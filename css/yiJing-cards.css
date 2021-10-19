@@ -1,3 +1,5 @@
+@import "reset.css";
+
 :root {
   /* rgb values */
   --color-davysgrey: 89, 89, 89; /* #595959 */
@@ -19,6 +21,10 @@
   background-repeat: no-repeat;
   position: relative;
   vertical-align: middle;
+}
+
+::before, ::after {
+	box-sizing: border-box;
 }
 
 html {
