@@ -46,7 +46,7 @@ main {
 
 #wrapper-supreme {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   grid-auto-rows: 1fr;
   gap: 2rem;
   grid-auto-flow: dense;
@@ -54,6 +54,7 @@ main {
 }
 
 .card {
+  aspect-ratio: 7 / 4;
   cursor: default;
   perspective: 100rem;
   display: flex;
@@ -85,7 +86,7 @@ main {
 
 .front {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: max(0.5rem, 1vmin);
 }
 
@@ -97,24 +98,24 @@ main {
 }
 
 .sequence {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .gua-num span:nth-child(3) { font-size: 1.2em; }
 
 .bronze img {
-  height: 5rem;
+  height: 4.5rem;
   display: block;
   filter: invert(13%) sepia(16%) saturate(1917%) hue-rotate(339deg) brightness(103%) contrast(90%);
 }
 
 .trad span {
-  font-size: 4rem;
+  font-size: 3.5rem;
   display: block;
 }
 
 .back {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
