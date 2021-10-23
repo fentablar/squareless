@@ -1,5 +1,6 @@
 {
 	"dataName" : "Yi Jing Cards",
+	"imgRoot" : "https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/",
 	"cards" : [
 	{
 		"number" : 8,
@@ -11,8 +12,8 @@
 		"characters" : {
 			"traditional" : [ "小", "畜" ],
 			"bronze" : [
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_5C0F.svg",
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_755C.svg"
+				"27_5C0F.svg",
+				"27_755C.svg"
 			]
 		},
 		"symbolText" : {
@@ -30,8 +31,8 @@
 		"characters" : {
 			"traditional" : [ "小", "畜" ],
 			"bronze" : [
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_5C0F.svg",
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_755C.svg"
+				"27_5C0F.svg",
+				"27_755C.svg"
 			]
 		},
 		"symbolText" : {
@@ -49,8 +50,8 @@
 		"characters" : {
 			"traditional" : [ "小", "畜" ],
 			"bronze" : [
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_5C0F.svg",
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_755C.svg"
+				"27_5C0F.svg",
+				"27_755C.svg"
 			]
 		},
 		"symbolText" : {
@@ -68,8 +69,8 @@
 		"characters" : {
 			"traditional" : [ "小", "畜" ],
 			"bronze" : [
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_5C0F.svg",
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_755C.svg"
+				"27_5C0F.svg",
+				"27_755C.svg"
 			]
 		},
 		"symbolText" : {
@@ -87,8 +88,8 @@
 		"characters" : {
 			"traditional" : [ "小", "畜" ],
 			"bronze" : [
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_5C0F.svg",
-				"https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/27_755C.svg"
+				"27_5C0F.svg",
+				"27_755C.svg"
 			]
 		},
 		"symbolText" : {
