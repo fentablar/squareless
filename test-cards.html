@@ -16,7 +16,5 @@
 </body>
 <script>
 const wrapperSupreme = document.querySelector('wrapper-supreme');
-let testp = document.createElement('p');
-testp.innerHTML = 'test text';
-wrapperSupreme.append(testp);
+wrapperSupreme.insertAdjacentHTML('afterbegin', '<p>Hello</p>');
 </script>
