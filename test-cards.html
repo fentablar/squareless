@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Yi Jing Cards</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/yiJing-cards.css">
+</head>
+<body>
+	<main>
+		<div id="wrapper-supreme">
+			
+		</div>
+	</main>
+</body>
+<script>
+	let wrapperSupreme = document.querySelector('wrapper-supreme');
+	let cardSection = document.createElement('div');
+	cardSection.id = '1';
+	wrapperSupreme.append(cardSection);
+	let testTxtWrap = document.createElement('div');
+	testTxtWrap.innerHTML = 'this is a test';
+	cardSection.append(testTxtWrap);
+</script>
