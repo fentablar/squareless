@@ -15,11 +15,13 @@
 	</main>
 </body>
 <script>
-	let wrapperSupreme = document.querySelector('wrapper-supreme');
-	let cardSection = document.createElement('div');
-	cardSection.id = '1';
-	wrapperSupreme.append(cardSection);
-	let testTxtWrap = document.createElement('div');
-	testTxtWrap.innerHTML = 'this is a test';
-	cardSection.append(testTxtWrap);
+	(function() {
+		let wrapperSupreme = document.querySelector('wrapper-supreme');
+		let cardSection = document.createElement('div');
+		cardSection.id = '1';
+		wrapperSupreme.append(cardSection);
+		let testTxtWrap = document.createElement('div');
+		testTxtWrap.innerHTML = 'this is a test';
+		cardSection.append(testTxtWrap);
+		})();
 </script>
