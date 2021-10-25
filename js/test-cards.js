@@ -55,5 +55,10 @@ fetch('kan/test-cards.json')
 					'<span>' + tradImg + '</span>');
 			}
 			sideFront.append(charTrad);
+			
+			
+			cardWrap.append(sideFront);
+			cardSection.append(cardWrap);
+			wrapperSupreme.append(cardSection);
 		}
 	});
