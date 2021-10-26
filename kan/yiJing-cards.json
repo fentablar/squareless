@@ -73,6 +73,24 @@
 			"traditional" : "山下出泉，蒙；君子以果行育德。",
 			"english" : "A mountain, and beneath it that for a spring issuing forth form Meng. The superior man, in accordance with this, strives to be resolute in his conduct and nourishes his virtue."
 		}
+	},
+	{
+		"number" : 5,
+		"guaCode" : "&#19908;",
+		"name" : {
+			"pinyin" : "Xū",
+			"english" : "Compel"
+		},
+		"characters" : {
+			"traditional" : [ "需" ],
+			"bronze" : [
+				"27_9700.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "雲上於天，需；君子以飲食宴樂。",
+			"english" : "Clouds ascending over that for the sky forms Xu. The superior man, in accordance with this, eats and drinks, feasts and enjoys himself ."
+		}
 	}
 	]
 }
