@@ -4,7 +4,7 @@
 	"cards" : [
 	{
 		"number" : 1,
-		"guaCode" : "&#19904;"
+		"guaCode" : "&#19904;",
 		"name" : {
 			"pinyin" : "Qián",
 			"english" : "Initiate"
