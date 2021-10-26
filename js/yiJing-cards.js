@@ -34,7 +34,9 @@ fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
 			let seqGuaNum = document.createElement('div');
 			seqGuaNum.classList.add('seq', 'gua-num');
 			seqGuaNum.insertAdjacentHTML('afterbegin',
-				'<span>' + card.number + '</span><span>&#160;</span><span>' + card.guaCode + '</span>');
+				'<span>' + card.number + '</span>'
+				+ '<span>&#160;</span>'
+				+ '<span>' + card.guaCode + '</span>');
 			sequence.append(seqGuaNum);
 			
 			let seqPinyin = document.createElement('div');
