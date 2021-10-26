@@ -91,6 +91,24 @@
 			"traditional" : "雲上於天，需；君子以飲食宴樂。",
 			"english" : "Clouds ascending over that for the sky forms Xu. The superior man, in accordance with this, eats and drinks, feasts and enjoys himself ."
 		}
+	},
+	{
+		"number" 6: ,
+		"guaCode" : "&#19909;",
+		"name" : {
+			"pinyin" : "Sòng",
+			"english" : "Contend"
+		},
+		"characters" : {
+			"traditional" : [ "訟" ],
+			"bronze" : [
+				"27_8A1F.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "天與水違行，訟；君子以作事謀始。",
+			"english" : "Heaven and water, moving away from each other, form Song. The superior man, in accordance with this, in the transaction of affairs takes good counsel about his first steps."
+		}
 	}
 	]
 }
