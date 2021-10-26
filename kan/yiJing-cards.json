@@ -839,6 +839,335 @@
 			"traditional" : "地中生木，升；君子以順德，積小以高大。",
 			"english" : "Wood and that for the earth with the wood growing in the midst of it form Sheng. The superior man, in accordance with this, pays careful attention to his virtue, and accumulates the small developments of it till it is high and great."
 		}
+	},
+	{
+		"number" : 47,
+		"guaCode" : "&#19950;",
+		"name" : {
+			"pinyin" : "Kùn",
+			"english" : "Exhaust"
+		},
+		"characters" : {
+			"traditional" : "困",
+			"bronze" : [
+				"27_56F0.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "澤无水，困；君子以致命遂志。",
+			"english" : "A marsh, and no water in it, form Kun. The superior man, in accordance with this, will sacrifice his life in order to carry out his purpose."
+		}
+	},
+	{
+		"number" : 48,
+		"guaCode" : "&#19951;",
+		"name" : {
+			"pinyin" : "Jǐng",
+			"english" : "Replenish"
+		},
+		"characters" : {
+			"traditional" : "井",
+			"bronze" : [
+				"27_4E95.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "木上有水，井；君子以勞民勸相。",
+			"english" : "Wood and above it that for water form Jing. The superior man, in accordance with this, comforts the people, and. stimulates them to mutual helpfulness."
+		}
+	},
+	{
+		"number" : 49,
+		"guaCode" : "&#19952;",
+		"name" : {
+			"pinyin" : "Gé",
+			"english" : "Abolish"
+		},
+		"characters" : {
+			"traditional" : "革",
+			"bronze" : [
+				"27_9769.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "澤中有火，革；君子以治歷明時。",
+			"english" : "A marsh and that for fire in the midst of them form Ge. The superior man, in accordance with this, regulates his calculations, and makes clear the seasons and times."
+		}
+	},
+	{
+		"number" : 50,
+		"guaCode" : "&#19953;",
+		"name" : {
+			"pinyin" : "Dǐng",
+			"english" : "Establish"
+		},
+		"characters" : {
+			"traditional" : "鼎",
+			"bronze" : [
+				"27_9F0E.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "木上有火，鼎；君子以正位凝命。",
+			"english" : "Wood and above it that for fire form Ding. The superior man, in accordance with this, keeps his every position correct, and maintains secure the appointment."
+		}
+	},
+	{
+		"number" : 51,
+		"guaCode" : "&#19954;",
+		"name" : {
+			"pinyin" : "Zhèn",
+			"english" : "Arouse"
+		},
+		"characters" : {
+			"traditional" : "震",
+			"bronze" : [
+				"27_9707.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "洊雷，震；君子以恐懼脩省。",
+			"english" : "Thunder, being repeated, forms Zhen. The superior man, in accordance with this, is fearful and apprehensive, cultivates, and examines."
+		}
+	},
+	{
+		"number" : 52,
+		"guaCode" : "&#19955;",
+		"name" : {
+			"pinyin" : "Gèn",
+			"english" : "Still"
+		},
+		"characters" : {
+			"traditional" : "艮",
+			"bronze" : [
+				"27_826E.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "兼山，艮；君子以思不出其位。",
+			"english" : "A mountain, one over the other, form Gen. The superior man, in accordance with this, does not go in his thoughts beyond the position in which he is."
+		}
+	},
+	{
+		"number" : 53,
+		"guaCode" : "&#19956;",
+		"name" : {
+			"pinyin" : "Jiàn",
+			"english" : "Develop"
+		},
+		"characters" : {
+			"traditional" : "漸",
+			"bronze" : [
+				"27_6F38.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山上有木，漸；君子以居賢德，善俗。",
+			"english" : "A mountain and above it that for a tree form Jian. The superior man, in accordance with this, attains to and maintains his extraordinary virtue, and makes the manners of the people good."
+		}
+	},
+	{
+		"number" : 54,
+		"guaCode" : "&#19957;",
+		"name" : {
+			"pinyin" : "Guī Mèi",
+			"english" : "Splice"
+		},
+		"characters" : {
+			"traditional" : "歸妹",
+			"bronze" : [
+				"27_6B78.svg",
+				"27_59B9.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "澤上有雷，歸妹；君子以永終知敝。",
+			"english" : "A marsh and over it that for thunder form Gui Mei. The superior man, in accordance with this, having regard to the far-distant end, knows the mischief."
+		}
+	},
+	{
+		"number" : 55,
+		"guaCode" : "&#19958;",
+		"name" : {
+			"pinyin" : "Fēng",
+			"english" : "Enrich"
+		},
+		"characters" : {
+			"traditional" : "豐",
+			"bronze" : [
+				"27_8C50.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "雷電皆至，豐；君子以折獄致刑。",
+			"english" : "Thunder and lightning combine to form Feng. The superior man, in accordance with this, decides cases of litigation, and apportions punishments with exactness."
+		}
+	},
+	{
+		"number" : 56,
+		"guaCode" : "&#19959;",
+		"name" : {
+			"pinyin" : "Lǚ",
+			"english" : "Travel"
+		},
+		"characters" : {
+			"traditional" : "旅",
+			"bronze" : [
+				"27_65C5.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山上有火，旅；君子以明慎用刑，而不留獄。",
+			"english" : "A mountain and above it that for fire form Lu. The superior man, in accordance with this, exerts his wisdom and caution in the use of punishments and not allowing litigations to continue."
+		}
+	},
+	{
+		"number" : 57,
+		"guaCode" : "&#19960;",
+		"name" : {
+			"pinyin" : "Xùn",
+			"english" : "Serve"
+		},
+		"characters" : {
+			"traditional" : "巽",
+			"bronze" : [
+				"27_E41E.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "隨風，巽；君子以申命行事。",
+			"english" : "Wind, following each other, form Xun. The superior man, in accordance with this, reiterates his orders, and secures the practice of his affairs."
+		}
+	},
+	{
+		"number" : 58,
+		"guaCode" : "&#19961;",
+		"name" : {
+			"pinyin" : "Duì",
+			"english" : "Exchange"
+		},
+		"characters" : {
+			"traditional" : "兌",
+			"bronze" : [
+				"27_514C.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "麗澤，兌；君子以朋友講習。",
+			"english" : "The waters of a marsh, one over the other, form Dui. The superior man, in accordance with this, the conversation of friends and their practice."
+		}
+	},
+	{
+		"number" : 59,
+		"guaCode" : "&#19962;",
+		"name" : {
+			"pinyin" : "Huàn",
+			"english" : "Disperse"
+		},
+		"characters" : {
+			"traditional" : "渙",
+			"bronze" : [
+				"27_6E19.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "風行水上，渙；先王以享于帝立廟。",
+			"english" : "Water and that for wind moving above the water form Huan. The ancient kings, in accordance with this, presented offerings to God and established the ancestral temple."
+		}
+	},
+	{
+		"number" : 60,
+		"guaCode" : "&#19963;",
+		"name" : {
+			"pinyin" : "Jié",
+			"english" : "Abridge"
+		},
+		"characters" : {
+			"traditional" : "節",
+			"bronze" : [
+				"27_7BC0.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "澤上有水，節；君子以制數度，議德行。",
+			"english" : "A lake, and above it that for water, form Jie. The superior man, in accordance with this, constructs his numbering and measurement, and discusses virtue and conduct."
+		}
+	},
+	{
+		"number" : 61,
+		"guaCode" : "&#19964;",
+		"name" : {
+			"pinyin" : "Zhōng Fú",
+			"english" : "Resolve"
+		},
+		"characters" : {
+			"traditional" : "中孚",
+			"bronze" : [
+				"27_4E2D.svg",
+				"27_5B5A.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "澤上有風，中孚；君子以議獄緩死。",
+			"english" : "A marsh and that for wind above it form Zhong Fu. The superior man, in accordance with this, deliberates about cases of litigation and delays death."
+		}
+	},
+	{
+		"number" : 62,
+		"guaCode" : "&#19965;",
+		"name" : {
+			"pinyin" : "Xiǎo Guò",
+			"english" : "Augment"
+		},
+		"characters" : {
+			"traditional" : "小過",
+			"bronze" : [
+				"27_5C0F.svg",
+				"27_904E.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山上有雷，小過；君子以行過乎恭，喪過乎哀，用過乎儉。",
+			"english" : "A hill and that for thunder above it form Xiao Guo. The superior man, in accordance with this, in his conduct exceeds in humility, in mourning exceeds in sorrow, and in his expenditure exceeds in economy."
+		}
+	},
+	{
+		"number" : 63,
+		"guaCode" : "&#19966;",
+		"name" : {
+			"pinyin" : "Jì Jì",
+			"english" : "Complete"
+		},
+		"characters" : {
+			"traditional" : "既濟",
+			"bronze" : [
+				"27_65E2.svg",
+				"27_6FDF.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "水在火上，既濟；君子以思患而預防之。",
+			"english" : "Fire and that for water above it form Ji Ji. The superior man, in accordance with this, thinks of evil, and beforehand guards against it."
+		}
+	},
+	{
+		"number" : 64,
+		"guaCode" : "&#19967;",
+		"name" : {
+			"pinyin" : "Wèi Jì",
+			"english" : "Iterate"
+		},
+		"characters" : {
+			"traditional" : "未濟",
+			"bronze" : [
+				"27_672A.svg",
+				"27_6FDF.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "火在水上，未濟；君子以慎辨物居方。",
+			"english" : "Water and that for fire above it form Wei Ji. The superior man, in accordance with this, carefully discriminates among things, and the positions they occupy."
+		}
 	}
 	]
 }
