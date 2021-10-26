@@ -37,6 +37,24 @@
 			"traditional" : "地勢坤，君子以厚德載物。",
 			"english" : "The power of the earth is what is denoted by Kun. The superior man, in accordance with this, with his large virtue supports things."
 		}
+	},
+	{
+		"number" : 3,
+		"guaCode" : "&#19906;",
+		"name" : {
+			"pinyin" : "Zhūn",
+			"english" : "Challenge"
+		},
+		"characters" : {
+			"traditional" : [ "屯" ],
+			"bronze" : [
+				"27_5C6F.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "雲，雷，屯；君子以經綸。",
+			"english" : "Clouds and thunder form Zhun. The superior man, in accordance with this, as in sorting the threads of the warp and woof."
+		}
 	}
 	]
 }
