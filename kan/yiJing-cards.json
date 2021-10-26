@@ -109,6 +109,24 @@
 			"traditional" : "天與水違行，訟；君子以作事謀始。",
 			"english" : "Heaven and water, moving away from each other, form Song. The superior man, in accordance with this, in the transaction of affairs takes good counsel about his first steps."
 		}
+	},
+	{
+		"number" : 7,
+		"guaCode" : "&#19910;",
+		"name" : {
+			"pinyin" : "Shī",
+			"english" : "Throng"
+		},
+		"characters" : {
+			"traditional" : [ "師" ],
+			"bronze" : [
+				"27_5E2B.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "地中有水，師；君子以容民畜眾。",
+			"english" : "The earth and in the midst of it that representing water, form Shi. The superior man, in accordance with this, nourishes and educates the people, and collects the multitudes."
+		}
 	}
 	]
 }
