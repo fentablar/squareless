@@ -55,6 +55,24 @@
 			"traditional" : "雲，雷，屯；君子以經綸。",
 			"english" : "Clouds and thunder form Zhun. The superior man, in accordance with this, as in sorting the threads of the warp and woof."
 		}
+	},
+	{
+		"number" : 4,
+		"guaCode" : "&#19907;",
+		"name" : {
+			"pinyin" : "Méng",
+			"english" : "Toddle"
+		},
+		"characters" : {
+			"traditional" : [ "蒙" ],
+			"bronze" : [
+				"27_8499.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山下出泉，蒙；君子以果行育德。",
+			"english" : "A mountain, and beneath it that for a spring issuing forth form Meng. The superior man, in accordance with this, strives to be resolute in his conduct and nourishes his virtue."
+		}
 	}
 	]
 }
