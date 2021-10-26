@@ -75,13 +75,12 @@ main {
 }
 
 .side {
-  flex: 1;
   min-width: 100%;
   box-shadow: 0px 0px 6px 2px rgb(var(--color-shadowblue));
   background-color: rgba(var(--color-bananamania), 0.8);
   border: 1px solid rgba(var(--color-camel), 0.8);
   color: rgb(var(--color-bistre));
-  padding: 0.5rem;
+  padding: max(1rem, 1vmin);
   backface-visibility: hidden;
 }
 
