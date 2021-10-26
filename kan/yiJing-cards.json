@@ -364,6 +364,226 @@
 			"traditional" : "風行地上，觀；先王以省方，觀民設教。",
 			"english" : "The earth, and that for wind moving above it, form Guan. The ancient kings, in accordance with this, examined the regions, to see the people, and set forth their instructions."
 		}
+	},
+	{
+		"number" : 21,
+		"guaCode" : "&#19924;",
+		"name" : {
+			"pinyin" : "Shì Kè",
+			"english" : "Eradicate"
+		},
+		"characters" : {
+			"traditional" : "噬嗑",
+			"bronze" : [
+				"27_566C.svg",
+				"27_55D1.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "雷電噬嗑；先王以明罰敕法。",
+			"english" : "Thunder and lightning form Shi He. The ancient kings, in accordance with this, framed their penalties with intelligence, and promulgated their laws."
+		}
+	},
+	{
+		"number" : 22,
+		"guaCode" : "&#19925;",
+		"name" : {
+			"pinyin" : "Bì",
+			"english" : "Adorn"
+		},
+		"characters" : {
+			"traditional" : "賁",
+			"bronze" : [
+				"27_8CC1.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山下有火，賁；君子以明庶政，无敢折獄。",
+			"english" : "A mountain and that for fire under it form Bi. The superior man, in accordance with this, throws a brilliancy around his various processes of government, but does not dare to decide cases of criminal litigation."
+		}
+	},
+	{
+		"number" : 23,
+		"guaCode" : "&#19926;",
+		"name" : {
+			"pinyin" : "Bō",
+			"english" : "Decay"
+		},
+		"characters" : {
+			"traditional" : "剝",
+			"bronze" : [
+				"27_525D.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山附地上，剝；上以厚下，安宅。",
+			"english" : "The earth, and that for a mountain, which adheres to the earth, form Bo. Superiors, in accordance with this, seek to strengthen those below them, to secure the peace and stability of their own position."
+		}
+	},
+	{
+		"number" : 24,
+		"guaCode" : "&#19927;",
+		"name" : {
+			"pinyin" : "Fù",
+			"english" : "Regress"
+		},
+		"characters" : {
+			"traditional" : "復",
+			"bronze" : [
+				"27_5FA9.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "雷在地中，復；先王以至日閉關，商旅不行，后不省方。",
+			"english" : "The earth and that for thunder in the midst of it form Fu. The ancient kings, in accordance with this, on the day. of the solstice, shut the gates of the passes, so that the travelling merchants could not pursue their journeys, nor the princes go on with the inspection of their states."
+		}
+	},
+	{
+		"number" : 25,
+		"guaCode" : "&#19928;",
+		"name" : {
+			"pinyin" : "Wú Wàng",
+			"english" : "Open"
+		},
+		"characters" : {
+			"traditional" : "無妄",
+			"bronze" : [
+				"27_F46F.svg",
+				"27_5984.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "天下雷行，物與无妄；先王以茂對時，育萬物。",
+			"english" : "The thunder rolls all under the sky, and to thing there is given, free from all insincerity. The ancient kings, in accordance with this, in complete accordance with the seasons, thereby nourishing all things."
+		}
+	},
+	{
+		"number" : 26,
+		"guaCode" : "&#19929;",
+		"name" : {
+			"pinyin" : "Dà Xù",
+			"english" : "Amass"
+		},
+		"characters" : {
+			"traditional" : "大畜",
+			"bronze" : [
+				"27_5927.svg",
+				"27_755C.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "天在山中，大畜；君子以多識前言往行，以畜其德。",
+			"english" : "A mountain, and in the midst of it that heaven, form Da Xu. The superior man, in accordance with this, stores largely in his memory the words and deeds of former men, to subserve the accumulation of his virtue."
+		}
+	},
+	{
+		"number" : 27,
+		"guaCode" : "&#19930;",
+		"name" : {
+			"pinyin" : "Yí",
+			"english" : "Nourish"
+		},
+		"characters" : {
+			"traditional" : "頤",
+			"bronze" : [
+				"27_9824.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山下有雷，頤；君子以慎言語，節飲食。",
+			"english" : "A mountain and under it that for thunder form Yi. The superior man, in accordance with this, watchfulness over our words, and the temperate regulation of our eating and drinking."
+		}
+	},
+	{
+		"number" : 28,
+		"guaCode" : "&#19931;",
+		"name" : {
+			"pinyin" : "Dà Guò",
+			"english" : "Exceed"
+		},
+		"characters" : {
+			"traditional" : "大過",
+			"bronze" : [
+				"27_5927.svg",
+				"27_904E.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "澤滅木，大過；君子以獨立不懼，遯世无悶。",
+			"english" : "Trees hidden beneath that for the waters of a marsh forms Da Guo. The superior man, in accordance with this, stands up alone and has no fear, and keeps retired from the world without regret."
+		}
+	},
+	{
+		"number" : 29,
+		"guaCode" : "&#19932;",
+		"name" : {
+			"pinyin" : "Kǎn",
+			"english" : "Depress"
+		},
+		"characters" : {
+			"traditional" : "坎",
+			"bronze" : [
+				"27_574E.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "水洊至，習坎；君子以常德行，習教事。",
+			"english" : "Water flowing on continuously forms the repeated Kan. The superior man, in accordance with this, maintains constantly the virtue and his conduct, and practises the business of instruction."
+		}
+	},
+	{
+		"number" : 30,
+		"guaCode" : "&#19933;",
+		"name" : {
+			"pinyin" : "Lí",
+			"english" : "Brighten"
+		},
+		"characters" : {
+			"traditional" : "離",
+			"bronze" : [
+				"27_96E2.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "明兩作離，大人以繼明照于四方。",
+			"english" : "Brightness, repeated, forms Li. The great man, in accordance with this, cultivates more and more his brilliant, and diffuses its brightness over the four quarters."
+		}
+	},
+	{
+		"number" : 31,
+		"guaCode" : "&#19934;",
+		"name" : {
+			"pinyin" : "Xián",
+			"english" : "Encompass"
+		},
+		"characters" : {
+			"traditional" : "咸",
+			"bronze" : [
+				"27_54B8.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山上有澤，咸，君子以虛受人。",
+			"english" : "A mountain and above it that for a marsh form Xian. The superior man, in accordance with this, keeps his mind free from pre-occupation, and open to receive others."
+		}
+	},
+	{
+		"number" : 32,
+		"guaCode" : "&#19935;",
+		"name" : {
+			"pinyin" : "Héng",
+			"english" : "Endure"
+		},
+		"characters" : {
+			"traditional" : "恆",
+			"bronze" : [
+				"27_6046.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "雷風，恆；君子以立不易方。",
+			"english" : "Thunder and that for wind form Heng. The superior man, in accordance with this, stands firm, and does not change his method."
+		}
 	}
 	]
 }
