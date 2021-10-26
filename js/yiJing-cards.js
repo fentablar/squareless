@@ -23,7 +23,7 @@ fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
 			let charBronze = document.createElement('div');
 			charBronze.classList.add('char', 'bronze');
 			for (let brnzImg of card.characters.bronze) {
-				charBronze.insertAdjacentHTML('afterbegin',
+				charBronze.insertAdjacentHTML('beforeend',
 				'<img src="' + imgRoot + brnzImg + '" >');
 			}
 			sideFront.append(charBronze);
@@ -54,7 +54,7 @@ fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
 			let charTrad = document.createElement('div');
 			charTrad.classList.add('char', 'trad');
 			for (let tradImg of card.characters.traditional) {
-				charTrad.insertAdjacentHTML('afterbegin',
+				charTrad.insertAdjacentHTML('beforeend',
 					'<span>' + tradImg + '</span>');
 			}
 			sideFront.append(charTrad);
