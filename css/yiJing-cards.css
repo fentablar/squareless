@@ -124,4 +124,7 @@ main {
   transform: rotateX(180deg) translate(-100%, 0);
 }
 
-.back span:nth-child(1) { font-size: 1.2em; }
+.back span:nth-child(1) {
+	font-size: 1.2em;
+	word-break: break-all;
+	}
