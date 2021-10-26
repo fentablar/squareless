@@ -10,7 +10,7 @@
 			"english" : "Initiate"
 		},
 		"characters" : {
-			"traditional" : [ "乾" ],
+			"traditional" : "乾",
 			"bronze" : [
 				"27_4E7E.svg"
 			]
@@ -28,7 +28,7 @@
 			"english" : "Respond"
 		},
 		"characters" : {
-			"traditional" : [ "坤" ],
+			"traditional" : "坤",
 			"bronze" : [
 				"27_5764.svg"
 			]
@@ -46,7 +46,7 @@
 			"english" : "Challenge"
 		},
 		"characters" : {
-			"traditional" : [ "屯" ],
+			"traditional" : "屯",
 			"bronze" : [
 				"27_5C6F.svg"
 			]
@@ -64,7 +64,7 @@
 			"english" : "Toddle"
 		},
 		"characters" : {
-			"traditional" : [ "蒙" ],
+			"traditional" : "蒙",
 			"bronze" : [
 				"27_8499.svg"
 			]
@@ -82,7 +82,7 @@
 			"english" : "Compel"
 		},
 		"characters" : {
-			"traditional" : [ "需" ],
+			"traditional" : "需",
 			"bronze" : [
 				"27_9700.svg"
 			]
@@ -100,7 +100,7 @@
 			"english" : "Contend"
 		},
 		"characters" : {
-			"traditional" : [ "訟" ],
+			"traditional" : "訟",
 			"bronze" : [
 				"27_8A1F.svg"
 			]
@@ -118,7 +118,7 @@
 			"english" : "Throng"
 		},
 		"characters" : {
-			"traditional" : [ "師" ],
+			"traditional" : "師",
 			"bronze" : [
 				"27_5E2B.svg"
 			]
@@ -136,7 +136,7 @@
 			"english" : "Unite"
 		},
 		"characters" : {
-			"traditional" : [ "比" ],
+			"traditional" : "比",
 			"bronze" : [
 				"27_6BD4.svg"
 			]
@@ -154,7 +154,7 @@
 			"english" : "Accrue"
 		},
 		"characters" : {
-			"traditional" : [ "小","畜" ],
+			"traditional" : "小畜",
 			"bronze" : [
 				"27_5C0F.svg",
 				"27_755C.svg"
@@ -173,7 +173,7 @@
 			"english" : "Conduct"
 		},
 		"characters" : {
-			"traditional" : [ "履" ],
+			"traditional" : "履",
 			"bronze" : [
 				"27_5C65.svg"
 			]
@@ -191,7 +191,7 @@
 			"english" : "Progress"
 		},
 		"characters" : {
-			"traditional" : [ "泰" ],
+			"traditional" : "泰",
 			"bronze" : [
 				"27_6CF0.svg"
 			]
@@ -209,7 +209,7 @@
 			"english" : "Stagnate"
 		},
 		"characters" : {
-			"traditional" : [ "否" ],
+			"traditional" : "否",
 			"bronze" : [
 				"27_5426.svg"
 			]
