@@ -19,6 +19,25 @@
 			"traditional" : "天行健，君子以自強不息。",
 			"english" : "Heaven, in its motion, strength. The superior man, in accordance with this, nerves himself to ceaseless activity."
 		}
+	},
+	{
+		"number" : 2,
+		"guaCode" : "&#19905;",
+		"name" : {
+			"pinyin" : "Kūn",
+			"english" : "Respond"
+		},
+		"characters" : {
+			"traditional" : [ "坤" ],
+			"bronze" : [
+				"27_5764.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "地勢坤，君子以厚德載物。",
+			"english" : "The power of the earth is what is denoted by Kun. The superior man, in accordance with this, with his large virtue supports things."
+		}
 	}
 	]
 }
+
