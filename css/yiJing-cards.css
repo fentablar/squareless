@@ -128,3 +128,8 @@ main {
 .back span:nth-child(1) {
 	font-size: 1.2em;
 	}
+	
+.back span:nth-child(2) {
+	overflow-wrap: anywhere;
+	hyphens: auto;
+	}
