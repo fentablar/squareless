@@ -31,13 +31,13 @@ fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
 			let sequence = document.createElement('div');
 			sequence.classList.add('sequence');
 			
-			let seqGuaNum = document.createElement('div');
-			seqGuaNum.classList.add('seq', 'gua-num');
-			seqGuaNum.insertAdjacentHTML('afterbegin',
+			let seqNumTrad = document.createElement('div');
+			seqNumTrad.classList.add('seq', 'num-trad');
+			seqNumTrad.insertAdjacentHTML('afterbegin',
 				'<span>' + card.number + '</span>'
 				+ '<span>&#160;&#183;&#160;</span>'
 				+ '<span>' + card.characters.traditional + '</span>');
-			sequence.append(seqGuaNum);
+			sequence.append(seqNumTrad);
 			
 			let seqPinyin = document.createElement('div');
 			seqPinyin.classList.add('seq', 'pinyin');
@@ -54,7 +54,7 @@ fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
 			sideFront.append(sequence);
 			
 			let charTrad = document.createElement('div');
-			charTrad.classList.add('char', 'trad');
+			charTrad.classList.add('char', 'gua');
 			charTrad.insertAdjacentHTML('beforeend',
 				'<span>' + card.guaCode + '</span>');
 			sideFront.append(charTrad);

@@ -101,7 +101,7 @@ main {
   font-size: 1.5rem;
 }
 
-.gua-num span:nth-child(3) { font-size: 1.2em; }
+.num-trad span:nth-child(3) { font-size: 1.2em; }
 
 .bronze img {
   height: 4.5rem;
@@ -109,8 +109,8 @@ main {
   filter: invert(13%) sepia(16%) saturate(1917%) hue-rotate(339deg) brightness(103%) contrast(90%);
 }
 
-.trad span {
-  font-size: 3.5rem;
+.gua span {
+  font-size: 4rem;
   display: block;
 }
 
