@@ -127,6 +127,97 @@
 			"traditional" : "地中有水，師；君子以容民畜眾。",
 			"english" : "The earth and in the midst of it that representing water, form Shi. The superior man, in accordance with this, nourishes and educates the people, and collects the multitudes."
 		}
+	},
+	{
+		"number" : 8,
+		"guaCode" : "&#19911;",
+		"name" : {
+			"pinyin" : "Bǐ",
+			"english" : "Unite"
+		},
+		"characters" : {
+			"traditional" : [ "比" ],
+			"bronze" : [
+				"27_6BD4.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "地上有水，比；先王以建萬國，親諸侯。",
+			"english" : "The earth, and over it water, form Bi. The ancient kings, in accordance with this, established the various states and maintained an affectionate relation to their princes."
+		}
+	},
+	{
+		"number" : 9,
+		"guaCode" : "&#19912;",
+		"name" : {
+			"pinyin" : "Xiǎo Xù",
+			"english" : "Accrue"
+		},
+		"characters" : {
+			"traditional" : [ "小","畜" ],
+			"bronze" : [
+				"27_5C0F.svg",
+				"27_755C.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "風行天上，小畜；君子以懿文德。",
+			"english" : "The sky, and that representing wind moving above it, form Xiao Xu The superior man, in accordance with this, adorns the outward manifestation of his virtue."
+		}
+	},
+	{
+		"number" : 10,
+		"guaCode" : "&#19913;",
+		"name" : {
+			"pinyin" : "Lǚ",
+			"english" : "Conduct"
+		},
+		"characters" : {
+			"traditional" : [ "履" ],
+			"bronze" : [
+				"27_5C65.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "上天下澤，履；君子以辨上下，安民志。",
+			"english" : "The sky above, and below it a marsh, form Lu. The superior man, in accordance with this, discriminates between high and low, and gives settlement to the aims of the people."
+		}
+	},
+	{
+		"number" : 11,
+		"guaCode" : "&#19914;",
+		"name" : {
+			"pinyin" : "Tài",
+			"english" : "Progress"
+		},
+		"characters" : {
+			"traditional" : [ "泰" ],
+			"bronze" : [
+				"27_6CF0.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "天地交泰，后以財成天地之道，輔相天地之宜，以左右民。",
+			"english" : "Heaven and earth in communication together form Tai. The sovereign, in harmony with this, fashions and completes after the courses of heaven and earth, and assists the application of the adaptations furnished by them, - in order to benefit the people."
+		}
+	},
+	{
+		"number" : 12,
+		"guaCode" : "&#19915;",
+		"name" : {
+			"pinyin" : "Pǐ",
+			"english" : "Stagnate"
+		},
+		"characters" : {
+			"traditional" : [ "否" ],
+			"bronze" : [
+				"27_5426.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "天地不交，否；君子以儉德辟難，不可榮以祿。",
+			"english" : "Heaven and earth, not in intercommunication, form Pi. The superior man, in accordance with this, restrains his virtue, and avoids the calamities. There is no opportunity of conferring on him the glory of emolument."
+		}
 	}
 	]
 }
