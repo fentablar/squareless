@@ -1,0 +1,24 @@
+{
+	"dataName" : "Yi Jing Cards",
+	"imgRoot" : "https://res.cloudinary.com/fentablar/image/upload/v1634330890/yiJing/",
+	"cards" : [
+	{
+		"number" : 1,
+		"guaCode" : "&#19904;"
+		"name" : {
+			"pinyin" : "Qián",
+			"english" : "Initiate"
+		},
+		"characters" : {
+			"traditional" : [ "乾" ],
+			"bronze" : [
+				"27_4E7E.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "天行健，君子以自強不息。",
+			"english" : "Heaven, in its motion, strength. The superior man, in accordance with this, nerves himself to ceaseless activity."
+		}
+	}
+	]
+}

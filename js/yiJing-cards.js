@@ -1,6 +1,6 @@
 const wrapperSupreme = document.querySelector('#wrapper-supreme');
 
-fetch('https://fentablar.github.io/squareless/kan/test-cards.json')
+fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
 	.then(response => response.json())
 	.then(json => { 
 		let imgRoot = json.imgRoot;
