@@ -218,6 +218,152 @@
 			"traditional" : "天地不交，否；君子以儉德辟難，不可榮以祿。",
 			"english" : "Heaven and earth, not in intercommunication, form Pi. The superior man, in accordance with this, restrains his virtue, and avoids the calamities. There is no opportunity of conferring on him the glory of emolument."
 		}
+	},
+	{
+		"number" : 13,
+		"guaCode" : "&#19916;",
+		"name" : {
+			"pinyin" : "Tóng Rén",
+			"english" : "Consort"
+		},
+		"characters" : {
+			"traditional" : "同人",
+			"bronze" : [
+				"27_540C.svg",
+				"27_4EBA.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "天與火，同人；君子以類族辨物。",
+			"english" : "Heaven and fire form Tong Ren. The superior man, in accordance with this, distinguishes things according to their kinds and classes."
+		}
+	},
+	{
+		"number" : 14,
+		"guaCode" : "&#19917;",
+		"name" : {
+			"pinyin" : "Dà Yǒu",
+			"english" : "Abound"
+		},
+		"characters" : {
+			"traditional" : "大有",
+			"bronze" : [
+				"27_5927.svg",
+				"27_6709.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "火在天上，大有；君子以遏惡揚善，順天休命。",
+			"english" : "Heaven and fire above it form Da You. The superior man, in accordance with this, represses what is evil and gives distinction to what is good, in sympathy with the excellent Heaven-conferred."
+		}
+	},
+	{
+		"number" : 15,
+		"guaCode" : "&#19918;",
+		"name" : {
+			"pinyin" : "Qiān",
+			"english" : "Reserve"
+		},
+		"characters" : {
+			"traditional" : "謙",
+			"bronze" : [
+				"27_8B19.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "地中有山，謙；君子以裒多益寡，稱物平施。",
+			"english" : "The earth and a mountain in the midst of it form Qian. The superior man, in accordance with this, diminishes what is excessive, and increases where there is any defect, bringing about an equality, according to the nature of the case, in his treatment."
+		}
+	},
+	{
+		"number" : 16,
+		"guaCode" : "&#19919;",
+		"name" : {
+			"pinyin" : "Yù",
+			"english" : "Delight"
+		},
+		"characters" : {
+			"traditional" : "豫",
+			"bronze" : [
+				"27_8C6B.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "雷出地奮，豫。先王以作樂崇德，殷薦之上帝，以配祖考。",
+			"english" : "The earth and thunder issuing from it with its crashing noise form Yu. The ancient kings, in accordance with this, composed their music and did honour to virtue, presenting it especially and most grandly to God, when they associated with Him their highest ancestor and their father."
+		}
+	},
+	{
+		"number" : 17,
+		"guaCode" : "&#19920;",
+		"name" : {
+			"pinyin" : "Suí",
+			"english" : "Follow"
+		},
+		"characters" : {
+			"traditional" : "隨",
+			"bronze" : [
+				"27_96A8.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "澤中有雷，隨；君子以嚮晦入宴息。",
+			"english" : "a marsh and thunder in the midst of it form Sui. The superior man in accordance with this, when it is getting towards dark, enters and rests."
+		}
+	},
+	{
+		"number" : 18,
+		"guaCode" : "&#19921;",
+		"name" : {
+			"pinyin" : "Gǔ",
+			"english" : "Correct"
+		},
+		"characters" : {
+			"traditional" : "蠱",
+			"bronze" : [
+				"27_8831.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "山下有風，蠱；君子以振民育德。",
+			"english" : "A mountain, and below it that for wind, form Gu. The superior man, in accordance with this, help the people and nourish his own virtue."
+		}
+	},
+	{
+		"number" : 19,
+		"guaCode" : "&#19922;",
+		"name" : {
+			"pinyin" : "Lín",
+			"english" : "Impend"
+		},
+		"characters" : {
+			"traditional" : "臨",
+			"bronze" : [
+				"27_81E8.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "澤上有地，臨；君子以教思无窮，容保民无疆。",
+			"english" : "The waters of a marsh and that for the earth above it form Lin. The superior man, in accordance with this, has his purposes of instruction that are inexhaustible, and nourishes and supports the people without limit."
+		}
+	},
+	{
+		"number" : 20,
+		"guaCode" : "&#19923;",
+		"name" : {
+			"pinyin" : "Guān",
+			"english" : "Consider"
+		},
+		"characters" : {
+			"traditional" : "觀",
+			"bronze" : [
+				"27_89C0.svg"
+			]
+		},
+		"symbolText" : {
+			"traditional" : "風行地上，觀；先王以省方，觀民設教。",
+			"english" : "The earth, and that for wind moving above it, form Guan. The ancient kings, in accordance with this, examined the regions, to see the people, and set forth their instructions."
+		}
 	}
 	]
 }
