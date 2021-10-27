@@ -61,9 +61,20 @@ fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
 			
 			let sideBack = document.createElement('div');
 			sideBack.classList.add('side', 'back');
-			sideBack.insertAdjacentHTML('afterbegin',
-				'<span>' + card.symbolText.traditional + '</span>' + 
-				'<span>' + card.symbolText.english + '</span>');
 			cardWrap.append(sideBack);
+			
+			let symbolTextWrap = document.createElement('div');
+			symbolTextWrap.classList.add('symbolTextWrap');
+			sideBack.append(symbolTextWrap);
+			
+			let symTxtTrad = document.createElement('span');
+			symTxtTrad.classList.add('symTxt', 'symTrad');
+			symTxtTrad.insertAdjacentHTML('afterbegin', card.symbolText.traditional);
+			symbolTextWrap.append(symTxtTrad);
+			
+			let symTxtEng = document.createElement('span');
+			symTxtEng.classList.add('symTxt', 'symEng');
+			symTxtEng.insertAdjacentHTML('afterbegin', card.symbolText.english);
+			symbolTextWrap.append(symTxtEng);
 		}
 	});

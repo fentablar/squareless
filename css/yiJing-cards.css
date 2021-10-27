@@ -80,7 +80,6 @@ main {
   background-color: rgba(var(--color-bananamania), 0.8);
   border: 1px solid rgba(var(--color-camel), 0.8);
   color: rgb(var(--color-bistre));
-  padding: 0.5rem;
   backface-visibility: hidden;
 }
 
@@ -94,7 +93,8 @@ main {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .sequence {
@@ -104,7 +104,7 @@ main {
 .num-trad span:nth-child(3) { font-size: 1.2em; }
 
 .bronze img {
-  height: 4.5rem;
+  height: 5rem;
   display: block;
   filter: invert(13%) sepia(16%) saturate(1917%) hue-rotate(339deg) brightness(103%) contrast(90%);
 }
@@ -118,17 +118,22 @@ main {
   font-size: 1rem;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: max(1rem, 1vmin);
   transform: rotateX(180deg) translate(-100%, 0);
 }
 
-.back span:nth-child(1) {
-	font-size: 1.2em;
-	}
-	
-.back span:nth-child(2) {
+.symbolTextWrap { margin: auto }
+
+.symTxt {
+	display: block;
+	margin: 0.5rem;
+}
+
+.symTrad {
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.symEng {
 	overflow-wrap: anywhere;
 	hyphens: auto;
-	}
+}
