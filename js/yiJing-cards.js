@@ -55,7 +55,7 @@ fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
 			
 			let charTrad = document.createElement('div');
 			charTrad.classList.add('char', 'gua');
-			charTrad.insertAdjacentHTML('beforeend',
+			charTrad.insertAdjacentHTML('afterbegin',
 				'<span>' + card.guaCode + '</span>');
 			sideFront.append(charTrad);
 			

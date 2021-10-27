@@ -121,7 +121,7 @@ main {
   transform: rotateX(180deg) translate(-100%, 0);
 }
 
-.symbolTextWrap { margin: auto }
+.symbolTextWrap { margin: auto; }
 
 .symTxt {
 	display: block;
