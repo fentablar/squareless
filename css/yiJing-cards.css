@@ -129,6 +129,6 @@ main {
 	}
 	
 .back span:nth-child(2) {
-	overflow-wrap: anywhere;
+	overflow-wrap: break-word;
 	hyphens: auto;
 	}
