@@ -1,0 +1,111 @@
+@import "reset.css";
+
+html { font-size: 10px; }
+main, div, img { box-sizing: border-box; }
+
+@media (max-width: 700px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+#main {
+  background-color: darkslategray;
+  display: flex;
+  justify-content: center;
+}
+
+#sheet {
+  border-radius: 3rem / 2rem;
+  background-color: lemonchiffon;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem 0;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+#banner {
+  padding: 1rem;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#title {
+  font-size: 7rem;
+}
+
+#image {
+  max-width: 100%;
+  display: block;
+  margin: 0.5rem;
+}
+
+#img-caption {
+  font-style: italic;
+  text-align: center;
+}
+
+#content {
+  font-size: 1.8rem;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 5rem;
+  max-width: 75%;
+}
+
+#tribute-info p {
+  line-height: 150%;
+}
+
+ul {
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 3rem / 2rem;
+  border: 0.5rem solid darkslategray;
+}
+
+.yiItem {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 2rem;
+  padding: 1.5rem 0.5rem;
+}
+
+.seqGua {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.seqNum {
+  font-size: 6rem;
+}
+
+.seqHex {
+  font-size: 8rem;
+}
+
+.pinEng {
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
