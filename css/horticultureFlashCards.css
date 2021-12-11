@@ -1,0 +1,42 @@
+@import "reset.css";
+
+:root {
+  /* time value for card flip animation */
+  --time: 0.707s;
+
+  /* rgb values */
+  --color-aeroblue: ; /* C4E7D4 */
+  --color-opal: ; /* C4DACF */
+  --color-periwinklecrayola: ; /* B9C0DA */
+  --color-heliotropegray: ; /* 998DA0 */
+  --color-darkliver: ; /* 63585E */
+}
+
+* {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  position: relative;
+  vertical-align: middle;
+}
+
+::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: rgb(var(--color-periwinklecrayola));
+  padding: max(1.5rem, 5vmin);
+}
+
+main {
+  min-width: 100%;
+  background-color: rgb(var(--color-opal));
+  border: 0.5rem solid rgb(var(--color-heliotropegray));
+  border-radius: 1vmin;
+  padding: max(1rem, 2vmin);
+}
