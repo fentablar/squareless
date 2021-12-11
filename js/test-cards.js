@@ -1,69 +1,83 @@
-const wrapperSupreme = document.querySelector('#wrapper-supreme');
+let divBuild = (wrapper, classes, content) => {
+	let div = document.createElement('div');
+	if (classes) div.classList.add(...classes);
+	if (content) content(div);
+	wrapper.append(div);
+}
 
-fetch('https://fentablar.github.io/squareless/kan/test-cards.json')
-	.then(response => response.json())
-	.then(json => { 
-		let imgRoot = json.imgRoot;
-		let cards = json.cards;
-		
-		for (let card of cards) {
-			let cardSection = document.createElement('div');
-			cardSection.classList.add('card');
-			cardSection.setAttribute('id', card.number);
-			wrapperSupreme.append(cardSection);
-			
-			let cardWrap = document.createElement('div');
-			cardWrap.classList.add('card-wrap');
-			cardSection.append(cardWrap);
-			
-			let sideFront = document.createElement('div');
-			sideFront.classList.add('side', 'front');
-			cardWrap.append(sideFront);
-			
-			let charBronze = document.createElement('div');
-			charBronze.classList.add('char', 'bronze');
-			for (let brnzImg of card.characters.bronze) {
-				charBronze.insertAdjacentHTML('afterbegin',
-				'<img src="' + imgRoot + brnzImg + '" >');
-			}
-			sideFront.append(charBronze);
-			
-			let sequence = document.createElement('div');
-			sequence.classList.add('sequence');
-			
-			let seqGuaNum = document.createElement('div');
-			seqGuaNum.classList.add('seq', 'gua-num');
-			seqGuaNum.insertAdjacentHTML('afterbegin',
-				'<span>' + card.number + '</span><span>&#160;</span><span>' + card.guaCode + '</span>');
-			sequence.append(seqGuaNum);
-			
-			let seqPinyin = document.createElement('div');
-			seqPinyin.classList.add('seq', 'pinyin');
-			seqPinyin.insertAdjacentHTML('afterbegin',
-				'<span>' + card.name.pinyin + '</span>');
-			sequence.append(seqPinyin);
-			
-			let seqEng = document.createElement('div');
-			seqEng.classList.add('seq', 'eng');
-			seqEng.insertAdjacentHTML('afterbegin',
-				'<span>' + card.name.english + '</span>');
-			sequence.append(seqEng);
-			
-			sideFront.append(sequence);
-			
-			let charTrad = document.createElement('div');
-			charTrad.classList.add('char', 'trad');
-			for (let tradImg of card.characters.traditional) {
-				charTrad.insertAdjacentHTML('afterbegin',
-					'<span>' + tradImg + '</span>');
-			}
-			sideFront.append(charTrad);
-			
-			let sideBack = document.createElement('div');
-			sideBack.classList.add('side', 'back');
-			sideBack.insertAdjacentHTML('afterbegin',
-				'<span>' + card.symbolText.traditional + '</span>' + 
-				'<span>' + card.symbolText.english + '</span>');
-			cardWrap.append(sideBack);
+let symTxt = (wrapper, txtClass, txt) => {
+	divBuild(wrapper, ['symTxt', txtClass], div => {
+		div.insertAdjacentHTML('afterbegin', txt);
+	});
+}
+
+let symTxtWrap = (wrapper, txt) => {
+	divBuild(wrapper, ['symbolTextWrap'], div => {
+		symTxt(div, 'symTrad', txt.traditional);
+		symTxt(div, 'symEng', txt.english);
+	});
+}
+
+let charBronze = (wrapper, imgRoot, chars) => {
+	divBuild(wrapper, ['char', 'bronze'], div => {
+		for (let c of chars) {
+			div.insertAdjacentHTML('beforeend',
+			'<img src="' + imgRoot + c + '" >');
 		}
 	});
+}
+
+let charGua = (wrapper, code) => {
+	divBuild(wrapper, ['char', 'gua'], div => {
+		div.insertAdjacentHTML('afterbegin',
+		'<span>' + code + '</span>');
+	});
+}
+
+let seqNumTrad = (wrapper, num, txt) => {
+	divBuild(wrapper, ['seq', 'num-trad'], div => {
+		div.insertAdjacentHTML('afterbegin',
+		'<span>' + num + '</span>'
+		+ '<span>&#160;&#183;&#160;</span>'
+		+ '<span>' + txt + '</span>');
+	});
+}
+
+let seqLang = (wrapper, txtClass, txt) => {
+	divBuild(wrapper, ['seq', txtClass], div => {
+		div.insertAdjacentHTML('afterbegin',
+		'<span>' + txt + '</span>');
+	});
+}
+
+let sequence = (wrapper, card) => {
+	divBuild(wrapper, ['sequence'], div => {
+		seqNumTrad(div, card.number, card.characters.traditional);
+		seqLang(div, 'pinyin', card.name.pinyin);
+		seqLang(div, 'eng', card.name.english);
+	});
+}
+
+let cardBuild = (wrapper, imgRoot, card) => {
+	divBuild(wrapper, ['card'], div => {
+		div.setAttribute('id', card.number);
+		divBuild(div, ['card-wrap'], div => {
+			divBuild(div, ['side', 'front'], div => {
+				charBronze(div, imgRoot, card.characters.bronze);
+				sequence(div, card);
+				charGua(div, card.guaCode);
+			});
+			divBuild(div, ['side', 'back'], div => {
+				symTxtWrap(div, card.symbolText);
+			});
+		});
+	});
+}
+
+fetch('https://fentablar.github.io/squareless/kan/yiJing-cards.json')
+.then(response => response.json())
+.then(json => {
+	const imgRoot = json.imgRoot, cards = json.cards;
+	const wrapperSupreme = document.querySelector('#wrapper-supreme');
+	for (let card of cards) cardBuild(wrapperSupreme, imgRoot, card);
+});

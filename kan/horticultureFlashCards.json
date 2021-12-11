@@ -1,0 +1,109 @@
+{
+	"dataName": "Horticulture Flash Cards",
+	"imgRoot": "https://res.cloudinary.com/fentablar/image/upload/v1632844188/horticultureFlashCards/",
+	"plants": [{
+			"commonName": "Grand Fir",
+			"botanicalName": "Abies grandis",
+			"group": "Conifer Trees",
+			"images": [
+				"grandFir001.png", "grandFir002.png", "grandFir003.png",
+				"grandFir004.png", "grandFir005.png", "grandFir006.png",
+				"grandFir007.png", "grandFir008.png", "grandFir009.png",
+				"grandFir010.png", "grandFir011.png", "grandFir012.png"
+			]
+		},
+		{
+			"commonName": "Sungold Falsecypress",
+			"botanicalName": "Chamaecyparis pisifera ‘Sungold’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"sungoldFalsecypress001.png", "sungoldFalsecypress002.png",
+				"sungoldFalsecypress003.png", "sungoldFalsecypress004.png"
+			]
+		},
+		{
+			"commonName": "Madrona; Pacific Madrone",
+			"botanicalName": "Arbutus menziesii",
+			"group": "Broadleaf Evergreen Trees",
+			"images": [
+				"pacificMadrone001.png", "pacificMadrone002.png", "pacificMadrone003.png",
+				"pacificMadrone004.png", "pacificMadrone005.png", "pacificMadrone006.png",
+				"pacificMadrone007.png", "pacificMadrone008.png", "pacificMadrone009.png",
+				"pacificMadrone010.png", "pacificMadrone011.png", "pacificMadrone012.png",
+				"pacificMadrone013.png"
+			],
+			"note": "may be problematic due to durability, pests, diseases, or invasiveness"
+		},
+		{
+			"commonName": "Vine Maple",
+			"botanicalName": "Acer circinatum",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"vineMaple001.png", "vineMaple002.png", "vineMaple003.png",
+				"vineMaple004.png", "vineMaple005.png"
+			]
+		},
+		{
+			"commonName": "Edward Goucher Glossy Abelia",
+			"botanicalName": "Abelia x grandiflora ‘Edward Goucher’",
+			"group": "Broadleaf Evergreen Shrubs",
+			"images": [
+				"edwardGoucher001.png", "edwardGoucher002.png", "edwardGoucher003.png",
+				"edwardGoucher004.png", "edwardGoucher005.png", "edwardGoucher006.png"
+			]
+		},
+		{
+			"commonName": "Amelanchier; Serviceberry",
+			"botanicalName": "Amelanchier",
+			"group": "Deciduous Shrubs",
+			"images": [
+				"amelanchier001.png", "amelanchier002.png", "amelanchier003.png",
+				"amelanchier004.png", "amelanchier005.png", "amelanchier006.png",
+				"amelanchier007.png", "amelanchier008.png"
+			]
+		},
+		{
+			"commonName": "Ajuga; Creeping Bugle",
+			"botanicalName": "Ajuga reptans",
+			"group": "Vines & Groundcovers",
+			"images": [
+				"ajuga001.png", "ajuga002.png", "ajuga003.png", "ajuga004.png",
+				"ajuga005.png"
+			]
+		},
+		{
+			"commonName": "Bugbane",
+			"botanicalName": "Actaea simplex",
+			"group": "Perennials",
+			"images": [
+				"bugbane001.png", "bugbane002.png"
+			]
+		},
+		{
+			"commonName": "Golden Variegated Sweet Flag",
+			"botanicalName": "Acorus gramineus ‘Ogon’",
+			"group": "Grasses & Grass-like",
+			"images": [
+				"ogon001.png", "ogon002.png", "ogon003.png"
+			]
+		},
+		{
+			"commonName": "Maidenhair Fern",
+			"botanicalName": "Adiantum",
+			"group": "Ferns",
+			"images": [
+				"maidenhairFern001.png", "maidenhairFern002.png", "maidenhairFern003.png",
+				"maidenhairFern004.png", "maidenhairFern005.png"
+			]
+		},
+		{
+			"commonName": "Snapdragon",
+			"botanicalName": "Antirrhinum",
+			"group": "Annuals & Single-season Perennials",
+			"images": [
+				"snapdragon001.png", "snapdragon002.png", "snapdragon003.png",
+				"snapdragon004.png", "snapdragon005.png", "snapdragon006.png"
+			]
+		}
+	]
+}
