@@ -15,8 +15,10 @@ function initRandom(arr) {
     rnd = Math.floor(Math.random() * arr.length);
     output.push(arr[rnd]);
     arr = arr.filter(a => a.botanicalName != arr[rnd].botanicalName);
+    console.log(output);
+    console.log(arr);
   }
 
   return output;
-  
+
 }
