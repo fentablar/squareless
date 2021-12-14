@@ -45,6 +45,7 @@ main {
 }
 
 #flashcardWrap, #buttonWrap {
+  padding: 1rem;
   width: 100%;
   display: grid;
   align-content: center;
