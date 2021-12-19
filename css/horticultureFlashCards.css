@@ -29,13 +29,13 @@ html {
 }
 
 body {
-  background-color: rgb(var(--color-heliotropegray));
+  background-color: rgb(var(--color-darkliver));
   padding: max(1.5rem, 5vmin);
 }
 
 main {
   background-color: rgb(var(--color-periwinklecrayola));
-  border: 0.5rem solid rgb(var(--color-darkliver));
+  border: 0.5rem solid rgb(var(--color-heliotropegray));
   border-radius: 1vmin;
   padding: max(1rem, 2vmin);
   display: flex;
