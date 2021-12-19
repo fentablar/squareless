@@ -32,6 +32,9 @@ const iterate = () => {
 const buildCard = () => {
   let card = document.createElement('div');
   card.setAttribute('id', 'card');
+  card.addEventListener('click', function () {
+    card.classList.toggle('flip');
+  })
   flashcardWrap.append(card);
 
   let cardWrap = document.createElement('div');
