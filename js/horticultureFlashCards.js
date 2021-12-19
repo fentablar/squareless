@@ -33,7 +33,7 @@ const buildCard = () => {
   let card = document.createElement('div');
   card.setAttribute('id', 'card');
   card.addEventListener('click', function () {
-    card.classList.toggle('flip');
+    this.classList.toggle('flip');
   })
   flashcardWrap.append(card);
 
@@ -59,10 +59,10 @@ const buildCard = () => {
   let cardInfo = document.createElement('div');
   cardInfo.classList.add('cardInfo');
   cardInfo.insertAdjacentHTML('afterbegin',
-    '<p>' + plant.commonName + '</p>' +
-    '<p>' + plant.botanicalName + '</p>' +
     '<p>' + plant.group + '</p>' +
-    '<p>' + (plant.note ? plant.note : '') + '</p>');
+    '<p>' + plant.botanicalName + '</p>' +
+    '<p>' + plant.commonName + '</p>' +
+    '<p><i>' + (plant.note ? plant.note : '') + '</i></p>');
   sideBack.append(cardInfo);
 
   return;
