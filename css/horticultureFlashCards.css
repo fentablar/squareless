@@ -85,6 +85,8 @@ img {
   background-color: rgb(var(--color-aeroblue));
   transform: rotateY(180deg) translate(100%, 0);
   width: 100%;
+  font-size: 2rem;
+  line-height: 1.5;
 }
 
 button {
