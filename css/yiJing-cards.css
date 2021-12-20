@@ -12,7 +12,7 @@
   --color-bananamania: 255, 230, 167; /* #ffe6a7 */
   --color-bistre: 67, 40, 24; /* #432818 */
   --color-wintersky: 250, 15, 121;
-  
+
   --time: 0.707s;
 }
 
@@ -60,17 +60,18 @@ main {
   display: flex;
 }
 
-.card:hover { transition-delay: 0s; }
-.card:active { transform: scale(0.975); }
-
 .card-wrap {
   flex: 1;
   display: flex;
   transform-style: preserve-3d;
-  transition: var(--time) transform;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transition-duration: var(--time);
+  -webkit-transition-duration: var(--time);
+  -moz-transition-duration: var(--time);
 }
 
-.card:hover .card-wrap, .card:focus .card-wrap {
+.card.flip .card-wrap {
   transform: rotateX(180deg);
 }
 
@@ -81,6 +82,7 @@ main {
   border: 1px solid rgba(var(--color-camel), 0.8);
   color: rgb(var(--color-bistre));
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .front {

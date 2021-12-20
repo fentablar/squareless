@@ -34,7 +34,7 @@ const buildCard = () => {
   card.setAttribute('id', 'card');
   card.addEventListener('click', function () {
     this.classList.toggle('flip');
-  })
+  });
   flashcardWrap.append(card);
 
   let cardWrap = document.createElement('div');
