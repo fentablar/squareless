@@ -61,8 +61,11 @@ const buildCard = () => {
   cardInfo.insertAdjacentHTML('afterbegin',
     '<p>' + plant.group + '</p>' +
     '<p>' + plant.botanicalName + '</p>' +
-    '<p>' + plant.commonName + '</p>' +
-    '<p><i>' + (plant.note ? plant.note : '') + '</i></p>');
+    '<p>' + plant.commonName + '</p>');
+  if (plant.note) {
+    cardInfo.insertAdjacentHTML('beforeend',
+    '<i>' + plant.note + '</i>');
+  }
   sideBack.append(cardInfo);
 
   return;
