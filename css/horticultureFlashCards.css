@@ -8,6 +8,9 @@
 
   --card-border: 2px;
   --card-padding: 1.5rem;
+  --font-prop: 'Cinzel', serif;
+  --font-val: 'Jost', sans-serif;
+  --font-button: 'Nova Mono', monospace;
 
   /* rgb values */
   --color-richblack: 16, 20, 25; /* 101419 */
@@ -146,13 +149,13 @@ img {
 
 .plantProp {
   text-align: right;
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-prop);
   font-size: 1.6rem;
   text-transform: uppercase;
 }
 
 .plantValue {
-  font-family: 'Jost', sans-serif;
+  font-family: var(--font-val);
   font-size: 3rem;
   font-weight: bold;
   line-height: 1.5;
@@ -179,7 +182,7 @@ button {
   border-radius: 0.5rem;
   color: rgb(var(--color-quicksilver));
   padding: 0.5rem 2rem;
-  font-family: 'Nova Mono', monospace;
+  font-family: var(--font-button);
   font-size: 3rem;
 }
 
