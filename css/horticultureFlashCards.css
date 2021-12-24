@@ -4,7 +4,7 @@
   /* time value for card flip animation */
   --time: 0.505s;
 
-  --card-border: 3px;
+  --card-border: 2px;
   --card-padding: 1.5rem;
 
   /* rgb values */
@@ -110,7 +110,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: var(--card-border) solid rgb(var(--color-quicksilver));
+  border: var(--card-border) solid rgba(var(--color-quicksilver), 0.4);
   border-radius: 1rem;
   padding: var(--card-padding);
 }
@@ -169,7 +169,7 @@ img {
 
 button {
   background: rgb(var(--color-richblack));
-  border: 3px solid rgb(var(--color-quicksilver));
+  border: 3px solid rgba(var(--color-quicksilver), 0.6);
   border-radius: 0.5rem;
   color: rgb(var(--color-quicksilver));
   padding: 1rem 2rem;
