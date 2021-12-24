@@ -1,5 +1,7 @@
 @import "reset.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Jost&family=Nova+Mono&display=swap');
+
 :root {
   /* time value for card flip animation */
   --time: 0.505s;
@@ -125,7 +127,7 @@ img {
 .back {
   color: rgb(var(--color-blackshadows));
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 5fr;
   gap: 2rem;
   padding: calc(var(--card-padding) * 2);
 }
@@ -144,11 +146,14 @@ img {
 
 .plantProp {
   text-align: right;
+  font-family: 'Cinzel', serif;
   font-size: 1.6rem;
+  text-transform: uppercase;
 }
 
 .plantValue {
-  font-size: 2.2rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 3rem;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -158,7 +163,7 @@ img {
 }
 
 .noteVal {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-style: italic;
   font-weight: normal;
   line-height: 1.2;
@@ -173,10 +178,9 @@ button {
   border: 3px solid rgba(var(--color-quicksilver), 0.6);
   border-radius: 0.5rem;
   color: rgb(var(--color-quicksilver));
-  padding: 1rem 2rem;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  padding: 0.5rem 2rem;
+  font-family: 'Nova Mono', monospace;
+  font-size: 3rem;
 }
 
 button:active {
