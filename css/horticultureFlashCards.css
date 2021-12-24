@@ -44,10 +44,11 @@ html {
 }
 
 body {
-  background-color: rgb(var(--color-richblack));
+  background-color: rgb(var(--color-quicksilver));
 }
 
 main {
+  background-color: rgba(var(--color-richblack), 0.92);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -75,6 +76,7 @@ main {
 }
 
 #card {
+  border-radius: 1rem;
   perspective: 350rem;
 }
 
@@ -101,6 +103,7 @@ main {
 }
 
 .side {
+  background-color: rgb(var(--color-richblack));
   position: absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
