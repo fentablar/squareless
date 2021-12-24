@@ -3,18 +3,28 @@
 :root {
   /* time value for card flip animation */
   --time: 0.505s;
-  --card-width: 80vw;
-  --card-height: 80vh;
+
   --card-border: 3px;
   --card-padding: 1.5rem;
 
   /* rgb values */
-  --color-cordovan: 152, 68, 71; /* 984447 */
-  --color-uranianblue: 173, 217, 244; /* ADD9F4 */
-  --color-queenblue: 71, 108, 155; /* 476C9B */
-  --color-steelteal: 70, 140, 152; /* 468C98 */
   --color-richblack: 16, 20, 25; /* 101419 */
-  --color-onyx: 49, 54, 56; /* 313638 */
+  --color-blackshadows: 213, 197, 200; /* d5c5c8 */
+  --color-quicksilver: 157, 163, 164; /* 9da3a4 */
+}
+
+@media (orientation: portrait) {
+  :root {
+    --card-width: 90vw;
+    --card-height: 80vh;
+  }
+}
+
+@media (orientation: landscape) {
+  :root {
+    --card-width: 80vw;
+    --card-height: 90vh;
+  }
 }
 
 * {
@@ -38,10 +48,25 @@ body {
 }
 
 main {
-  display: grid;
-  grid-gap: 4rem;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
   justify-content: center;
-  margin-top: 5vh;
+  align-items: center;
+}
+
+@media (orientation: portrait) {
+  main {
+    flex-direction: column;
+    gap: 3vh;
+  }
+}
+
+@media (orientation: landscape) {
+  main {
+    flex-direction: row;
+    gap: 2vw;
+  }
 }
 
 #flashcardWrap, #card, .cardWrap, .side {
@@ -63,8 +88,16 @@ main {
   transition: transform var(--time);
 }
 
-#card.flip .cardWrap {
-  transform: rotateY(180deg);
+@media (orientation: portrait) {
+  #card.flip .cardWrap {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (orientation: landscape) {
+  #card.flip .cardWrap {
+    transform: rotateX(180deg);
+  }
 }
 
 .side {
@@ -74,40 +107,68 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: var(--card-border) solid rgb(var(--color-steelteal));
+  border: var(--card-border) solid rgb(var(--color-quicksilver));
   border-radius: 1rem;
   padding: var(--card-padding);
 }
-/*
-.front {
-  background-color: rgb(var(--color-onyx));
-}
-*/
+
 img {
   --card-edge: calc((var(--card-border) * 2) + (var(--card-padding) * 2));
   max-height: calc(var(--card-height) - var(--card-edge));
   max-width: calc(var(--card-width) - var(--card-edge));
-  box-shadow: 0px 0px 6px 2px rgb(var(--color-onyx));
+  box-shadow: 0px 0px 6px 2px rgb(var(--color-quicksilver));
 }
 
 .back {
-  transform: rotateY(180deg);
-  font-size: 3rem;
-  line-height: 2;
-  color: rgb(var(--color-steelteal));
+  color: rgb(var(--color-blackshadows));
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+@media (orientation: portrait) {
+  .back {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (orientation: landscape) {
+  .back {
+    transform: rotateX(180deg);
+  }
+}
+
+.plantProp {
+  text-align: right;
+  font-size: 1.6rem;
+}
+
+.plantValue {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.noteProp {
+  font-size: 1.2rem;
+}
+
+.noteVal {
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.2;
 }
 
 #buttonWrap {
-  height: 10vh;
-  width: var(--card-width);
   text-align: center;
 }
 
 button {
   background: rgb(var(--color-richblack));
-  border: 3px solid rgb(var(--color-steelteal));
+  border: 3px solid rgb(var(--color-quicksilver));
   border-radius: 0.5rem;
-  color: rgb(var(--color-steelteal));
+  color: rgb(var(--color-quicksilver));
   padding: 1rem 2rem;
   font-size: 2.5rem;
   font-weight: bold;
@@ -115,6 +176,7 @@ button {
 }
 
 button:active {
-  background: rgb(var(--color-steelteal));
+  background: rgb(var(--color-blackshadows));
+  border-color: rgb(var(--color-blackshadows));
   color: rgb(var(--color-richblack));
 }

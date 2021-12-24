@@ -56,17 +56,51 @@ const buildCard = () => {
   sideBack.classList.add('side', 'back');
   cardWrap.append(sideBack);
 
-  let cardInfo = document.createElement('div');
-  cardInfo.classList.add('cardInfo');
-  cardInfo.insertAdjacentHTML('afterbegin',
-    '<p>' + plant.group + '</p>' +
-    '<p>' + plant.botanicalName + '</p>' +
+  let plntPropGrp = document.createElement('div');
+  plntPropGrp.classList.add('plantProp');
+  plntPropGrp.insertAdjacentHTML('afterbegin', '<p>Group</p>');
+  sideBack.append(plntPropGrp);
+
+  let plantValGrp = document.createElement('div');
+  plantValGrp.classList.add('plantValue');
+  plantValGrp.insertAdjacentHTML('afterbegin',
+    '<p>' + plant.group + '</p>');
+  sideBack.append(plantValGrp);
+
+  let plntPropBot = document.createElement('div');
+  plntPropBot.classList.add('plantProp');
+  plntPropBot.insertAdjacentHTML('afterbegin', '<p>Botanical Name</p>');
+  sideBack.append(plntPropBot);
+
+  let plntValBot = document.createElement('div');
+  plntValBot.classList.add('plantValue');
+  plntValBot.insertAdjacentHTML('afterbegin',
+    '<p>' + plant.botanicalName + '</p>');
+  sideBack.append(plntValBot);
+
+  let plntPropCom = document.createElement('div');
+  plntPropCom.classList.add('plantProp');
+  plntPropCom.insertAdjacentHTML('afterbegin', '<p>Common Name</p>');
+  sideBack.append(plntPropCom);
+
+  let plntValCom = document.createElement('div');
+  plntValCom.classList.add('plantValue');
+  plntValCom.insertAdjacentHTML('afterbegin',
     '<p>' + plant.commonName + '</p>');
+  sideBack.append(plntValCom);
+
   if (plant.note) {
-    cardInfo.insertAdjacentHTML('beforeend',
-    '<i>' + plant.note + '</i>');
+    let plntPropNote = document.createElement('div');
+    plntPropNote.classList.add('plantProp', 'noteProp');
+    plntPropNote.insertAdjacentHTML('afterbegin', '<p>Nota Bene</p>');
+    sideBack.append(plntPropNote);
+
+    let plntValNote = document.createElement('div');
+    plntValNote.classList.add('plantValue', 'noteVal');
+    plntValNote.insertAdjacentHTML('afterbegin',
+      '<p>' + plant.note + '</p>');
+    sideBack.append(plntValNote);
   }
-  sideBack.append(cardInfo);
 
   return;
 }
