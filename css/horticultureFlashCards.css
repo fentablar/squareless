@@ -127,6 +127,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
+  padding: calc(var(--card-padding) * 2);
 }
 
 @media (orientation: portrait) {
@@ -153,11 +154,11 @@ img {
 }
 
 .noteProp {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .noteVal {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: italic;
   font-weight: normal;
   line-height: 1.2;
