@@ -114,13 +114,16 @@ main {
   backface-visibility: hidden;
   border: var(--card-border) solid rgba(var(--color-quicksilver), 0.4);
   border-radius: 1rem;
-  padding: var(--card-padding);
 }
 
 .front {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cardImg {
+  padding: var(--card-padding);
 }
 
 img {
@@ -182,17 +185,17 @@ img {
 }
 
 button {
-  background: rgb(var(--color-richblack));
-  border: 3px solid rgba(var(--color-quicksilver), 0.6);
+  background-color: inherit;
+  border: 2px solid rgba(var(--color-quicksilver), 0.4);
   border-radius: 0.5rem;
-  color: rgb(var(--color-quicksilver));
-  padding: 0.5rem 2rem;
+  color: rgba(var(--color-quicksilver), 0.4);
+  padding: 0.25rem 1.5rem;
   font-family: var(--font-button);
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 button:active {
-  background: rgb(var(--color-blackshadows));
-  border-color: rgb(var(--color-blackshadows));
+  background-color: rgba(var(--color-quicksilver), 0.4);
+  border-color: rgba(var(--color-quicksilver), 0);
   color: rgb(var(--color-richblack));
 }
