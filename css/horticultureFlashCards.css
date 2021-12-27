@@ -75,7 +75,7 @@ main {
   }
 }
 
-#flashcardWrap, #card, .cardWrap, .side {
+#flashcardWrap, #card, .cardWrap, .side, .cardImg {
   height: var(--card-height);
   width: var(--card-width);
 }
@@ -114,16 +114,29 @@ main {
   backface-visibility: hidden;
   border: var(--card-border) solid rgba(var(--color-quicksilver), 0.4);
   border-radius: 1rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.front {
+.side::-webkit-scrollbar {
+  display: none;
+}
+
+.imgWrap {
+  --n: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: calc(var(--n) * var(--card-width));
 }
 
 .cardImg {
   padding: var(--card-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--card-height);
+  min-width: var(--card-width);
 }
 
 img {
@@ -131,6 +144,7 @@ img {
   max-height: calc(var(--card-height) - var(--card-edge));
   max-width: calc(var(--card-width) - var(--card-edge));
   box-shadow: 0px 0px 6px 2px rgb(var(--color-quicksilver));
+  pointer-events: none;
 }
 
 .back {

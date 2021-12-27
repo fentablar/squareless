@@ -1,5 +1,7 @@
-const kan = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
-const imgRoot = 'https://res.cloudinary.com/fentablar/image/upload/v1632844188/horticultureFlashCards/'
+const kan =
+  'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
+const imgRoot =
+  'https://res.cloudinary.com/fentablar/image/upload/v1632844188/horticultureFlashCards/'
 
 let plants = [];
 let cardOrder = [];
@@ -11,27 +13,23 @@ let plant = {
     'note': ''
   }
 
-const shuffleCards = arr => {
-  let nums = [];
+const shuffle = arr => {
   let shuffled = [];
-  while (nums.length < arr.length) {
+  while (shuffled.length < arr.length) {
     let rnd = Math.floor(Math.random() * arr.length);
-    if (!nums.includes(rnd)) nums.push(rnd);
+    if (!shuffled.includes(arr[rnd])) shuffled.push(arr[rnd]);
   }
-  for (num of nums) {
-    shuffled.push(arr[num]);
-  }
-  return cardOrder = shuffled;
+  return shuffled;
 }
 
 const iterate = () => {
-  if (!cardOrder.length) shuffleCards(plants);
+  if (!cardOrder.length) cardOrder = shuffle(plants);
   return plant = cardOrder.shift();
 }
 
 const buildCard = () => {
   let card = document.createElement('div');
-  card.setAttribute('id', 'card');
+  card.id = 'card';
   card.addEventListener('click', function () {
     this.classList.toggle('flip');
   });
@@ -45,12 +43,19 @@ const buildCard = () => {
   sideFront.classList.add('side', 'front');
   cardWrap.append(sideFront);
 
-  let rnd = Math.floor(Math.random() * plant.images.length);
-  let cardImg = document.createElement('div');
-  cardImg.classList.add('cardImg');
-  cardImg.insertAdjacentHTML('afterbegin',
-    '<img src="' + imgRoot + plant.images[rnd] + '" >');
-  sideFront.append(cardImg);
+  let imgWrap = document.createElement('div');
+  imgWrap.classList.add('imgWrap');
+  imgWrap.style.setProperty('--n', plant.images.length);
+  sideFront.append(imgWrap);
+
+  if (plant.images.length > 1) plant.images = shuffle(plant.images);
+  for (plntImg of plant.images) {
+    let cardImg = document.createElement('div');
+    cardImg.classList.add('cardImg');
+    cardImg.insertAdjacentHTML('afterbegin',
+      '<img src=' + imgRoot.concat(plntImg) + ' >');
+    imgWrap.append(cardImg);
+  }
 
   let sideBack = document.createElement('div');
   sideBack.classList.add('side', 'back');
@@ -115,8 +120,8 @@ const fetchPlants = fetch(kan)
                     .then(resp => resp.json())
                     .then(json => {
                       plants = json.plants;
-                      shuffleCards(plants);
-                      iterate(cardOrder, plant);
+                      cardOrder = shuffle(plants);
+                      iterate();
                       buildCard();
                       next.addEventListener('click', nextCard);
                       return;
