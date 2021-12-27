@@ -75,7 +75,7 @@ main {
   }
 }
 
-#flashcardWrap, #card, .cardWrap, .side, .cardImg {
+#flashcardWrap, #card, .cardWrap, .side, .imgWrap, .cardImg {
   height: var(--card-height);
   width: var(--card-width);
 }
@@ -114,6 +114,11 @@ main {
   backface-visibility: hidden;
   border: var(--card-border) solid rgba(var(--color-quicksilver), 0.4);
   border-radius: 1rem;
+}
+
+.imgWrap {
+  --n: 1;
+  display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
   scrollbar-width: none;
@@ -121,14 +126,8 @@ main {
   scroll-snap-type: x proximity;
 }
 
-.side::-webkit-scrollbar {
+.imgWrap::-webkit-scrollbar {
   display: none;
-}
-
-.imgWrap {
-  --n: 1;
-  display: flex;
-  width: calc(var(--n) * var(--card-width));
 }
 
 .cardImg {
