@@ -8,6 +8,7 @@
 
   --card-border: 2px;
   --card-padding: 1.5rem;
+  --card-edge: calc((var(--card-border) * 2) + (var(--card-padding) * 2));
   --font-prop: 'Cinzel', serif;
   --font-val: 'Jost', sans-serif;
   --font-button: 'Nova Mono', monospace;
@@ -114,11 +115,6 @@ main {
   backface-visibility: hidden;
   border: var(--card-border) solid rgba(var(--color-quicksilver), 0.4);
   border-radius: 1rem;
-}
-
-.imgWrap {
-  --n: 1;
-  display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
   scrollbar-width: none;
@@ -126,21 +122,25 @@ main {
   scroll-snap-type: x proximity;
 }
 
-.imgWrap::-webkit-scrollbar {
+.side::-webkit-scrollbar {
   display: none;
 }
 
+.imgWrap {
+  --n: 1;
+  display: flex;
+}
+
 .cardImg {
-  padding: var(--card-padding);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: var(--card-height);
   min-width: var(--card-width);
+  padding: var(--card-padding);
 }
 
 img {
-  --card-edge: calc((var(--card-border) * 2) + (var(--card-padding) * 2));
   max-height: calc(var(--card-height) - var(--card-edge));
   max-width: calc(var(--card-width) - var(--card-edge));
   box-shadow: 0px 0px 6px 2px rgb(var(--color-quicksilver));
@@ -154,7 +154,7 @@ img {
   gap: 4rem;
   align-content: center;
   align-items: center;
-  padding: calc(var(--card-padding) * 2);
+  padding: var(--card-padding);
 }
 
 @media (orientation: portrait) {
