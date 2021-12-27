@@ -118,6 +118,7 @@ main {
   overflow-x: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  scroll-snap-type: x proximity;
 }
 
 .side::-webkit-scrollbar {
