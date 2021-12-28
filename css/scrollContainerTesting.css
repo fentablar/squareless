@@ -91,6 +91,8 @@ section {
   max-width: var(--cardWidth);
   max-height: var(--cardHeight);
   background-color: rgb(var(--color-safetyyellow));
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 #cardWrap {
@@ -114,7 +116,12 @@ section {
 .card {
   max-width: var(--cardWidth);
   max-height: var(--cardHeight);
-  font-size: 2rem;
+  font-size: 5rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5;
   color: rgb(var(--color-babypowder));
 }
 
