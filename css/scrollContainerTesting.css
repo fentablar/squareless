@@ -1,0 +1,135 @@
+@import "reset.css";
+
+
+:root {
+  /* pivot animation */
+  --time: 0.505s;
+
+  /* rgb values */
+  --color-redpigment: 237, 28, 36;
+  --color-babypowder: 253, 255, 252;
+  --color-bdazzledblue: 35, 87, 137;
+  --color-safetyyellow: 241, 211, 2;
+  --color-black: 2, 1, 0;
+
+  /* fixed dimensions */
+  --width-outer: 80vw;
+  --height-outer: 80vh;
+  --border-outer: 3px;
+  --padding-outer: 20px;
+  --edge: calc((var(--border-outer) + var(--padding-outer)) * 2);
+  --cardWidth: calc(var(--width-outer) - var(--edge));
+  --cardHeight: calc(var(--height-outer) - var(--edge));
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: rgba(var(--color-black), 0.8);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main, section, .side {
+  width: var(--width-outer);
+  height: var(--height-outer);
+  max-width: var(--width-outer);
+  max-height: var(--height-outer);
+}
+
+main {
+  perspective: 350rem;
+}
+
+section {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: transform var(--time);
+  -moz-transition: transform var(--time);
+  transition: transform var(--time);
+}
+
+@media (orientation: portrait) {
+  main.pivot section {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (orientation: landscape) {
+  main.pivot section {
+    transform: rotateX(180deg);
+  }
+}
+
+.side {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: var(--border-outer) solid rgb(var(--color-babypowder));
+}
+
+#front {
+  background-color: rgb(var(--color-bdazzledblue));
+  padding: var(--padding-outer);
+}
+
+#frontFrame {
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
+  background-color: rgb(var(--color-safetyyellow));
+}
+
+#cardWrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cardFrame {
+  min-width: var(--cardWidth);
+  min-height: var(--cardHeight);
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(var(--color-black));
+  border: 2px solid rgb(var(--color-redpigment));
+}
+
+.card {
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
+  font-size: 2rem;
+  color: rgb(var(--color-babypowder));
+}
+
+#back {
+  background-color: rgb(var(--color-redpigment));
+}
+
+@media (orientation: portrait) {
+  #back {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (orientation: landscape) {
+  #back {
+    transform: rotateX(180deg);
+  }
+}
