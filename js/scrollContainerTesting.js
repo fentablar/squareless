@@ -1,6 +1,5 @@
-const main = document.querySelector('main');
 
-main.addEventListener('click', function () {
+content.addEventListener('click', function () {
   this.classList.toggle('pivot');
 });
 

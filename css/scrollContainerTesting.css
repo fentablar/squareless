@@ -29,9 +29,14 @@
 
 html {
   font-size: 10px;
+  font-family: sans-serif;
 }
 
 body {
+  overflow: hidden;
+}
+
+main {
   background-color: rgba(var(--color-black), 0.8);
   width: 100vw;
   height: 100vh;
@@ -40,18 +45,18 @@ body {
   align-items: center;
 }
 
-main, section, .side {
+#content, #outerWrap, .side {
   width: var(--width-outer);
   height: var(--height-outer);
   max-width: var(--width-outer);
   max-height: var(--height-outer);
 }
 
-main {
+#content {
   perspective: 350rem;
 }
 
-section {
+#outerWrap {
   position: relative;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -62,13 +67,13 @@ section {
 }
 
 @media (orientation: portrait) {
-  main.pivot section {
+  #content.pivot #outerWrap {
     transform: rotateY(180deg);
   }
 }
 
 @media (orientation: landscape) {
-  main.pivot section {
+  #content.pivot #outerWrap {
     transform: rotateX(180deg);
   }
 }
@@ -117,7 +122,6 @@ section {
   max-width: var(--cardWidth);
   max-height: var(--cardHeight);
   font-size: 5rem;
-  font-family: sans-serif;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
