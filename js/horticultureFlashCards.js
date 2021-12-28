@@ -45,7 +45,6 @@ const buildCard = () => {
 
   let imgWrap = document.createElement('div');
   imgWrap.classList.add('imgWrap');
-  imgWrap.style.setProperty('--n', plant.images.length);
   sideFront.append(imgWrap);
 
   if (plant.images.length > 1) plant.images = shuffle(plant.images);
