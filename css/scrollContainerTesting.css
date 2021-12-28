@@ -1,5 +1,18 @@
 @import "reset.css";
 
+@media (orientation: portrait) {
+  :root {
+    --height-content: 85vh;
+    --width-content: 90vw;
+  }
+}
+
+@media (orientation: landscape) {
+  :root {
+    --height-content: 90vh;
+    --width-content: 85vw;
+  }
+}
 
 :root {
   /* pivot animation */
@@ -13,10 +26,8 @@
   --color-black: 2, 1, 0;
 
   /* fixed dimensions */
-  --height-content: 80vh;
-  --width-content: 80vw;
-  --border-content: 3px;
-  --padding-content: 20px;
+  --border-content: 2px;
+  --padding-content: 6px;
   --edge-content: calc((var(--border-content) + var(--padding-content)) * 2);
   --cardHeight: calc(var(--height-content) - var(--edge-content));
   --cardWidth: calc(var(--width-content) - var(--edge-content));
@@ -55,12 +66,12 @@ main {
   }
 }
 
-#content, #outerWrap, .innerWrap, .side {
+.content, .outerWrap, .innerWrap, .side {
   height: var(--height-content);
   width: var(--width-content);
 }
 
-#outerWrap {
+.outerWrap {
   perspective: 350rem;
 }
 
@@ -75,13 +86,13 @@ main {
 }
 
 @media (orientation: portrait) {
-  #outerWrap.pivot .innerWrap {
+  .outerWrap.pivot .innerWrap {
     transform: rotateY(180deg);
   }
 }
 
 @media (orientation: landscape) {
-  #outerWrap.pivot .innerWrap {
+  .outerWrap.pivot .innerWrap {
     transform: rotateX(180deg);
   }
 }

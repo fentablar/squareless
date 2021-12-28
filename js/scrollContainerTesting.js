@@ -1,6 +1,10 @@
 
 const buildCards = () => {
-  if (!frontFrame) return;
+  if (!front) return;
+
+  let frontFrame = document.createElement('div');
+  frontFrame.id = 'frontFrame';
+  front.append(frontFrame);
 
   let cardWrap = document.createElement('div');
   cardWrap.id = 'cardWrap';
@@ -21,10 +25,17 @@ const buildCards = () => {
   }
 }
 
+const iteration = () => {
+  if (frontFrame) frontFrame.remove();
+  return buildCards();
+}
+
 const addControls = () => {
+  let outerWrap = document.querySelector('.outerWrap');
   outerWrap.addEventListener('click', function () {
     this.classList.toggle('pivot');
   });
+  iterate.addEventListener('click', iteration);
 }
 
 buildCards();
