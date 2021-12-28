@@ -1,10 +1,10 @@
 
-content.addEventListener('click', function () {
-  this.classList.toggle('pivot');
-});
+const buildCards = () => {
+  if (!frontFrame) return;
 
-const buildCard = () => {
-  if (!cardWrap) return;
+  let cardWrap = document.createElement('div');
+  cardWrap.id = 'cardWrap';
+  frontFrame.append(cardWrap);
 
   let rnd = Math.floor(Math.random() * 10) + 3;
 
@@ -21,4 +21,11 @@ const buildCard = () => {
   }
 }
 
-buildCard();
+const addControls = () => {
+  outerWrap.addEventListener('click', function () {
+    this.classList.toggle('pivot');
+  });
+}
+
+buildCards();
+addControls();

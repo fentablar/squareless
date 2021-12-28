@@ -13,13 +13,13 @@
   --color-black: 2, 1, 0;
 
   /* fixed dimensions */
-  --width-outer: 80vw;
-  --height-outer: 80vh;
-  --border-outer: 3px;
-  --padding-outer: 20px;
-  --edge: calc((var(--border-outer) + var(--padding-outer)) * 2);
-  --cardWidth: calc(var(--width-outer) - var(--edge));
-  --cardHeight: calc(var(--height-outer) - var(--edge));
+  --height-content: 80vh;
+  --width-content: 80vw;
+  --border-content: 3px;
+  --padding-content: 20px;
+  --edge-content: calc((var(--border-content) + var(--padding-content)) * 2);
+  --cardHeight: calc(var(--height-content) - var(--edge-content));
+  --cardWidth: calc(var(--width-content) - var(--edge-content));
 
 }
 
@@ -32,31 +32,39 @@ html {
   font-family: sans-serif;
 }
 
-body {
-  overflow: hidden;
-}
-
 main {
   background-color: rgba(var(--color-black), 0.8);
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#content, #outerWrap, .side {
-  width: var(--width-outer);
-  height: var(--height-outer);
-  max-width: var(--width-outer);
-  max-height: var(--height-outer);
+@media (orientation: portrait) {
+  main {
+    flex-direction: column;
+    gap: 3vh;
+  }
 }
 
-#content {
-  perspective: 350rem;
+@media (orientation: landscape) {
+  main {
+    flex-direction: row;
+    gap: 3vw;
+  }
+}
+
+#content, #outerWrap, .innerWrap, .side {
+  height: var(--height-content);
+  width: var(--width-content);
 }
 
 #outerWrap {
+  perspective: 350rem;
+}
+
+.innerWrap {
   position: relative;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -67,13 +75,13 @@ main {
 }
 
 @media (orientation: portrait) {
-  #content.pivot #outerWrap {
+  #outerWrap.pivot .innerWrap {
     transform: rotateY(180deg);
   }
 }
 
 @media (orientation: landscape) {
-  #content.pivot #outerWrap {
+  #outerWrap.pivot .innerWrap {
     transform: rotateX(180deg);
   }
 }
@@ -82,12 +90,12 @@ main {
   position: absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: var(--border-outer) solid rgb(var(--color-babypowder));
+  border: var(--border-content) solid rgb(var(--color-babypowder));
 }
 
 #front {
   background-color: rgb(var(--color-bdazzledblue));
-  padding: var(--padding-outer);
+  padding: var(--padding-content);
 }
 
 #frontFrame {
@@ -96,13 +104,30 @@ main {
   max-width: var(--cardWidth);
   max-height: var(--cardHeight);
   background-color: rgb(var(--color-safetyyellow));
-  overflow-y: hidden;
-  overflow-x: scroll;
 }
 
 #cardWrap {
   display: flex;
-  justify-content: flex-start;
+}
+
+@media (orientation: portrait) {
+  #frontFrame {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+  #cardWrap {
+    flex-direction: row;
+  }
+}
+
+@media (orientation: landscape) {
+  #frontFrame {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  #cardWrap {
+    flex-direction: column;
+  }
 }
 
 .cardFrame {
