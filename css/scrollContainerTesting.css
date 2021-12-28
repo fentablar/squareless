@@ -114,6 +114,7 @@ main {
   #frontFrame {
     overflow-y: hidden;
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
   #cardWrap {
     flex-direction: row;
@@ -124,6 +125,7 @@ main {
   #frontFrame {
     overflow-y: auto;
     overflow-x: hidden;
+    scroll-snap-type: y mandatory;
   }
   #cardWrap {
     flex-direction: column;
@@ -141,6 +143,7 @@ main {
   overflow: hidden;
   background-color: rgb(var(--color-black));
   border: 2px solid rgb(var(--color-redpigment));
+  scroll-snap-align: center;
 }
 
 .card {
