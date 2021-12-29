@@ -22,106 +22,177 @@ const shuffle = arr => {
   return shuffled;
 }
 
-const iterate = () => {
+const getNextPlant = () => {
   if (!cardOrder.length) cardOrder = shuffle(plants);
   return plant = cardOrder.shift();
 }
 
-const buildCard = () => {
-  let card = document.createElement('div');
-  card.id = 'card';
-  card.addEventListener('click', function () {
-    this.classList.toggle('flip');
+const buildMain = () => {
+  const body = document.querySelector('body');
+  const main = document.createElement('main');
+
+  return body.append(main);
+}
+
+const buildContentWraps = () => {
+  const main = document.querySelector('main');
+  const content = document.createElement('section');
+  content.classList.add('content');
+
+  const outerWrap = document.createElement('div');
+  outerWrap.classList.add('outerWrap');
+  outerWrap.addEventListener('click', function () {
+    this.classList.toggle('pivot');
   });
-  flashcardWrap.append(card);
+  content.append(outerWrap);
 
-  let cardWrap = document.createElement('div');
+  const innerWrap = document.createElement('div');
+  innerWrap.classList.add('innerWrap');
+  outerWrap.append(innerWrap);
+
+  return main.append(content);
+}
+
+const buildFront = () => {
+  const innerWrap = document.querySelector('.innerWrap');
+  const front = document.createElement('div');
+  front.classList.add('side', 'front');
+
+  return innerWrap.append(front);
+}
+
+const buildFrontFrame = () => {
+  const front = document.querySelector('.front');
+  const frontFrame = document.createElement('div');
+  frontFrame.classList.add('frontFrame');
+
+  const cardWrap = document.createElement('div');
   cardWrap.classList.add('cardWrap');
-  card.append(cardWrap);
+  frontFrame.append(cardWrap);
 
-  let sideFront = document.createElement('div');
-  sideFront.classList.add('side', 'front');
-  cardWrap.append(sideFront);
+  return front.append(frontFrame);
+}
 
-  let imgWrap = document.createElement('div');
-  imgWrap.classList.add('imgWrap');
-  sideFront.append(imgWrap);
+const populateCardWrap = () => {
+  const cardWrap = document.querySelector('.cardWrap');
+  const cards = shuffle(plant.images);
+  for (card of cards) {
+    const cardFrame = document.createElement('div');
+    cardFrame.classList.add('cardFrame');
+    cardWrap.append(cardFrame);
 
-  if (plant.images.length > 1) plant.images = shuffle(plant.images);
-  for (plntImg of plant.images) {
-    let cardImg = document.createElement('div');
-    cardImg.classList.add('cardImg');
-    cardImg.insertAdjacentHTML('afterbegin',
-      '<img src=' + imgRoot.concat(plntImg) + ' >');
-    imgWrap.append(cardImg);
+    const cardImg = document.createElement('img');
+    cardImg.classList.add('card');
+    cardImg.setAttribute('src', imgRoot.concat(card));
+    cardFrame.append(cardImg);
   }
+  return;
+}
 
-  let sideBack = document.createElement('div');
-  sideBack.classList.add('side', 'back');
-  cardWrap.append(sideBack);
+const paintFrontSide = () => {
+  buildFront();
+  buildFrontFrame();
+  populateCardWrap();
+  return;
+}
 
-  let plntPropGrp = document.createElement('div');
-  plntPropGrp.classList.add('plantProp');
-  plntPropGrp.insertAdjacentHTML('afterbegin', '<p>Group</p>');
-  sideBack.append(plntPropGrp);
+const buildBack = () => {
+  const innerWrap = document.querySelector('.innerWrap');
+  const back = document.createElement('div');
+  back.classList.add('side', 'back');
 
-  let plantValGrp = document.createElement('div');
+  return innerWrap.append(back);
+}
+
+const populateBack = () => {
+
+  const back = document.querySelector('.back');
+
+  const plantPropGrp = document.createElement('div');
+  plantPropGrp.classList.add('plantProp');
+  plantPropGrp.innerText = 'Group';
+  back.append(plantPropGrp);
+
+  const plantValGrp = document.createElement('div');
   plantValGrp.classList.add('plantValue');
-  plantValGrp.insertAdjacentHTML('afterbegin',
-    '<p>' + plant.group + '</p>');
-  sideBack.append(plantValGrp);
+  plantValGrp.innerText = plant.group;
+  back.append(plantValGrp);
 
-  let plntPropBot = document.createElement('div');
-  plntPropBot.classList.add('plantProp');
-  plntPropBot.insertAdjacentHTML('afterbegin', '<p>Botanical Name</p>');
-  sideBack.append(plntPropBot);
+  const plantPropBot = document.createElement('div');
+  plantPropBot.classList.add('plantProp');
+  plantPropBot.innerText = 'Botanical Name';
+  back.append(plantPropBot);
 
-  let plntValBot = document.createElement('div');
-  plntValBot.classList.add('plantValue');
-  plntValBot.insertAdjacentHTML('afterbegin',
-    '<p>' + plant.botanicalName + '</p>');
-  sideBack.append(plntValBot);
+  const plantValBot = document.createElement('div');
+  plantValBot.classList.add('plantValue');
+  plantValBot.innerText = plant.botanicalName;
+  back.append(plantValBot);
 
-  let plntPropCom = document.createElement('div');
-  plntPropCom.classList.add('plantProp');
-  plntPropCom.insertAdjacentHTML('afterbegin', '<p>Common Name</p>');
-  sideBack.append(plntPropCom);
+  const plantPropCom = document.createElement('div');
+  plantPropCom.classList.add('plantProp');
+  plantPropCom.innerText = 'Common Name';
+  back.append(plantPropCom);
 
-  let plntValCom = document.createElement('div');
-  plntValCom.classList.add('plantValue');
-  plntValCom.insertAdjacentHTML('afterbegin',
-    '<p>' + plant.commonName + '</p>');
-  sideBack.append(plntValCom);
+  const plantValCom = document.createElement('div');
+  plantValCom.classList.add('plantValue');
+  plantValCom.innerText = plant.commonName;
+  back.append(plantValCom);
 
   if (plant.note) {
-    let plntPropNote = document.createElement('div');
-    plntPropNote.classList.add('plantProp', 'noteProp');
-    plntPropNote.insertAdjacentHTML('afterbegin', '<p>Nota Bene</p>');
-    sideBack.append(plntPropNote);
+    const plantPropNote = document.createElement('div');
+    plantPropNote.classList.add('plantProp', 'noteProp');
+    plantPropNote.innerText = 'Nota Bene';
+    back.append(plantPropNote);
 
-    let plntValNote = document.createElement('div');
-    plntValNote.classList.add('plantValue', 'noteVal');
-    plntValNote.insertAdjacentHTML('afterbegin',
-      '<p>' + plant.note + '</p>');
-    sideBack.append(plntValNote);
+    const plantValNote = document.createElement('div');
+    plantValNote.classList.add('plantValue', 'noteVal');
+    plantValNote.innerText = plant.note;
+    back.append(plantValNote);
   }
 
   return;
 }
 
-const nextCard = () => {
-  if (card) card.remove();
-  iterate();
-  return buildCard();
-};
+const paintBackSide = () => {
+  buildBack();
+  populateBack();
+  return;
+}
+
+const iteration = () => {
+  const front = document.querySelector('.front');
+  const back = document.querySelector('.back');
+  if (front) front.remove();
+  if (back) back.remove();
+  getNextPlant();
+  paintFrontSide();
+  paintBackSide();
+
+  return;
+}
+
+const buildControls = () => {
+  const main = document.querySelector('main');
+  const controls = document.createElement('section');
+  controls.classList.add('controls');
+
+  const iterate = document.createElement('button');
+  iterate.classList.add('iterate');
+  iterate.setAttribute('type', 'button');
+  iterate.textContent = 'Next';
+  iterate.addEventListener('click', iteration);
+
+  return main.append(controls);
+}
 
 const fetchPlants = fetch(kan)
                     .then(resp => resp.json())
                     .then(json => {
                       plants = json.plants;
-                      cardOrder = shuffle(plants);
-                      iterate();
-                      buildCard();
-                      next.addEventListener('click', nextCard);
+                      buildMain();
+                      buildContentWraps();
+                      buildControls();
+                      iteration();
+
                       return;
                     });

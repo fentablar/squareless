@@ -2,45 +2,45 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Jost&family=Nova+Mono&display=swap');
 
-:root {
-  /* time value for card flip animation */
-  --time: 0.505s;
-
-  --card-border: 2px;
-  --card-padding: 1.5rem;
-  --card-edge: calc((var(--card-border) * 2) + (var(--card-padding) * 2));
-  --font-prop: 'Cinzel', serif;
-  --font-val: 'Jost', sans-serif;
-  --font-button: 'Nova Mono', monospace;
-
-  /* rgb values */
-  --color-richblack: 16, 20, 25; /* 101419 */
-  --color-blackshadows: 213, 197, 200; /* d5c5c8 */
-  --color-quicksilver: 157, 163, 164; /* 9da3a4 */
-}
 
 @media (orientation: portrait) {
   :root {
-    --card-width: 90vw;
-    --card-height: 80vh;
+    --height-content: 85vh;
+    --width-content: 90vw;
   }
 }
 
 @media (orientation: landscape) {
   :root {
-    --card-width: 80vw;
-    --card-height: 90vh;
+    --height-content: 90vh;
+    --width-content: 85vw;
   }
 }
 
-* {
-  box-sizing: border-box;
-  background-repeat: no-repeat;
-  position: relative;
-  vertical-align: middle;
+:root {
+  /* pivot animation */
+  --time: 0.505s;
+
+  /* rgb values */
+  --color-richblack: 16, 20, 25; /* 101419 */
+  --color-blackshadows: 213, 197, 200; /* d5c5c8 */
+  --color-quicksilver: 157, 163, 164; /* 9da3a4 */
+
+  /* google fonts */
+  --font-prop: 'Cinzel', serif;
+  --font-val: 'Jost', sans-serif;
+  --font-button: 'Nova Mono', monospace;
+
+  /* fixed dimensions */
+  --border-content: 2px;
+  --padding-content: 6px;
+  --edge-content: calc((var(--border-content) + var(--padding-content)) * 2);
+  --cardHeight: calc(var(--height-content) - var(--edge-content));
+  --cardWidth: calc(var(--width-content) - var(--edge-content));
+
 }
 
-::before, ::after {
+* {
   box-sizing: border-box;
 }
 
@@ -65,7 +65,7 @@ main {
 @media (orientation: portrait) {
   main {
     flex-direction: column;
-    gap: 3vh;
+    gap: 2vh;
   }
 }
 
@@ -76,17 +76,16 @@ main {
   }
 }
 
-#flashcardWrap, #card, .cardWrap, .side, .imgWrap, .cardImg {
-  height: var(--card-height);
-  width: var(--card-width);
+.content, .outerWrap, .innerWrap, .side {
+  height: var(--height-content);
+  width: var(--width-content);
 }
 
-#card {
-  border-radius: 1rem;
+.outerWrap {
   perspective: 350rem;
 }
 
-.cardWrap {
+.innerWrap {
   position: relative;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -97,13 +96,13 @@ main {
 }
 
 @media (orientation: portrait) {
-  #card.flip .cardWrap {
+  .outerWrap.pivot .innerWrap {
     transform: rotateY(180deg);
   }
 }
 
 @media (orientation: landscape) {
-  #card.flip .cardWrap {
+  .outerWrap.pivot .innerWrap {
     transform: rotateX(180deg);
   }
 }
@@ -113,47 +112,74 @@ main {
   position: absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: var(--card-border) solid rgba(var(--color-quicksilver), 0.4);
-  border-radius: 1rem;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  border: var(--border-content) solid rgba(var(--color-quicksilver), 0.4);
+  border-radius: 0.8rem;
 }
 
-.side::-webkit-scrollbar {
-  display: none;
+.front {
+  padding: var(--padding-content);
 }
 
-.imgWrap {
+.frontFrame {
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
+}
+
+.cardWrap {
   display: flex;
-  scroll-snap-type: x proximity;
+  gap: calc(var(--padding-content) * 2);
 }
 
-.cardImg {
+@media (orientation: portrait) {
+  .frontFrame {
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .cardWrap {
+    flex-direction: row;
+  }
+}
+
+@media (orientation: landscape) {
+  .frontFrame {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+  }
+  .cardWrap {
+    flex-direction: column;
+  }
+}
+
+.cardFrame {
+  min-width: var(--cardWidth);
+  min-height: var(--cardHeight);
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: var(--card-height);
-  min-width: var(--card-width);
-  padding: var(--card-padding);
+  scroll-snap-align: center;
 }
 
-img {
-  max-height: calc(var(--card-height) - var(--card-edge));
-  max-width: calc(var(--card-width) - var(--card-edge));
-  box-shadow: 0px 0px 6px 2px rgb(var(--color-quicksilver));
-  pointer-events: none;
+.card {
+  height: auto;
+  width: auto;
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
 }
 
 .back {
   color: rgb(var(--color-blackshadows));
   display: grid;
   grid-template-columns: 2fr 5fr;
-  gap: 4rem;
+  gap: 3vw;
   align-content: center;
   align-items: center;
-  padding: var(--card-padding);
+  padding: var(--padding-content);
 }
 
 @media (orientation: portrait) {
@@ -193,11 +219,11 @@ img {
   line-height: 1.2;
 }
 
-#buttonWrap {
+.controls {
   text-align: center;
 }
 
-button {
+.iterate {
   background-color: inherit;
   border: 2px solid rgba(var(--color-quicksilver), 0.4);
   border-radius: 0.5rem;
@@ -205,9 +231,10 @@ button {
   padding: 0.25rem 1.5rem;
   font-family: var(--font-button);
   font-size: 2.5rem;
+  text-transform: lowercase;
 }
 
-button:active {
+.iterate:active {
   background-color: rgba(var(--color-quicksilver), 0.4);
   border-color: rgba(var(--color-quicksilver), 0);
   color: rgb(var(--color-richblack));
