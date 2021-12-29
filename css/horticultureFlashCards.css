@@ -179,7 +179,7 @@ main {
   gap: 3vw;
   align-content: center;
   align-items: center;
-  padding: calc(var(--padding-content) * 2);
+  padding: 2.5rem;
 }
 
 @media (orientation: portrait) {
