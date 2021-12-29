@@ -50,7 +50,7 @@ const buildContentWraps = () => {
   innerWrap.classList.add('innerWrap');
   outerWrap.append(innerWrap);
 
-  return main.append(content);
+  return main.prepend(content);
 }
 
 const buildFront = () => {
@@ -160,10 +160,15 @@ const paintBackSide = () => {
 }
 
 const iteration = () => {
+  const content = document.querySelector('.content');
   const front = document.querySelector('.front');
   const back = document.querySelector('.back');
+
+  if (content) content.remove();
   if (front) front.remove();
   if (back) back.remove();
+
+  buildContentWraps();
   getNextPlant();
   paintFrontSide();
   paintBackSide();
