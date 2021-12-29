@@ -181,6 +181,7 @@ const buildControls = () => {
   iterate.setAttribute('type', 'button');
   iterate.textContent = 'Next';
   iterate.addEventListener('click', iteration);
+  controls.append(iterate);
 
   return main.append(controls);
 }
