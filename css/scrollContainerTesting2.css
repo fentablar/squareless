@@ -1,0 +1,267 @@
+@import "reset.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Jost&family=Major+Mono+Display&family=Nova+Mono&display=swap');
+
+
+@media (orientation: portrait) {
+  :root {
+    --height-content: 85vh;
+    --width-content: 90vw;
+  }
+}
+
+@media (orientation: landscape) {
+  :root {
+    --height-content: 90vh;
+    --width-content: 85vw;
+  }
+}
+
+:root {
+  /* pivot animation */
+  --time: 0.505s;
+
+  /* rgb values */
+  --color-eerieblack: 38, 38, 37; /*  */
+  --color-dutchwhite: 232, 219, 190; /* e8dbbe */
+  --color-olivedrab: 48, 39, 19; /* 302713 */
+  --color-olivedrabdark: 41, 33, 16; /* 292110 */
+  --color-blackolive: 69, 66, 61; /* 45423d */
+
+  /* google fonts */
+  --font-prop: 'Cinzel', serif;
+  --font-val: 'Jost', sans-serif;
+  --font-button: 'Major Mono Display', monospace;
+
+  /* fixed dimensions */
+  --border-content: 2px;
+  --padding-content: 6px;
+  --edge-content: calc((var(--border-content) + var(--padding-content)) * 2);
+  --cardHeight: calc(var(--height-content) - var(--edge-content));
+  --cardWidth: calc(var(--width-content) - var(--edge-content));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: rgb(var(--color-eerieblack));
+}
+
+main {
+  background-color: rgba(var(--color-dutchwhite), 0.25);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (orientation: portrait) {
+  main {
+    flex-direction: column;
+    gap: 2.5vh;
+  }
+}
+
+@media (orientation: landscape) {
+  main {
+    flex-direction: row;
+    gap: 2vw;
+  }
+}
+
+.content, .content > .outerWrap, .content > .outerWrap > .innerWrap, .side {
+  height: var(--height-content);
+  width: var(--width-content);
+}
+
+.content > .outerWrap {
+  perspective: 350rem;
+}
+
+.content > .outerWrap > .innerWrap {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: transform var(--time);
+  -moz-transition: transform var(--time);
+  transition: transform var(--time);
+}
+
+@media (orientation: portrait) {
+  .content > .outerWrap.pivot > .innerWrap {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (orientation: landscape) {
+  .content > .outerWrap.pivot > .innerWrap {
+    transform: rotateX(180deg);
+  }
+}
+
+.side {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: var(--border-content) solid rgba(var(--color-dutchwhite), 0.5);
+  border-radius: 0.8rem;
+  background-color: rgb(var(--color-olivedrabdark));
+}
+
+.front {
+  padding: var(--padding-content);
+}
+
+.panelFrame {
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
+}
+
+.panelWrap {
+  display: flex;
+}
+
+@media (orientation: portrait) {
+  .panelFrame {
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .panelWrap {
+    flex-direction: row;
+  }
+}
+
+@media (orientation: landscape) {
+  .panelFrame {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+  }
+  .panelWrap {
+    flex-direction: column;
+  }
+}
+
+.panel {
+  min-width: var(--cardWidth);
+  min-height: var(--cardHeight);
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+}
+
+.pane {
+  max-width: var(--cardWidth);
+  max-height: var(--cardHeight);
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: rgb(var(--color-blackolive));
+}
+
+@media (orientation: portrait) {
+  .back {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (orientation: landscape) {
+  .back {
+    transform: rotateX(180deg);
+  }
+}
+
+.infoWrap {
+  color: rgba(var(--color-dutchwhite), 0.75);
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  gap: 3vw;
+  align-content: center;
+  align-items: center;
+  height: var(--height-content);
+  width: var(--width-content);
+  padding: 2.5rem;
+}
+
+.infoProp {
+  text-align: right;
+  font-family: var(--font-prop);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.infoValue {
+  font-family: var(--font-val);
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.noteProp {
+  font-size: 1.4rem;
+}
+
+.noteVal {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.controls > .outerWrap > .innerWrap {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (orientation: portrait) {
+  .controls > .outerWrap > .innerWrap {
+    flex-direction: row;
+    width: var(--cardWidth);
+    height: auto;
+  }
+}
+
+@media (orientation: landscape) {
+  .controls > .outerWrap > .innerWrap {
+    flex-direction: column;
+    width: auto;
+    height: var(--cardHeight);
+  }
+}
+
+.iterate {
+  background-color: rgba(var(--color-dutchwhite), 0.25);
+  border: 2px solid rgba(var(--color-dutchwhite), 0);
+  border-radius: 0.5rem;
+  color: rgb(var(--color-blackolive));
+  padding: 0.25rem;
+  font-family: var(--font-button);
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.iterate:active {
+  background-color: inherit;
+  border-color: rgba(var(--color-dutchwhite), 0.5);
+  color: rgba(var(--color-dutchwhite), 0.5);
+}
