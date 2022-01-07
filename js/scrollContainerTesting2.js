@@ -118,6 +118,8 @@ const controls = {
     if (num === 0) this.queue = 0;
     else {
       let sum = this.queue + num;
+      if (sum < 0) alert('No previous cards to show');
+      if (sum >= content.shuffled.length) alert('No more cards to show');
       if (sum >= 0 && sum < content.shuffled.length) this.queue = sum;
     }
   },
