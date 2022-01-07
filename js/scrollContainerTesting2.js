@@ -46,7 +46,7 @@ const addWrappedButton = (parent, buttType, label, ...classes) => {
   const buttonWrap = addElement(parent, 'div', 'buttonWrap');
   const button = addElement(buttonWrap, 'button', ...classes);
   button.setAttribute('type', buttType);
-  button.innerText = label;
+  button.innerHTML = label;
   return button;
 }
 
@@ -126,9 +126,31 @@ const controls = {
   sewButtons() {
     const outerWrap = qrySelAddElem('.controls', 'div', 'outerWrap');
     const innerWrap = addElement(outerWrap, 'div', 'innerWrap');
-    const prev = addWrappedButton(innerWrap, 'button', 'prev', 'iterate', 'prev');
-    const next = addWrappedButton(innerWrap, 'button', 'next', 'iterate', 'next');
-    const reset = addWrappedButton(innerWrap, 'button', 'reset', 'iterate', 'reset');
+
+    const prvIco = '<svg xmlns="http://www.w3.org/2000/svg" '
+      + 'width="24" height="24" viewBox="0 0 24 24" stroke-width="2" '
+      + 'stroke="currentColor" fill="none" stroke-linecap="round" '
+      + 'stroke-linejoin="round">'
+      + '<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+      + '<path d="M21 5v14l-8 -7z"></path><path d="M10 5v14l-8 -7z"></path></svg>';
+    const prev = addWrappedButton(innerWrap, 'button', prvIco, 'iterate', 'prev');
+
+    const nxtIco = '<svg xmlns="http://www.w3.org/2000/svg" '
+      + 'width="24" height="24" viewBox="0 0 24 24" stroke-width="2" '
+      + 'stroke="currentColor" fill="none" stroke-linecap="round" '
+      + 'stroke-linejoin="round">'
+      + '<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+      + '<path d="M3 5v14l8 -7z"></path><path d="M14 5v14l8 -7z"></path></svg>';
+    const next = addWrappedButton(innerWrap, 'button', nxtIco, 'iterate', 'next');
+
+    const rstIco = '<svg xmlns="http://www.w3.org/2000/svg" '
+      + 'width="24" height="24" viewBox="0 0 24 24" stroke-width="2" '
+      + 'stroke="currentColor" fill="none" stroke-linecap="round" '
+      + 'stroke-linejoin="round">'
+      + '<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
+      + '<path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4"></path>'
+      + '<path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"></path></svg>';
+    const reset = addWrappedButton(innerWrap, 'button', rstIco, 'iterate', 'reset');
 
     prev.addEventListener('click', function () {
       controls.deal = -1;
