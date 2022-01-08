@@ -53,9 +53,9 @@
   --clr-bgBody: 216, 226, 220; /* alabaster */
   --clr-bgMain: 2, 36, 60; /* prussian blue dk */
   --clr-cardBorder: 3, 47, 79; /* prussian blue lt */
-  --clr-bgFront: 1, 11, 19; /* rich black FOGRA 29 dk */
+  --clr-bgFront: 2, 22, 39; /* rich black FOGRA 29 lt */
   --clr-bgBack: 1, 11, 19; /* rich black FOGRA 29 dk */
-  --clr-btn: 2, 22, 39; /* rich black FOGRA 29 lt */
+  --clr-btn: 1, 11, 19; /* rich black FOGRA 29 dk */
   --clr-btnActive: 12, 133, 233; /* bleu de france */
   --clr-text: 2, 156, 222; /* star command blue */
 }
