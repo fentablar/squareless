@@ -54,7 +54,7 @@ body {
 }
 
 main {
-  background-color: rgba(var(--color-richblack), 0.92);
+  background-color: rgba(var(--color-richblack), 0.88);
   height: 100vh;
   width: 100vw;
   display: flex;
