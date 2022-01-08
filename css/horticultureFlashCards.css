@@ -62,11 +62,12 @@
   --eerieBlackDk: 20, 20, 20; /* 141414 */
   --jet: 41, 41, 41; /* 292929 */
   --richblackFOGRA39: 10, 10, 10; /* 0a0a0a */
+  --onyx: 61, 61, 61; /* 3d3d3d */
 
   /* color assignments */
   --clr-bgMain: 31, 31, 31; /* eerie black lt */
   --clr-cardBorder: 20, 20, 20; /* eerie black dk */
-  --clr-bgFront: 41, 41, 41; /* jet */
+  --clr-bgFront: 61, 61, 61; /* onyx */
   --clr-bgBack: 1, 11, 19; /* rich black FOGRA 29 dk */
   --clr-btn: 60, 83, 70; /* peach crayola */
   --clr-btnActive: 12, 133, 233; /* bleu de france */
