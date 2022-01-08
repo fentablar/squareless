@@ -1,6 +1,6 @@
 @import "reset.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Jost&family=Nova+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Jost&family=Major+Mono+Display&family=Nova+Mono&display=swap');
 
 
 @media (orientation: portrait) {
@@ -29,7 +29,7 @@
   /* google fonts */
   --font-prop: 'Cinzel', serif;
   --font-val: 'Jost', sans-serif;
-  --font-button: 'Nova Mono', monospace;
+  --font-button: 'Major Mono Display', monospace;
 
   /* fixed dimensions */
   --border-content: 2px;
@@ -76,7 +76,7 @@ main {
   }
 }
 
-.content, .outerWrap, .innerWrap, .side {
+.content, .content > .outerWrap, .content > .outerWrap > .innerWrap, .side {
   height: var(--height-content);
   width: var(--width-content);
 }
@@ -85,7 +85,7 @@ main {
   perspective: 350rem;
 }
 
-.innerWrap {
+.content > .outerWrap > .innerWrap {
   position: relative;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -96,13 +96,13 @@ main {
 }
 
 @media (orientation: portrait) {
-  .outerWrap.pivot .innerWrap {
+  .content > .outerWrap.pivot > .innerWrap {
     transform: rotateY(180deg);
   }
 }
 
 @media (orientation: landscape) {
-  .outerWrap.pivot .innerWrap {
+  .content > .outerWrap.pivot > .innerWrap {
     transform: rotateX(180deg);
   }
 }
@@ -120,41 +120,41 @@ main {
   padding: var(--padding-content);
 }
 
-.frontFrame {
+.panelFrame {
   width: var(--cardWidth);
   height: var(--cardHeight);
   max-width: var(--cardWidth);
   max-height: var(--cardHeight);
 }
 
-.cardWrap {
+.panelWrap {
   display: flex;
   gap: calc(var(--padding-content) * 2);
 }
 
 @media (orientation: portrait) {
-  .frontFrame {
+  .panelFrame {
     overflow-y: hidden;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
-  .cardWrap {
+  .panelWrap {
     flex-direction: row;
   }
 }
 
 @media (orientation: landscape) {
-  .frontFrame {
+  .panelFrame {
     overflow-y: auto;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
   }
-  .cardWrap {
+  .panelWrap {
     flex-direction: column;
   }
 }
 
-.cardFrame {
+.panel {
   min-width: var(--cardWidth);
   min-height: var(--cardHeight);
   max-width: var(--cardWidth);
@@ -165,22 +165,13 @@ main {
   scroll-snap-align: center;
 }
 
-.card {
+.pane {
   height: auto;
   width: auto;
   max-width: var(--cardWidth);
   max-height: var(--cardHeight);
 }
 
-.back {
-  color: rgb(var(--color-blackshadows));
-  display: grid;
-  grid-template-columns: 3fr 5fr;
-  gap: 3vw;
-  align-content: center;
-  align-items: center;
-  padding: 2.5rem;
-}
 
 @media (orientation: portrait) {
   .back {
@@ -194,14 +185,26 @@ main {
   }
 }
 
-.plantProp {
+.infoWrap {
+  color: rgb(var(--color-blackshadows));
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  gap: 3vw;
+  align-content: center;
+  align-items: center;
+  height: var(--height-content);
+  width: var(--width-content);
+  padding: 2.5rem;
+}
+
+.infoProp {
   text-align: right;
   font-family: var(--font-prop);
   font-size: 1.6rem;
   text-transform: uppercase;
 }
 
-.plantValue {
+.infoValue {
   font-family: var(--font-val);
   font-size: 2.8rem;
   font-weight: bold;
@@ -219,23 +222,45 @@ main {
   line-height: 1.2;
 }
 
-.controls {
+.controls > .outerWrap > .innerWrap {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (orientation: portrait) {
+  .controls > .outerWrap > .innerWrap {
+    flex-direction: row;
+    width: var(--cardWidth);
+    height: auto;
+  }
+}
+
+@media (orientation: landscape) {
+  .controls > .outerWrap > .innerWrap {
+    flex-direction: column;
+    width: auto;
+    height: var(--cardHeight);
+  }
 }
 
 .iterate {
   background-color: inherit;
-  border: 2px solid rgba(var(--color-quicksilver), 0.4);
+  border: 2px solid rgba(var(--color-quicksilver), 0);
   border-radius: 0.5rem;
-  color: rgba(var(--color-quicksilver), 0.4);
-  padding: 0.25rem 1.5rem;
-  font-family: var(--font-button);
-  font-size: 2.5rem;
-  text-transform: lowercase;
+  color: rgb(var(--color-richblack));
+  padding: 0.25rem;
+  height: 5rem;
+  aspect-ratio: 1;
+}
+
+.iterate > svg {
+  height: 100%;
+  width: 100%;
 }
 
 .iterate:active {
-  background-color: rgba(var(--color-quicksilver), 0.4);
-  border-color: rgba(var(--color-quicksilver), 0);
-  color: rgb(var(--color-richblack));
+  border-color: rgba(var(--color-quicksilver), 0.4);
+  color: rgba(var(--color-quicksilver), 0.4);
 }
