@@ -254,6 +254,24 @@ main {
   line-height: 1.2;
 }
 
+@media (max-width: 500px) {
+  .infoValue {
+    font-size: 2.2rem;
+  }
+  .noteVal {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .infoValue {
+    font-size: 2.2rem;
+  }
+  .noteVal {
+    font-size: 1.6rem;
+  }
+}
+
 .controls > .outerWrap > .innerWrap {
   text-align: center;
   display: flex;
