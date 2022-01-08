@@ -130,6 +130,7 @@ main {
 
 .panelWrap {
   display: flex;
+  gap: calc(var(--padding-content) * 2);
 }
 
 @media (orientation: portrait) {
@@ -249,12 +250,12 @@ main {
 }
 
 .iterate {
-  background-color: rgba(var(--color-dutchwhite), 0);
+  background-color: inherit;
   border: 2px solid rgba(var(--color-dutchwhite), 0);
   border-radius: 0.5rem;
   color: rgba(var(--color-eerieblack), 0.6);
   padding: 0.25rem;
-  height: 5rem;
+  height: 6rem;
   aspect-ratio: 1;
 }
 
@@ -264,7 +265,6 @@ main {
 }
 
 .iterate:active {
-  background-color: inherit;
   border-color: rgba(var(--color-dutchwhite), 0.5);
   color: rgba(var(--color-dutchwhite), 0.5);
 }
