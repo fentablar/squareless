@@ -27,7 +27,7 @@
   --font-button: 'Major Mono Display', monospace;
 
   /* fixed dimensions */
-  --border-content: 2px;
+  --border-content: 1px;
   --padding-content: 6px;
   --edge-content: calc((var(--border-content) + var(--padding-content)) * 2);
   --cardHeight: calc(var(--height-content) - var(--edge-content));
@@ -48,14 +48,27 @@
   --indigoDyeLt: 1, 71, 101; /* 014765 */
   --starCommandBlue: 2, 128, 182; /* 0280b6 */
   --carolinaBlue: 2, 156, 222; /* 029cde */
+  --peachCrayola: 254, 200, 154; /* fec89a */
+  --ashGray: 196, 212, 203; /* c4d4cb */
+  --cambridgeBlue: 196, 212, 203; /* a0baac */
+  --mistyRose: 239, 214, 210; /* efd6d2 */
+  --palePink: 247, 208, 202; /* f7d0ca */
+  --melon: 241, 177, 167; /* f1b1a7 */
+  --mellowApricot: 254, 179, 114; /* feb372 */
+  --feldgrau: 60, 83, 70; /* 3c5346 */
+  --camel: 185, 155, 121; /* b99b79 */
+
+  --eerieBlackLt: 31, 31, 31; /* 1f1f1f */
+  --eerieBlackDk: 20, 20, 20; /* 141414 */
+  --jet: 41, 41, 41; /* 292929 */
+  --richblackFOGRA39: 10, 10, 10; /* 0a0a0a */
 
   /* color assignments */
-  --clr-bgBody: 216, 226, 220; /* alabaster */
-  --clr-bgMain: 2, 36, 60; /* prussian blue dk */
-  --clr-cardBorder: 3, 47, 79; /* prussian blue lt */
-  --clr-bgFront: 2, 22, 39; /* rich black FOGRA 29 lt */
+  --clr-bgMain: 31, 31, 31; /* eerie black lt */
+  --clr-cardBorder: 20, 20, 20; /* eerie black dk */
+  --clr-bgFront: 41, 41, 41; /* jet */
   --clr-bgBack: 1, 11, 19; /* rich black FOGRA 29 dk */
-  --clr-btn: 1, 11, 19; /* rich black FOGRA 29 dk */
+  --clr-btn: 60, 83, 70; /* peach crayola */
   --clr-btnActive: 12, 133, 233; /* bleu de france */
   --clr-text: 2, 156, 222; /* star command blue */
 }
@@ -67,10 +80,6 @@
 html {
   font-size: 10px;
   font-family: sans-serif;
-}
-
-body {
-  background-color: rgb(var(--clr-bgBody));
 }
 
 main {
