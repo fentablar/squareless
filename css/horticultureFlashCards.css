@@ -51,8 +51,8 @@
 
   /* color assignments */
   --clr-bgBody: 216, 226, 220; /* alabaster */
-  --clr-bgMain: 3, 47, 79; /* prussian blue lt */
-  --clr-cardBorder: 2, 36, 60; /* prussian blue dk */
+  --clr-bgMain: 2, 36, 60; /* prussian blue dk */
+  --clr-cardBorder: 3, 47, 79; /* prussian blue lt */
   --clr-bgFront: 1, 11, 19; /* rich black FOGRA 29 dk */
   --clr-bgBack: 1, 11, 19; /* rich black FOGRA 29 dk */
   --clr-btn: 2, 22, 39; /* rich black FOGRA 29 lt */
