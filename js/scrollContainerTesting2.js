@@ -178,7 +178,10 @@ const genericCards = elem => {
     const paneArr = rndNumArr(rndNum(7, 5), 12, 3);
     let paneObjArr = [];
     for (let i = 0; i < paneArr.length; i++) {
-      const obj = { elem: elem, content: 'Pane ' + paneArr[i] }
+      const obj = {
+        elem: elem,
+        content: 'Card &#' + num + '<br>Pane ' + paneArr[i] 
+      }
       paneObjArr.push(obj);
     }
     let cardObj = {
