@@ -148,8 +148,9 @@ const controls = {
       + 'stroke="currentColor" fill="none" stroke-linecap="round" '
       + 'stroke-linejoin="round">'
       + '<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>'
-      + '<path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4"></path>'
-      + '<path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"></path></svg>';
+      + '<path d="M3 17h5l1.67 -2.386m3.66 -5.227l1.67 -2.387h6"></path>'
+      + '<path d="M18 4l3 3l-3 3"></path><path d="M3 7h5l7 10h6"></path>'
+      + '<path d="M18 20l3 -3l-3 -3"></path></svg>';
     const reset = addWrappedButton(innerWrap, 'button', rstIco, 'iterate', 'reset');
 
     prev.addEventListener('click', function () {
