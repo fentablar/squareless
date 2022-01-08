@@ -249,10 +249,10 @@ main {
 }
 
 .iterate {
-  background-color: rgba(var(--color-dutchwhite), 0.25);
+  background-color: rgba(var(--color-dutchwhite), 0);
   border: 2px solid rgba(var(--color-dutchwhite), 0);
   border-radius: 0.5rem;
-  color: rgb(var(--color-blackolive));
+  color: rgba(var(--color-eerieblack), 0.6);
   padding: 0.25rem;
   height: 5rem;
   aspect-ratio: 1;
