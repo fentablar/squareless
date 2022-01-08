@@ -21,11 +21,6 @@
   /* pivot animation */
   --time: 0.505s;
 
-  /* rgb values */
-  --color-richblack: 16, 20, 25; /* 101419 */
-  --color-blackshadows: 213, 197, 200; /* d5c5c8 */
-  --color-quicksilver: 157, 163, 164; /* 9da3a4 */
-
   /* google fonts */
   --font-prop: 'Cinzel', serif;
   --font-val: 'Jost', sans-serif;
@@ -38,6 +33,31 @@
   --cardHeight: calc(var(--height-content) - var(--edge-content));
   --cardWidth: calc(var(--width-content) - var(--edge-content));
 
+  /* rgb values */
+  --color-richblack: 16, 20, 25; /* 101419 */
+  --color-blackshadows: 213, 197, 200; /* d5c5c8 */
+  --color-quicksilver: 157, 163, 164; /* 9da3a4 */
+
+  --alabaster: 216, 226, 220; /* d8e2dc */
+  --prussianBlueLt: 3, 47, 79; /* 022f4f */
+  --prussianBlueDk: 2, 36, 60; /* 02243c */
+  --richBlackFOGRA29Lt: 2, 22, 39; /* 021627 */
+  --richBlackFOGRA29Dk: 1, 11, 19; /* 010b13 */
+  --bleuDeFrance: 12, 133, 233; /* 0c85e9 */
+  --indigoDyeDk: 1, 57, 81; /* 013951 */
+  --indigoDyeLt: 1, 71, 101; /* 014765 */
+  --starCommandBlue: 2, 128, 182; /* 0280b6 */
+  --carolinaBlue: 2, 156, 222; /* 029cde */
+
+  /* color assignments */
+  --clr-bgBody: 216, 226, 220; /* alabaster */
+  --clr-bgMain: 3, 47, 79; /* prussian blue lt */
+  --clr-cardBorder: 2, 36, 60; /* prussian blue dk */
+  --clr-bgFront: 1, 11, 19; /* rich black FOGRA 29 dk */
+  --clr-bgBack: 1, 11, 19; /* rich black FOGRA 29 dk */
+  --clr-btn: 2, 22, 39; /* rich black FOGRA 29 lt */
+  --clr-btnActive: 12, 133, 233; /* bleu de france */
+  --clr-text: 2, 156, 222; /* star command blue */
 }
 
 * {
@@ -50,11 +70,11 @@ html {
 }
 
 body {
-  background-color: rgb(var(--color-quicksilver));
+  background-color: rgb(var(--clr-bgBody));
 }
 
 main {
-  background-color: rgba(var(--color-richblack), 0.88);
+  background-color: rgb(var(--clr-bgMain));
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -108,15 +128,15 @@ main {
 }
 
 .side {
-  background-color: rgb(var(--color-richblack));
   position: absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: var(--border-content) solid rgba(var(--color-quicksilver), 0.4);
+  border: var(--border-content) solid rgb(var(--clr-cardBorder));
   border-radius: 0.8rem;
 }
 
 .front {
+  background-color: rgb(var(--clr-bgFront));
   padding: var(--padding-content);
 }
 
@@ -172,6 +192,9 @@ main {
   max-height: var(--cardHeight);
 }
 
+.back {
+  background-color: rgb(var(--clr-bgBack));
+}
 
 @media (orientation: portrait) {
   .back {
@@ -186,7 +209,7 @@ main {
 }
 
 .infoWrap {
-  color: rgb(var(--color-blackshadows));
+  color: rgb(var(--clr-text));
   display: grid;
   grid-template-columns: 3fr 5fr;
   gap: 3vw;
@@ -232,7 +255,7 @@ main {
 @media (orientation: portrait) {
   .controls > .outerWrap > .innerWrap {
     flex-direction: row;
-    width: var(--cardWidth);
+    width: calc(var(--cardWidth) * 0.75);
     height: auto;
   }
 }
@@ -241,15 +264,15 @@ main {
   .controls > .outerWrap > .innerWrap {
     flex-direction: column;
     width: auto;
-    height: var(--cardHeight);
+    height: calc(var(--cardHeight) * 0.75);
   }
 }
 
 .iterate {
-  background-color: inherit;
-  border: 2px solid rgba(var(--color-quicksilver), 0);
+  background-color: rgb(var(--clr-bgMain));
+  border: 2px solid rgb(var(--clr-bgMain));
   border-radius: 0.5rem;
-  color: rgb(var(--color-richblack));
+  color: rgb(var(--clr-btn));
   padding: 0.25rem;
   height: 6rem;
   aspect-ratio: 1;
@@ -261,6 +284,6 @@ main {
 }
 
 .iterate:active {
-  border-color: rgba(var(--color-quicksilver), 0.4);
-  color: rgba(var(--color-quicksilver), 0.4);
+  border-color: rgb(var(--clr-btnActive));
+  color: rgb(var(--clr-btnActive));
 }
