@@ -283,7 +283,7 @@ main {
   width: 100%;
 }
 
-.iterate:active {
+.iterate:active, .iterate:hover {
   border-color: rgb(var(--clr-btnActive));
   color: rgb(var(--clr-btnActive));
 }
