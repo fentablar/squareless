@@ -79,6 +79,7 @@
   --clr-btn: 142, 142, 142; /* spanishGray */
   --clr-btnActive: 12, 133, 233; /* bleu de france */
   --clr-text: 41, 41, 41; /* jet */
+  --clr-imgShadow: 142, 142, 142; /* spanishGray */
 }
 
 * {
@@ -207,7 +208,7 @@ main {
   width: auto;
   max-width: calc(var(--cardWidth) * .9);
   max-height: calc(var(--cardHeight) * .9);
-  box-shadow: 0 0 10px 4px rgb(var(--clr-btn));
+  box-shadow: 0 0 10px 4px rgb(var(--clr-imgShadow));
 }
 
 .back {
