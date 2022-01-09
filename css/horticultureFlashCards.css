@@ -64,14 +64,21 @@
   --richblackFOGRA39: 10, 10, 10; /* 0a0a0a */
   --onyx: 61, 61, 61; /* 3d3d3d */
 
+  --platinum: 227, 227, 227; /* e3e3e3 */
+  --cultured: 245, 245, 245; /* f5f5f5 */
+  --gainsboro: 224, 224, 224; /* e0e0e0 */
+  --silver: 194, 194, 194; /* c2c2c2 */
+  --lightGray: 204, 204, 204; /* cccccc */
+  --spanishGray: 142, 142, 142; /* 8e8e8e */
+
   /* color assignments */
-  --clr-bgMain: 31, 31, 31; /* eerie black lt */
-  --clr-cardBorder: 20, 20, 20; /* eerie black dk */
-  --clr-bgFront: 61, 61, 61; /* onyx */
-  --clr-bgBack: 1, 11, 19; /* rich black FOGRA 29 dk */
-  --clr-btn: 60, 83, 70; /* peach crayola */
+  --clr-bgMain: 204, 204, 204; /* lightGray */
+  --clr-cardBorder: 194, 194, 194; /* silver */
+  --clr-bgFront: 227, 227, 227; /* platinum */
+  --clr-bgBack: 227, 227, 227; /* platinum */
+  --clr-btn: 142, 142, 142; /* spanishGray */
   --clr-btnActive: 12, 133, 233; /* bleu de france */
-  --clr-text: 2, 156, 222; /* star command blue */
+  --clr-text: 41, 41, 41; /* jet */
 }
 
 * {
@@ -198,8 +205,9 @@ main {
 .pane {
   height: auto;
   width: auto;
-  max-width: var(--cardWidth);
-  max-height: var(--cardHeight);
+  max-width: calc(var(--cardWidth) * .9);
+  max-height: calc(var(--cardHeight) * .9);
+  box-shadow: 0 0 10px 4px rgb(var(--clr-btn));
 }
 
 .back {
