@@ -54,9 +54,14 @@ const addWrappedButton = (parent, buttType, label, ...classes) => {
 // build html structure
 
 const addMainSections = () => {
-  const main = qrySelAddElem('body', 'main');
+  const body = document.querySelector('body');
+  const darkMode = addElement(body, 'div', 'darkMode');
+  const main = addElement(body, 'main');
   addElement(main, 'section', 'content');
   addElement(main, 'section', 'controls');
+  darkMode.addEventListener('click', function () {
+    body.classList.toggle('dark');
+  });
 }
 
 const content = {

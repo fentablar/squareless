@@ -41,15 +41,13 @@
   --spanishGray: 142, 142, 142; /* 8e8e8e */
   --bleuDeFrance: 12, 133, 233; /* 0c85e9 */
 
-  /* color assignments */
-  --clr-bgMain: 204, 204, 204; /* lightGray */
-  --clr-cardBorder: 194, 194, 194; /* silver */
-  --clr-bgFront: 227, 227, 227; /* platinum */
-  --clr-bgBack: 227, 227, 227; /* platinum */
-  --clr-btn: 142, 142, 142; /* spanishGray */
-  --clr-btnActive: 12, 133, 233; /* bleu de france */
-  --clr-text: 41, 41, 41; /* jet */
-  --clr-imgShadow: 142, 142, 142; /* spanishGray */
+  --eerieBlack-222222: 34, 34, 34; /* 222222 */
+  --jet-373737: 55, 55, 55; /* 323232 */
+  --richBlack-0a0a0a: 10, 10, 10; /* 0a0a0a */
+  --jet-2c2c2c: 44, 44, 44; /* 2c2c2c */
+  --davysGrey-474747: 71, 71, 71;
+  --dimGray-666666: 102, 102, 102;
+
 }
 
 * {
@@ -61,6 +59,33 @@ html {
   font-family: sans-serif;
 }
 
+  /* color assignments */
+body {
+  --clr-bgMain: 204, 204, 204; /* lightGray */
+  --clr-cardBorder: 194, 194, 194; /* silver */
+  --clr-bgFront: 227, 227, 227; /* platinum */
+  --clr-bgBack: 227, 227, 227; /* platinum */
+  --clr-btn: 142, 142, 142; /* spanishGray */
+  --clr-text: 41, 41, 41; /* jet */
+  --clr-imgShadow: 142, 142, 142; /* spanishGray */
+}
+
+body.dark {
+  --clr-bgMain: 34, 34, 34; /* eerieBlack-222222 */
+  --clr-cardBorder: 44, 44, 44; /* jet-2c2c2c */
+  --clr-bgFront: 10, 10, 10; /* richBlack-0a0a0a */
+  --clr-bgBack: 10, 10, 10; /* richBlack-0a0a0a */
+  --clr-btn: 71, 71, 71; /* davysGrey-474747 */
+  --clr-text: 194, 194, 194; /* silver */
+  --clr-imgShadow: 102, 102, 102; /* dimGray-666666 */
+}
+
+.darkMode {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+}
+
 main {
   background-color: rgb(var(--clr-bgMain));
   height: 100vh;
@@ -68,6 +93,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  --clr-btnActive: 12, 133, 233; /* bleu de france */
 }
 
 @media (orientation: portrait) {
@@ -133,6 +159,10 @@ main {
   height: var(--cardHeight);
   max-width: var(--cardWidth);
   max-height: var(--cardHeight);
+}
+
+.panelFrame::-webkit-scrollbar {
+  display: none;
 }
 
 .panelWrap {
