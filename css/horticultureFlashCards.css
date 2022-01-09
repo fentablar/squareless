@@ -34,42 +34,12 @@
   --cardWidth: calc(var(--width-content) - var(--edge-content));
 
   /* rgb values */
-  --color-richblack: 16, 20, 25; /* 101419 */
-  --color-blackshadows: 213, 197, 200; /* d5c5c8 */
-  --color-quicksilver: 157, 163, 164; /* 9da3a4 */
-
-  --alabaster: 216, 226, 220; /* d8e2dc */
-  --prussianBlueLt: 3, 47, 79; /* 022f4f */
-  --prussianBlueDk: 2, 36, 60; /* 02243c */
-  --richBlackFOGRA29Lt: 2, 22, 39; /* 021627 */
-  --richBlackFOGRA29Dk: 1, 11, 19; /* 010b13 */
-  --bleuDeFrance: 12, 133, 233; /* 0c85e9 */
-  --indigoDyeDk: 1, 57, 81; /* 013951 */
-  --indigoDyeLt: 1, 71, 101; /* 014765 */
-  --starCommandBlue: 2, 128, 182; /* 0280b6 */
-  --carolinaBlue: 2, 156, 222; /* 029cde */
-  --peachCrayola: 254, 200, 154; /* fec89a */
-  --ashGray: 196, 212, 203; /* c4d4cb */
-  --cambridgeBlue: 196, 212, 203; /* a0baac */
-  --mistyRose: 239, 214, 210; /* efd6d2 */
-  --palePink: 247, 208, 202; /* f7d0ca */
-  --melon: 241, 177, 167; /* f1b1a7 */
-  --mellowApricot: 254, 179, 114; /* feb372 */
-  --feldgrau: 60, 83, 70; /* 3c5346 */
-  --camel: 185, 155, 121; /* b99b79 */
-
-  --eerieBlackLt: 31, 31, 31; /* 1f1f1f */
-  --eerieBlackDk: 20, 20, 20; /* 141414 */
   --jet: 41, 41, 41; /* 292929 */
-  --richblackFOGRA39: 10, 10, 10; /* 0a0a0a */
-  --onyx: 61, 61, 61; /* 3d3d3d */
-
   --platinum: 227, 227, 227; /* e3e3e3 */
-  --cultured: 245, 245, 245; /* f5f5f5 */
-  --gainsboro: 224, 224, 224; /* e0e0e0 */
   --silver: 194, 194, 194; /* c2c2c2 */
   --lightGray: 204, 204, 204; /* cccccc */
   --spanishGray: 142, 142, 142; /* 8e8e8e */
+  --bleuDeFrance: 12, 133, 233; /* 0c85e9 */
 
   /* color assignments */
   --clr-bgMain: 204, 204, 204; /* lightGray */
@@ -206,8 +176,8 @@ main {
 .pane {
   height: auto;
   width: auto;
-  max-width: calc(var(--cardWidth) * .9);
-  max-height: calc(var(--cardHeight) * .9);
+  max-width: calc(var(--cardWidth) * .92);
+  max-height: calc(var(--cardHeight) * .92);
   box-shadow: 0 0 10px 4px rgb(var(--clr-imgShadow));
 }
 
