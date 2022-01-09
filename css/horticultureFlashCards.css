@@ -307,10 +307,10 @@ main {
 
 .iterate {
   background-color: rgb(var(--clr-bgMain));
-  border: 2px solid rgb(var(--clr-bgMain));
-  border-radius: 0.5rem;
+  border: 4px solid rgb(var(--clr-bgMain));
+  border-radius: 1rem;
   color: rgb(var(--clr-btn));
-  padding: 0.25rem;
+  padding: 0.2rem;
   height: 6rem;
   aspect-ratio: 1;
 }
