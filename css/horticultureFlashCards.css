@@ -61,6 +61,7 @@ html {
 
   /* color assignments */
 body {
+  --clr-btnActive: 12, 133, 233; /* bleu de france */
   --clr-bgMain: 204, 204, 204; /* lightGray */
   --clr-cardBorder: 194, 194, 194; /* silver */
   --clr-bgFront: 227, 227, 227; /* platinum */
@@ -93,7 +94,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  --clr-btnActive: 12, 133, 233; /* bleu de france */
 }
 
 @media (orientation: portrait) {
