@@ -9,19 +9,73 @@
 	<script src="../js/scrollContainerTesting.js" defer></script>
 </head>
 <body>
+  <div class="darkMode">
+    <script>
+      document.querySelector('.darkMode')
+      .addEventListener('click', function ()
+        { document.body.classList.toggle('dark'); }
+      );
+    </script>
+  </div>
   <main>
     <section class="content">
       <div class="outerWrap">
         <div class="innerWrap">
-          <div class="side" id="front">
+          <div class="side front">
+            <div class="panelFrame">
+              <div class="panelWrap">
+              </div>
+            </div>
           </div>
-          <div class="side" id="back">
+          <div class="side back">
+            <div class="panelFrame">
+              <div class="panelWrap">
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section class="controls">
-      <button type="button" id="iterate">未濟</button>
+      <div class="outerWrap">
+        <div class="innerWrap">
+          <div class="buttonWrap">
+            <button class="iterate prev" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" stroke-width="2.7" stroke="currentColor"
+                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M21 5v14l-8 -7z"></path>
+                <path d="M10 5v14l-8 -7z"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="buttonWrap">
+            <button class="iterate next" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" stroke-width="2.7" stroke="currentColor"
+                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M3 5v14l8 -7z"></path>
+                <path d="M14 5v14l8 -7z"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="buttonWrap">
+            <button class="iterate reset" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" stroke-width="2.7" stroke="currentColor"
+                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M3 17h5l1.67 -2.386m3.66 -5.227l1.67 -2.387h6"></path>
+                <path d="M18 4l3 3l-3 3"></path>
+                <path d="M3 7h5l7 10h6"></path>
+                <path d="M18 20l3 -3l-3 -3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </body>

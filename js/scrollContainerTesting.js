@@ -1,42 +1,124 @@
 
-const buildCards = () => {
-  if (!front) return;
+const shuffleArray = arr => {
+  const len = arr.length;
+  let shuffled = [];
+  while (shuffled.length < len) {
+    let rnd = Math.floor(Math.random() * len);
+    if (!shuffled.includes(arr[rnd])) shuffled.push(arr[rnd]);
+  }
+  return shuffled;
+}
 
-  let frontFrame = document.createElement('div');
-  frontFrame.id = 'frontFrame';
-  front.append(frontFrame);
+const addElement = (parent, elem, ...classes) => {
+  const newElem = document.createElement(elem);
+  if (classes.length) newElem.classList.add(...classes);
+  if (parent) parent.append(newElem);
+  return newElem;
+}
 
-  let cardWrap = document.createElement('div');
-  cardWrap.id = 'cardWrap';
-  frontFrame.append(cardWrap);
+const showMeToggle = element => {
+  return document.querySelector(element).classList.toggle('showMe');
+}
 
-  let rnd = Math.floor(Math.random() * 10) + 3;
-
-  for (let i = 0; i < rnd; i++) {
-    let cardFrame = document.createElement('div');
-    cardFrame.classList.add('cardFrame');
-    cardWrap.append(cardFrame);
-
-    let card = document.createElement('div');
-    let crdTxt = '<p>Card</p><p>' + i + '</p>';
-    card.classList.add('card');
-    card.insertAdjacentHTML('afterbegin', crdTxt);
-    cardFrame.append(card);
+const stakePanes = (side, paneArr) => {
+  const panelWrap = document.querySelector(side.concat(' .panelWrap'));
+  panelWrap.innerHTML = '';
+  for (pane of paneArr) {
+    const panel = addElement(panelWrap, 'div', 'panel')
+    const p = addElement(panel, 'div', 'pane');
+    p.innerHTML = pane;
   }
 }
 
-const iteration = () => {
-  if (frontFrame) frontFrame.remove();
-  return buildCards();
+// kan
+
+const kan = {
+  set cards(src) { this._deck = src; },
+  get cards() { return this._deck; },
+  set shuffle(arr) { this._mix = shuffleArray(arr); },
+  get shuffle() { return this._mix; },
+  set idx(val) { if (typeof val == 'number') this._mark = val; },
+  get idx() { return this._mark; },
+  get card() { return this.shuffle[this.idx]; }
 }
 
-const addControls = () => {
-  let outerWrap = document.querySelector('.outerWrap');
-  outerWrap.addEventListener('click', function () {
-    this.classList.toggle('pivot');
-  });
-  iterate.addEventListener('click', iteration);
+// tong
+
+const tong = {
+  dealCard() {
+    if (kan.card.front.shuffle) {
+      stakePanes('.front', shuffleArray(kan.card.front.panes));
+    } else stakePanes('.front', kan.card.front.panes);
+    if (kan.card.back.shuffle) {
+      stakePanes('.back', shuffleArray(kan.card.back.panes));
+    } else stakePanes('.back', kan.card.back.panes);
+  },
+  iterate() {
+    showMeToggle('.content');
+    this.dealCard;
+    showMeToggle('.content');
+  },
+  reset() {
+    kan.idx = 0;
+    kan.shuffle = kan.cards;
+    this.iterate;
+  },
+  prev() {
+    const n = kan.idx - 1;
+    if (n >= 0) {
+      kan.idx = n;
+      this.iterate;
+    } else alert('No prior cards to show');
+  },
+  next() {
+    const n = kan.idx + 1;
+    if (n <= kan.cards.length) {
+      kan.idx = n;
+      this.iterate;
+    } else alert('No more cards to show');
+  },
+  initialize(src) {
+    kan.cards = src;
+    kan.idx = 0;
+    kan.shuffle = kan.cards;
+    const findAdd = (elem, func) => {
+      document.querySelector(elem).addEventListener('click', func);
+    };
+    findAdd('button.prev', this.prev);
+    findAdd('button.next', this.next);
+    findAdd('button.reset', this.reset);
+    findAdd('.content > .outerWrap', function () {
+      this.classList.toggle('pivot');
+    });
+    setTimeout(() => { showMeToggle('.controls') }, 250);
+    this.dealCard();
+    setTimeout(() => { showMeToggle('.content') }, 500);
+  }
 }
 
-buildCards();
-addControls();
+// retrieve and process data
+
+function genericCards() {
+  let cards = [];
+  let len = Math.floor(Math.random() * 12) + 7;
+  for (let i = 0; i <= len; i++) {
+    let card = {
+      id: i,
+      front: { panes: [], shuffle: true },
+      back: { panes: [], shuffle: false }
+    };
+    let len2 = Math.floor(Math.random() * 5) + 5;
+    for (let j = 0; j < len2; j++) {
+      let pane = '<p>Card &#' + (i+65) + '</p>'
+                + '<p>Pane ' + j + '</p>';
+      card.front.panes.push(pane);
+    }
+    let back = '<p>id = ' + i + '</p>'
+              + '<p>no. of panes = ' + len2 + '</p>';
+    card.back.panes.push(back);
+    cards.push(card);
+  }
+  tong.initialize(cards);
+}
+
+genericCards();
