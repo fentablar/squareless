@@ -21,8 +21,10 @@ const showMeToggle = element => {
 }
 
 const stakePanes = (side, paneArr) => {
-  const panelWrap = document.querySelector(side.concat(' .panelWrap'));
-  panelWrap.innerHTML = '';
+  const parent = document.querySelector(side);
+  parent.innerHTML = '';
+  const panelFrame = addElement(parent, 'div', 'panelFrame');
+  const panelWrap = addElement(panelFrame, 'div', 'panelWrap');
   for (pane of paneArr) {
     const panel = addElement(panelWrap, 'div', 'panel')
     const p = addElement(panel, 'div', 'pane');
@@ -58,7 +60,7 @@ const tong = {
     document.querySelector('.content > .outerWrap').classList.remove('pivot');
     showMeToggle('.content');
     this.dealCard();
-    setTimeout(() => { showMeToggle('.content') }, 150);
+    setTimeout(() => { showMeToggle('.content') }, 400);
   },
   reset() {
     kan.idx = 0;
@@ -121,6 +123,21 @@ function genericCards() {
     cards.push(card);
   }
   tong.initialize(cards);
+}
+
+function horticultureFlashCards() {
+  const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
+  fetch(src)
+  .then(resp => resp.json())
+  .then(json => {
+    let cards = [];
+    for (plant of json.plants) {
+      let card = {
+        front: { panes: [], shuffle: true },
+        back: { panes: [], shuffle: false }
+      };
+    }
+  });
 }
 
 genericCards();
