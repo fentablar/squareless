@@ -240,14 +240,10 @@ section {
   width: auto;
   max-width: calc(var(--cardWidth) * .92);
   max-height: calc(var(--cardHeight) * .92);
-  box-shadow: 0 0 10px 4px rgb(var(--clr-imgShadow));
 }
 
-.pane > * {
-  height: auto;
-  width: auto;
-  max-width: calc(var(--cardWidth) * .92);
-  max-height: calc(var(--cardHeight) * .92);
+img.pane {
+  box-shadow: 0 0 10px 4px rgb(var(--clr-imgShadow));
 }
 
 .infoWrap {

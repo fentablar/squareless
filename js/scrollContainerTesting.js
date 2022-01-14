@@ -26,9 +26,8 @@ const stakePanes = (side, paneArr) => {
   const panelFrame = addElement(parent, 'div', 'panelFrame');
   const panelWrap = addElement(panelFrame, 'div', 'panelWrap');
   for (pane of paneArr) {
-    const panel = addElement(panelWrap, 'div', 'panel')
-    const p = addElement(panel, 'div', 'pane');
-    p.innerHTML = pane;
+    const panel = addElement(panelWrap, 'div', 'panel');
+    panel.innerHTML = pane;
   }
 }
 
@@ -130,14 +129,43 @@ function horticultureFlashCards() {
   fetch(src)
   .then(resp => resp.json())
   .then(json => {
+    const imgRoot = json.imgRoot;
     let cards = [];
     for (plant of json.plants) {
       let card = {
         front: { panes: [], shuffle: true },
         back: { panes: [], shuffle: false }
       };
+      for (image of plant.images) {
+        let pane = '<img class="pane" src=' + imgRoot.concat(image) + '>';
+        card.front.panes.push(pane);
+      }
+      let infoPane = '<div class="pane infoWrap">';
+      let displayNames = {
+        group: 'Group',
+        botanicalName: 'Botanical Name',
+        commonName: 'Common Name',
+        note: 'Nota Bene'
+      }
+      for (key of Object.keys(displayNames)) {
+        if (plant[key]) {
+          if (key != 'note') {
+            let txt = '<p class="infoProp">' + displayNames[key] + '</p>'
+                    + '<p class="infoValue">' + plant[key] + '</p>';
+            infoPane = infoPane.concat(txt);
+          } else {
+            let txt = '<p class="infoProp noteProp">' + displayNames[key] + '</p>'
+                    + '<p class="infoValue noteVal">' + plant[key] + '</p>';
+            infoPane = infoPane.concat(txt);
+          }
+        }
+      }
+      infoPane = infoPane.concat('</div>');
+      card.back.panes.push(infoPane);
+      cards.push(card);
     }
+    tong.initialize(cards);
   });
 }
 
-genericCards();
+horticultureFlashCards();

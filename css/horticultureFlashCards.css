@@ -19,7 +19,7 @@
 
 :root {
   /* pivot animation */
-  --time: 0.505s;
+  --time: 0.300s;
 
   /* google fonts */
   --font-prop: 'Cinzel', serif;
@@ -34,17 +34,17 @@
   --cardWidth: calc(var(--width-content) - var(--edge-content));
 
   /* rgb values */
-  --jet: 41, 41, 41; /* 292929 */
-  --platinum: 227, 227, 227; /* e3e3e3 */
-  --silver: 194, 194, 194; /* c2c2c2 */
-  --lightGray: 204, 204, 204; /* cccccc */
-  --spanishGray: 142, 142, 142; /* 8e8e8e */
-  --bleuDeFrance: 12, 133, 233; /* 0c85e9 */
+  --jet-292929: 41, 41, 41;
+  --platinum-e3e3e3: 227, 227, 227;
+  --silver-c2c2c2: 194, 194, 194;
+  --lightGray-cccccc: 204, 204, 204;
+  --spanishGray-8e8e8e: 142, 142, 142;
+  --bleuDeFrance-0c85e9: 12, 133, 233;
 
-  --eerieBlack-222222: 34, 34, 34; /* 222222 */
-  --jet-373737: 55, 55, 55; /* 323232 */
-  --richBlack-0a0a0a: 10, 10, 10; /* 0a0a0a */
-  --jet-2c2c2c: 44, 44, 44; /* 2c2c2c */
+  --eerieBlack-222222: 34, 34, 34;
+  --jet-373737: 55, 55, 55;
+  --richBlack-0a0a0a: 10, 10, 10;
+  --jet-2c2c2c: 44, 44, 44;
   --davysGrey-474747: 71, 71, 71;
   --dimGray-666666: 102, 102, 102;
 
@@ -61,14 +61,18 @@ html {
 
   /* color assignments */
 body {
-  --clr-btnActive: 12, 133, 233; /* bleu de france */
-  --clr-bgMain: 204, 204, 204; /* lightGray */
-  --clr-cardBorder: 194, 194, 194; /* silver */
-  --clr-bgFront: 227, 227, 227; /* platinum */
-  --clr-bgBack: 227, 227, 227; /* platinum */
-  --clr-btn: 142, 142, 142; /* spanishGray */
-  --clr-text: 41, 41, 41; /* jet */
-  --clr-imgShadow: 142, 142, 142; /* spanishGray */
+  overflow: hidden;
+
+  --clr-btnActive: 12, 133, 233; /* bleuDeFrance-0c85e9 */
+  --clr-bgMain: 204, 204, 204; /* lightGray-cccccc */
+  --clr-cardBorder: 194, 194, 194; /* silver-c2c2c2 */
+  --clr-bgFront: 227, 227, 227; /* platinum-e3e3e3 */
+  --clr-bgBack: 227, 227, 227; /* platinum-e3e3e3 */
+  --clr-btn: 142, 142, 142; /* spanishGray-8e8e8e */
+  --clr-text: 41, 41, 41; /* jet-292929 */
+  --clr-imgShadow: 142, 142, 142; /* spanishGray-8e8e8e */
+
+  background-color: rgb(var(--clr-bgMain));
 }
 
 body.dark {
@@ -77,12 +81,16 @@ body.dark {
   --clr-bgFront: 10, 10, 10; /* richBlack-0a0a0a */
   --clr-bgBack: 10, 10, 10; /* richBlack-0a0a0a */
   --clr-btn: 71, 71, 71; /* davysGrey-474747 */
-  --clr-text: 194, 194, 194; /* silver */
+  --clr-text: 194, 194, 194; /* silver-c2c2c2 */
   --clr-imgShadow: 102, 102, 102; /* dimGray-666666 */
+
+  background-color: rgb(var(--clr-bgMain));
 }
 
 .darkMode {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 50px;
   width: 50px;
 }
@@ -110,16 +118,20 @@ main {
   }
 }
 
-.content, .content > .outerWrap, .content > .outerWrap > .innerWrap, .side {
+section {
+  opacity: 0;
+}
+
+.content, .content > .outerWrap, .content .innerWrap, .side {
   height: var(--height-content);
   width: var(--width-content);
 }
 
-.outerWrap {
-  perspective: 350rem;
+.content > .outerWrap {
+  perspective: 500rem;
 }
 
-.content > .outerWrap > .innerWrap {
+.content .innerWrap {
   position: relative;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -154,6 +166,24 @@ main {
   padding: var(--padding-content);
 }
 
+.back {
+  background-color: rgb(var(--clr-bgBack));
+}
+
+@media (orientation: portrait) {
+  .back {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (orientation: landscape) {
+  .back {
+    transform: rotateX(180deg);
+  }
+}
+
+
+
 .panelFrame {
   width: var(--cardWidth);
   height: var(--cardHeight);
@@ -161,9 +191,11 @@ main {
   max-height: var(--cardHeight);
 }
 
+/*
 .panelFrame::-webkit-scrollbar {
   display: none;
 }
+*/
 
 .panelWrap {
   display: flex;
@@ -208,23 +240,10 @@ main {
   width: auto;
   max-width: calc(var(--cardWidth) * .92);
   max-height: calc(var(--cardHeight) * .92);
+}
+
+img.pane {
   box-shadow: 0 0 10px 4px rgb(var(--clr-imgShadow));
-}
-
-.back {
-  background-color: rgb(var(--clr-bgBack));
-}
-
-@media (orientation: portrait) {
-  .back {
-    transform: rotateY(180deg);
-  }
-}
-
-@media (orientation: landscape) {
-  .back {
-    transform: rotateX(180deg);
-  }
 }
 
 .infoWrap {
@@ -282,7 +301,7 @@ main {
   }
 }
 
-.controls > .outerWrap > .innerWrap {
+.controls .innerWrap {
   text-align: center;
   display: flex;
   align-items: center;
@@ -290,7 +309,7 @@ main {
 }
 
 @media (orientation: portrait) {
-  .controls > .outerWrap > .innerWrap {
+  .controls .innerWrap {
     flex-direction: row;
     width: calc(var(--cardWidth) * 0.8);
     height: auto;
@@ -298,7 +317,7 @@ main {
 }
 
 @media (orientation: landscape) {
-  .controls > .outerWrap > .innerWrap {
+  .controls .innerWrap {
     flex-direction: column;
     width: auto;
     height: calc(var(--cardHeight) * 0.8);
@@ -323,4 +342,9 @@ main {
 .iterate:active {
   border-color: rgb(var(--clr-btnActive));
   color: rgb(var(--clr-btnActive));
+}
+
+.showMe {
+  opacity: 1;
+  transition: opacity calc(var(--time) / 3) ease-in;
 }
