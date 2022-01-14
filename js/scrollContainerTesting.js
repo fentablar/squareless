@@ -60,7 +60,7 @@ const tong = {
     document.querySelector('.content > .outerWrap').classList.remove('pivot');
     showMeToggle('.content');
     this.dealCard();
-    setTimeout(() => { showMeToggle('.content') }, 400);
+    setTimeout(() => { showMeToggle('.content') }, 250);
   },
   reset() {
     kan.idx = 0;
@@ -96,7 +96,7 @@ const tong = {
     });
     setTimeout(() => { showMeToggle('.controls') }, 250);
     this.dealCard();
-    setTimeout(() => { showMeToggle('.content') }, 500);
+    setTimeout(() => { showMeToggle('.content') }, 400);
   }
 }
 

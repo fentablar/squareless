@@ -19,7 +19,7 @@
 
 :root {
   /* pivot animation */
-  --time: 0.505s;
+  --time: 0.300s;
 
   /* google fonts */
   --font-prop: 'Cinzel', serif;
@@ -128,7 +128,7 @@ section {
 }
 
 .content > .outerWrap {
-  perspective: 350rem;
+  perspective: 500rem;
 }
 
 .content .innerWrap {
