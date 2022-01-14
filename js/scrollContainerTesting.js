@@ -46,35 +46,37 @@ const kan = {
 
 const tong = {
   dealCard() {
-    if (kan.card.front.shuffle) {
-      stakePanes('.front', shuffleArray(kan.card.front.panes));
-    } else stakePanes('.front', kan.card.front.panes);
-    if (kan.card.back.shuffle) {
-      stakePanes('.back', shuffleArray(kan.card.back.panes));
-    } else stakePanes('.back', kan.card.back.panes);
+    const card = kan.card;
+    if (card.front.shuffle) {
+      stakePanes('.front', shuffleArray(card.front.panes));
+    } else stakePanes('.front', card.front.panes);
+    if (card.back.shuffle) {
+      stakePanes('.back', shuffleArray(card.back.panes));
+    } else stakePanes('.back', card.back.panes);
   },
   iterate() {
+    document.querySelector('.content > .outerWrap').classList.remove('pivot');
     showMeToggle('.content');
-    this.dealCard;
-    showMeToggle('.content');
+    this.dealCard();
+    setTimeout(() => { showMeToggle('.content') }, 150);
   },
   reset() {
     kan.idx = 0;
     kan.shuffle = kan.cards;
-    this.iterate;
+    tong.iterate();
   },
   prev() {
     const n = kan.idx - 1;
     if (n >= 0) {
       kan.idx = n;
-      this.iterate;
+      tong.iterate();
     } else alert('No prior cards to show');
   },
   next() {
     const n = kan.idx + 1;
-    if (n <= kan.cards.length) {
+    if (n < kan.cards.length) {
       kan.idx = n;
-      this.iterate;
+      tong.iterate();
     } else alert('No more cards to show');
   },
   initialize(src) {

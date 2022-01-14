@@ -350,5 +350,5 @@ section {
 
 .showMe {
   opacity: 1;
-  transition: opacity calc(var(--time) / 2) ease-in;
+  transition: opacity calc(var(--time) / 3) ease-in;
 }
