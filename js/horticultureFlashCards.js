@@ -16,9 +16,9 @@ const addElement = (parent, elem, ...classes) => {
   return newElem;
 }
 
-const showMeToggle = element => {
-  return document.querySelector(element).classList.toggle('showMe');
-}
+const qrySel = element => document.querySelector(element);
+
+const cssToggle = (element, css) => element.classList.toggle(css);
 
 const stakePanes = (side, paneArr) => {
   const parent = document.querySelector(side);
@@ -56,15 +56,19 @@ const tong = {
     } else stakePanes('.back', card.back.panes);
   },
   iterate() {
-    document.querySelector('.content > .outerWrap').classList.remove('pivot');
-    showMeToggle('.content');
+    const contentWrap = qrySel('.content > .outerWrap');
+    contentWrap.classList.remove('pivot');
+    cssToggle(contentWrap, 'hideMe');
     this.dealCard();
-    setTimeout(() => { showMeToggle('.content') }, 250);
+    setTimeout(() => { cssToggle(contentWrap, 'hideMe'); }, 200);
   },
   reset() {
+    const content = qrySel('.content');
+    cssToggle(content, 'showMe');
     kan.idx = 0;
     kan.shuffle = kan.cards;
     tong.iterate();
+    setTimeout(() => { cssToggle(content, 'showMe'); }, 300);
   },
   prev() {
     const n = kan.idx - 1;
@@ -81,25 +85,55 @@ const tong = {
     } else alert('No more cards to show');
   },
   initialize(src) {
+    const content = qrySel('.content');
+    const controls = qrySel('.controls');
+    const contentWrap = qrySel('.content > .outerWrap');
     kan.cards = src;
     kan.idx = 0;
     kan.shuffle = kan.cards;
-    const findAdd = (elem, func) => {
-      document.querySelector(elem).addEventListener('click', func);
+    const addClick = (element, func) => {
+      element.addEventListener('click', func);
     };
-    findAdd('button.prev', this.prev);
-    findAdd('button.next', this.next);
-    findAdd('button.reset', this.reset);
-    findAdd('.content > .outerWrap', function () {
-      this.classList.toggle('pivot');
+    addClick(qrySel('.darkMode'), function () {
+      cssToggle(document.body, 'dark');
     });
-    setTimeout(() => { showMeToggle('.controls') }, 250);
+    addClick(qrySel('button.prev'), this.prev);
+    addClick(qrySel('button.next'), this.next);
+    addClick(qrySel('button.reset'), this.reset);
+    addClick(contentWrap, function () {
+      cssToggle(contentWrap, 'pivot');
+    });
+    setTimeout(() => { cssToggle(controls, 'showMe'); }, 250);
     this.dealCard();
-    setTimeout(() => { showMeToggle('.content') }, 400);
+    setTimeout(() => { cssToggle(content, 'showMe'); }, 400);
   }
 }
 
 // retrieve and process data
+
+function genericCards() {
+  let cards = [];
+  let len = Math.floor(Math.random() * 12) + 7;
+  for (let i = 0; i <= len; i++) {
+    let card = {
+      id: i,
+      front: { panes: [], shuffle: true },
+      back: { panes: [], shuffle: false }
+    };
+    const iWrap = '<div class="pane infoWrap">';
+    let len2 = Math.floor(Math.random() * 5) + 5;
+    for (let j = 0; j < len2; j++) {
+      let pane = '<p>Card &#' + (i+65) + '</p>'
+                + '<p>Pane ' + j + '</p></div>';
+      card.front.panes.push(iWrap.concat(pane));
+    }
+    let back = '<p>id = ' + i + '</p>'
+              + '<p>no. of panes = ' + len2 + '</p></div>';
+    card.back.panes.push(iWrap.concat(back));
+    cards.push(card);
+  }
+  tong.initialize(cards);
+}
 
 function horticultureFlashCards() {
   const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';

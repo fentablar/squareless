@@ -19,7 +19,7 @@
 
 :root {
   /* pivot animation */
-  --time: 0.300s;
+  --time: 0.250s;
 
   /* google fonts */
   --font-prop: 'Cinzel', serif;
@@ -240,7 +240,10 @@ section {
   width: auto;
   max-width: calc(var(--cardWidth) * .92);
   max-height: calc(var(--cardHeight) * .92);
+  user-select: none;
 }
+
+.pane * { user-select: none; }
 
 img.pane {
   box-shadow: 0 0 10px 4px rgb(var(--clr-imgShadow));
@@ -346,5 +349,9 @@ img.pane {
 
 .showMe {
   opacity: 1;
-  transition: opacity calc(var(--time) / 3) ease-in;
+  transition: opacity calc(var(--time) / 2) ease-in;
+}
+
+.hideMe {
+  opacity: 0;
 }
