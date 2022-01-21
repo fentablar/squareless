@@ -20,15 +20,36 @@ const qrySel = element => document.querySelector(element);
 
 const cssToggle = (element, css) => element.classList.toggle(css);
 
-const stakePanes = (side, paneArr) => {
-  const parent = document.querySelector(side);
-  parent.innerHTML = '';
-  const panelFrame = addElement(parent, 'div', 'panelFrame');
-  const panelWrap = addElement(panelFrame, 'div', 'panelWrap');
+const promisePanes = (wrap, paneArr) => {
+  const promArr = [];
   for (pane of paneArr) {
-    const panel = addElement(panelWrap, 'div', 'panel');
-    panel.innerHTML = pane;
+    const panel = addElement(wrap, 'div', 'panel');
+    switch (pane.type) {
+      case 'imgSingle': {
+        const imgSingle = new Image();
+        imgSingle.src = pane.data;
+        imgSingle.classList.add('pane', 'imgSingle');
+        promArr.push(imgSingle.decode().then(() => { panel.append(imgSingle); }));
+        break;
+      }
+      case 'txtProps': {
+        const txtProps = addElement(panel, 'div', 'pane', 'txtProps');
+        for (prop of pane.data) {
+          const txtProp = addElement(txtProps, 'p', 'txtProp');
+          const txtVal = addElement(txtProps, 'p', 'txtVal');
+          txtProp.innerText = prop.prop;
+          txtVal.innerText = prop.val;
+          if (prop.prop == 'Nota Bene') {
+            txtProp.classList.add('noteProp');
+            txtVal.classList.add('noteVal');
+          }
+        }
+        promArr.push(Promise.resolve(txtProps));
+        break;
+      }
+    }
   }
+  return Promise.all(promArr);
 }
 
 // kan
@@ -47,20 +68,22 @@ const kan = {
 
 const tong = {
   dealCard() {
-    const card = kan.card;
-    if (card.front.shuffle) {
-      stakePanes('.front', shuffleArray(card.front.panes));
-    } else stakePanes('.front', card.front.panes);
-    if (card.back.shuffle) {
-      stakePanes('.back', shuffleArray(card.back.panes));
-    } else stakePanes('.back', card.back.panes);
+    const card = kan.card, frPanes = card.front.panes, bkPanes = card.back.panes;
+    const frWrap = qrySel('.front .panelWrap'), bkWrap = qrySel('.back .panelWrap');
+    frWrap.innerHTML = '';
+    bkWrap.innerHTML = '';
+    qrySel('.front > .panelFrame').scrollLeft = 0;
+    qrySel('.back > .panelFrame').scrollLeft = 0;
+    const frArr = card.front.shuffle ? shuffleArray(frPanes) : frPanes;
+    const bkArr = card.back.shuffle ? shuffleArray(bkPanes) : bkPanes;
+    return Promise.all([promisePanes(frWrap, frArr), promisePanes(bkWrap, bkArr)]);
   },
   iterate() {
     const contentWrap = qrySel('.content > .outerWrap');
     contentWrap.classList.remove('pivot');
     cssToggle(contentWrap, 'hideMe');
-    this.dealCard();
-    setTimeout(() => { cssToggle(contentWrap, 'hideMe'); }, 200);
+    Promise.resolve(this.dealCard())
+    .then(() => setTimeout(() => { cssToggle(contentWrap, 'hideMe'); }, 200));
   },
   reset() {
     const content = qrySel('.content');
@@ -111,48 +134,24 @@ const tong = {
 
 // retrieve and process data
 
-function genericCards() {
-  let cards = [];
-  let len = Math.floor(Math.random() * 12) + 7;
-  for (let i = 0; i <= len; i++) {
-    let card = {
-      id: i,
-      front: { panes: [], shuffle: true },
-      back: { panes: [], shuffle: false }
-    };
-    const iWrap = '<div class="pane infoWrap">';
-    let len2 = Math.floor(Math.random() * 5) + 5;
-    for (let j = 0; j < len2; j++) {
-      let pane = '<p>Card &#' + (i+65) + '</p>'
-                + '<p>Pane ' + j + '</p></div>';
-      card.front.panes.push(iWrap.concat(pane));
-    }
-    let back = '<p>id = ' + i + '</p>'
-              + '<p>no. of panes = ' + len2 + '</p></div>';
-    card.back.panes.push(iWrap.concat(back));
-    cards.push(card);
-  }
-  tong.initialize(cards);
-}
-
 function horticultureFlashCards() {
   const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
   fetch(src)
   .then(resp => resp.json())
   .then(json => {
     const imgRoot = json.imgRoot;
-    let cards = [];
+    const cards = [];
     for (plant of json.plants) {
-      let card = {
+      const card = {
         front: { panes: [], shuffle: true },
         back: { panes: [], shuffle: false }
       };
       for (image of plant.images) {
-        let pane = '<img class="pane" src=' + imgRoot.concat(image) + '>';
+        const pane = { type: 'imgSingle', data: imgRoot.concat(image) };
         card.front.panes.push(pane);
       }
-      let infoPane = '<div class="pane infoWrap">';
-      let displayNames = {
+      const infoPane = { type: 'txtProps', data: [] };
+      const displayNames = {
         group: 'Group',
         botanicalName: 'Botanical Name',
         commonName: 'Common Name',
@@ -160,18 +159,10 @@ function horticultureFlashCards() {
       }
       for (key of Object.keys(displayNames)) {
         if (plant[key]) {
-          if (key != 'note') {
-            let txt = '<p class="infoProp">' + displayNames[key] + '</p>'
-                    + '<p class="infoValue">' + plant[key] + '</p>';
-            infoPane = infoPane.concat(txt);
-          } else {
-            let txt = '<p class="infoProp noteProp">' + displayNames[key] + '</p>'
-                    + '<p class="infoValue noteVal">' + plant[key] + '</p>';
-            infoPane = infoPane.concat(txt);
-          }
+          const prop = { prop: displayNames[key], val: plant[key] };
+          infoPane.data.push(prop);
         }
       }
-      infoPane = infoPane.concat('</div>');
       card.back.panes.push(infoPane);
       cards.push(card);
     }
