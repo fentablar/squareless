@@ -250,7 +250,7 @@ section {
 
 .pane * { user-select: none; }
 
-img.pane {
+.imgSingle {
   box-shadow: 0 0 10px 4px rgb(var(--clr-imgShadow));
 }
 
