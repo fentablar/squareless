@@ -21,11 +21,8 @@ const qrySel = element => document.querySelector(element);
 const cssToggle = (element, css) => element.classList.toggle(css);
 
 const scaleImage = (img, parent) => {
-  const pstyle = window.getComputedStyle(parent);
-  const pw = pstyle.getPropertyValue('width');
-  const ph = pstyle.getPropertyValue('height');
-  const pWidth = pw.slice(0, pw.length - 2);
-  const pHeight = ph.slice(0, ph.length - 2);
+  const pWidth = parent.offsetWidth;
+  const pHeight = parent.offsetHeight;
   const pRatio = pWidth / pHeight;
   const iRatio = img.naturalWidth / img.naturalHeight;
   if (pRatio > iRatio) {
