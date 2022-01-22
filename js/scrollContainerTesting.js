@@ -38,6 +38,17 @@ const scaleImage = (img, parent) => {
   return img;
 }
 
+const scaleImageArray = (imgArray, parent) => {
+  for (img of imgArray) scaleImage(img, parent);
+  return imgArray;
+}
+
+const scaleOnResize = () => {
+  const imgArray = document.querySelectorAll('.imgSingle');
+  const parent = qrySel('.panel');
+  return scaleImageArray(imgArray, parent)
+}
+
 const promisePanes = (wrap, paneArr) => {
   const promArr = [];
   for (pane of paneArr) {
@@ -149,6 +160,7 @@ const tong = {
     setTimeout(() => { cssToggle(controls, 'showMe'); }, 250);
     this.dealCard();
     setTimeout(() => { cssToggle(content, 'showMe'); }, 400);
+    window.onresize = scaleOnResize;
   }
 }
 
