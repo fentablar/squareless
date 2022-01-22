@@ -241,8 +241,6 @@ section {
 }
 
 .pane {
-  height: auto;
-  width: auto;
   max-width: calc(var(--cardWidth) * .92);
   max-height: calc(var(--cardHeight) * .92);
   user-select: none;

@@ -20,6 +20,24 @@ const qrySel = element => document.querySelector(element);
 
 const cssToggle = (element, css) => element.classList.toggle(css);
 
+const scaleImage = (img, parent) => {
+  const pstyle = window.getComputedStyle(parent);
+  const pw = pstyle.getPropertyValue('width');
+  const ph = pstyle.getPropertyValue('height');
+  const pWidth = pw.slice(0, pw.length - 2);
+  const pHeight = ph.slice(0, ph.length - 2);
+  const pRatio = pWidth / pHeight;
+  const iRatio = img.naturalWidth / img.naturalHeight;
+  if (pRatio > iRatio) {
+    img.width = pHeight * iRatio;
+    img.height = pHeight;
+  } else {
+    img.width = pWidth;
+    img.height = pWidth / iRatio;
+  }
+  return img;
+}
+
 const promisePanes = (wrap, paneArr) => {
   const promArr = [];
   for (pane of paneArr) {
@@ -29,7 +47,9 @@ const promisePanes = (wrap, paneArr) => {
         const imgSingle = new Image();
         imgSingle.src = pane.data;
         imgSingle.classList.add('pane', 'imgSingle');
-        promArr.push(imgSingle.decode().then(() => { panel.append(imgSingle); }));
+        promArr.push(imgSingle.decode()
+          .then(() => { scaleImage(imgSingle, panel); })
+          .then(() => { panel.append(imgSingle); }));
         break;
       }
       case 'txtProps': {
