@@ -254,9 +254,9 @@ tong.initialize();
 
 
 // hoisted custom function is below
-// push formatted cards into predetermined array 
+// push formatted cards into predetermined array
 
-function horticultureFlashCards(arr) {
+function horticultureFlashCards(targetArray) {
   const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
   return fetch(src).then(resp => resp.json()).then(json => {
     const imgRoot = json.imgRoot;
@@ -283,7 +283,7 @@ function horticultureFlashCards(arr) {
         }
       }
       card.back.panes.push(infoPane);
-      arr.push(card);
+      targetArray.push(card);
     }
   });
 }

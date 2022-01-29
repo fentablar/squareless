@@ -257,7 +257,7 @@ tong.initialize();
 // return array of card objects fitting design mold
 // array is returned as resolved promise
 
-function horticultureFlashCards(arr) {
+function horticultureFlashCards(targetArray) {
   const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
   return fetch(src).then(resp => resp.json()).then(json => {
     const imgRoot = json.imgRoot;
@@ -284,7 +284,7 @@ function horticultureFlashCards(arr) {
         }
       }
       card.back.panes.push(infoPane);
-      arr.push(card);
+      targetArray.push(card);
     }
   });
 }
