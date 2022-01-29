@@ -254,8 +254,7 @@ tong.initialize();
 
 
 // hoisted custom function is below
-// return array of card objects fitting design mold
-// array is returned as resolved promise
+// push formatted cards into predetermined array 
 
 function horticultureFlashCards(arr) {
   const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
