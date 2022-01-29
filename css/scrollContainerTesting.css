@@ -95,14 +95,6 @@ body.dark {
   width: 50px;
 }
 
-.scroller {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 50px;
-  width: 50px;
-}
-
 main {
   background-color: rgb(var(--clr-bgMain));
   height: 100vh;

@@ -148,7 +148,20 @@ const jie = {
     return panels[tgtIdx];
   },
   frPanelTgt() { kan.frontPanel = jie.panelScrollTarget(jie.content.front); },
-  bkPanelTgt() { kan.backPanel = jie.panelScrollTarget(jie.content.back); }
+  bkPanelTgt() { kan.backPanel = jie.panelScrollTarget(jie.content.back); },
+  changeOrient() {
+    const fp = kan.frontPanel;
+    const bp = kan.backPanel;
+    const frFrame = jie.content.front.frame,
+          bkFrame = jie.content.back.frame;
+    if (jie.portOrient.matches) {
+      if (fp) frFrame.scrollLeft = fp.offsetLeft;
+      if (bp) bkFrame.scrollLeft = bp.offsetLeft;
+    } else {
+      if (fp) frFrame.scrollTop = fp.offsetTop;
+      if (bp) bkFrame.scrollTop = bp.offsetTop;
+    }
+  }
 }
 
 
@@ -208,19 +221,7 @@ const tong = {
     const flipCard = () => jie.toggle(contentWrap, 'pivot');
     controls.darkMode.onclick = toggleDarkMode;
     contentWrap.onclick = flipCard;
-    jie.portOrient.onchange = () => {
-      const fp = kan.frontPanel;
-      const bp = kan.backPanel;
-      const frFrame = jie.content.front.frame,
-            bkFrame = jie.content.back.frame;
-      if (jie.portOrient.matches) {
-        if (fp) frFrame.scrollLeft = fp.offsetLeft;
-        if (bp) bkFrame.scrollLeft = bp.offsetLeft;
-      } else {
-        if (fp) frFrame.scrollTop = fp.offsetTop;
-        if (bp) bkFrame.scrollTop = bp.offsetTop;
-      }
-    }
+    jie.portOrient.onchange = jie.changeOrient;
   },
   initialize() {
     const content = jie.content.section;
