@@ -1,125 +1,189 @@
 
-const shuffleArray = arr => {
-  const len = arr.length;
-  let shuffled = [];
-  while (shuffled.length < len) {
-    let rnd = Math.floor(Math.random() * len);
-    if (!shuffled.includes(arr[rnd])) shuffled.push(arr[rnd]);
-  }
-  return shuffled;
-}
-
-const addElement = (parent, elem, ...classes) => {
-  const newElem = document.createElement(elem);
-  if (classes.length) newElem.classList.add(...classes);
-  if (parent) parent.append(newElem);
-  return newElem;
-}
-
-const qrySel = element => document.querySelector(element);
-
-const cssToggle = (element, css) => element.classList.toggle(css);
-
-const scaleImage = (img, parent) => {
-  const pWidth = parent.offsetWidth;
-  const pHeight = parent.offsetHeight;
-  const pRatio = pWidth / pHeight;
-  const iRatio = img.naturalWidth / img.naturalHeight;
-  if (pRatio > iRatio) {
-    img.width = pHeight * iRatio;
-    img.height = pHeight;
-  } else {
-    img.width = pWidth;
-    img.height = pWidth / iRatio;
-  }
-  return img;
-}
-
-const scaleImageArray = (imgArray, parent) => {
-  for (img of imgArray) scaleImage(img, parent);
-  return imgArray;
-}
-
-const scaleOnResize = () => {
-  const imgArray = document.querySelectorAll('.imgSingle');
-  const parent = qrySel('.panel');
-  return scaleImageArray(imgArray, parent)
-}
-
-const promisePanes = (wrap, paneArr) => {
-  const promArr = [];
-  for (pane of paneArr) {
-    const panel = addElement(wrap, 'div', 'panel');
-    switch (pane.type) {
-      case 'imgSingle': {
-        const imgSingle = new Image();
-        imgSingle.src = pane.data;
-        imgSingle.classList.add('pane', 'imgSingle');
-        promArr.push(imgSingle.decode()
-          .then(() => { scaleImage(imgSingle, panel); })
-          .then(() => { panel.append(imgSingle); }));
-        break;
-      }
-      case 'txtProps': {
-        const txtProps = addElement(panel, 'div', 'pane', 'txtProps');
-        for (prop of pane.data) {
-          const txtProp = addElement(txtProps, 'p', 'txtProp');
-          const txtVal = addElement(txtProps, 'p', 'txtVal');
-          txtProp.innerText = prop.prop;
-          txtVal.innerText = prop.val;
-          if (prop.prop == 'Nota Bene') {
-            txtProp.classList.add('noteProp');
-            txtVal.classList.add('noteVal');
-          }
-        }
-        promArr.push(Promise.resolve(txtProps));
-        break;
-      }
+const jing = {
+  shuffleArray(array) {
+    const len = array.length;
+    let shuffled = [];
+    while (shuffled.length < len) {
+      let rnd = Math.floor(Math.random() * len);
+      if (!shuffled.includes(array[rnd])) shuffled.push(array[rnd]);
     }
+    return shuffled;
+  },
+  addElement(parent, element, ...classes) {
+    const newElement = document.createElement(element);
+    if (classes.length) newElement.classList.add(...classes);
+    if (parent) parent.append(newElement);
+    return newElement;
   }
-  return Promise.all(promArr);
 }
 
-// kan
 
 const kan = {
   set cards(src) { this._deck = src; },
   get cards() { return this._deck; },
-  set shuffle(arr) { this._mix = shuffleArray(arr); },
+  set shuffle(arr) { this._mix = jing.shuffleArray(arr); },
   get shuffle() { return this._mix; },
-  set idx(val) { if (typeof val == 'number') this._mark = val; },
+  set idx(num) { if (typeof num == 'number') this._mark = num; },
   get idx() { return this._mark; },
-  get card() { return this.shuffle[this.idx]; }
+  get card() { return this.shuffle[this.idx]; },
+  set frontPanel(panel) { this._fp = panel; },
+  get frontPanel() { return this._fp; },
+  set backPanel(panel) { this._bp = panel; },
+  get backPanel() { return this._bp; },
+  set scrolling(bool) { this._lock = bool; },
+  get scrolling() { return this._lock; }
 }
 
-// tong
+
+const jie = {
+  get portOrient() { return window.matchMedia('(orientation: portrait)'); },
+  get content() { return {
+    section: jie.qSel('.content'),
+    outerWrap: jie.qSel('.content > .outerWrap'),
+    front: {
+      frame: jie.qSel('.front > .panelFrame'),
+      wrap: jie.qSel('.front .panelWrap'),
+      panels: document.querySelectorAll('.front .panel')
+    },
+    back: {
+      frame: jie.qSel('.back > .panelFrame'),
+      wrap: jie.qSel('.back .panelWrap'),
+      panels: document.querySelectorAll('.back .panel')
+    },
+    oneImgPanes: document.querySelectorAll('.imgSingle')
+  }},
+  get controls() { return {
+    section: jie.qSel('.controls'),
+    buttons: {
+      prev: jie.qSel('button.prev'),
+      next: jie.qSel('button.next'),
+      reset: jie.qSel('button.reset')
+    },
+    darkMode: jie.qSel('.darkMode')
+  }},
+  qSel(element) { return document.querySelector(element); },
+  toggle(element, cssClass) { return element.classList.toggle(cssClass); },
+  scaleImg(img, container) {
+    const cWidth = container.offsetWidth * 0.92,
+          cHeight = container.offsetHeight * 0.92,
+          iWidth = img.naturalWidth,
+          iHeight = img.naturalHeight,
+          cRatio = cWidth / cHeight,
+          iRatio = iWidth / iHeight;
+
+    if (cRatio > iRatio) {
+      img.width = cHeight * iRatio;
+      img.height = cHeight;
+    } else {
+      img.width = cWidth;
+      img.height = cWidth /iRatio;
+    }
+  },
+  scaleImgPanes() {
+    const imgArr = jie.content.oneImgPanes,
+          panel = jie.qSel('.panel');
+    for (img of imgArr) jie.scaleImg(img, panel);
+  },
+  promisePanes(wrap, paneArr) {
+    const promArr = [];
+    for (pane of paneArr) {
+      const panel = jing.addElement(wrap, 'div', 'panel');
+      switch (pane.type) {
+        case 'imgSingle': {
+          const imgSingle = new Image();
+          imgSingle.src = pane.data;
+          imgSingle.classList.add('pane', 'imgSingle');
+          promArr.push(imgSingle.decode()
+            .then(() => { jie.scaleImg(imgSingle, panel); })
+            .then(() => { panel.append(imgSingle); }));
+          break;
+        }
+        case 'txtProps': {
+          const txtProps = jing.addElement(panel, 'div', 'pane', 'txtProps');
+          for (prop of pane.data) {
+            const txtProp = jing.addElement(txtProps, 'p', 'txtProp');
+            const txtVal = jing.addElement(txtProps, 'p', 'txtVal');
+            txtProp.innerText = prop.prop;
+            txtVal.innerText = prop.val;
+            if (prop.prop == 'Nota Bene') {
+              txtProp.classList.add('noteProp');
+              txtVal.classList.add('noteVal');
+            }
+          }
+          promArr.push(Promise.resolve(txtProps));
+          break;
+        }
+      }
+    }
+    return Promise.all(promArr);
+  },
+  clearCard() {
+    jie.content.front.wrap.innerHTML = '';
+    jie.content.back.wrap.innerHTML = '';
+    jie.content.front.frame.scrollLeft = 0;
+    jie.content.back.frame.scrollLeft = 0;
+  },
+  dealCard() {
+    const card = kan.card, frPanes = card.front.panes, bkPanes = card.back.panes,
+          frWrap = jie.content.front.wrap, bkWrap = jie.content.back.wrap,
+          frArr = card.front.shuffle ? jing.shuffleArray(frPanes) : frPanes,
+          bkArr = card.back.shuffle ? jing.shuffleArray(bkPanes) : bkPanes;
+    return Promise.all([jie.promisePanes(frWrap, frArr),
+                        jie.promisePanes(bkWrap, bkArr)]);
+  },
+  panelScrollTarget(side) {
+    const port = jie.portOrient.matches,
+          frame = side.frame, panels = side.panels,
+          pos = port ? frame.scrollLeft : frame.scrollTop;
+    let tgtIdx = 0, tgtDist = 999999;
+    for (let i = 0; i < panels.length; i++) {
+      const panel = panels[i],
+            offset = port ? panel.offsetLeft : panel.offsetTop,
+            dist = Math.abs(offset - pos);
+      if (dist < tgtDist) {
+        tgtIdx = i;
+        tgtDist = dist;
+      }
+    }
+    return panels[tgtIdx];
+  },
+  frPanelTgt() { kan.frontPanel = jie.panelScrollTarget(jie.content.front); },
+  bkPanelTgt() { kan.backPanel = jie.panelScrollTarget(jie.content.back); }
+}
+
 
 const tong = {
-  dealCard() {
-    const card = kan.card, frPanes = card.front.panes, bkPanes = card.back.panes;
-    const frWrap = qrySel('.front .panelWrap'), bkWrap = qrySel('.back .panelWrap');
-    frWrap.innerHTML = '';
-    bkWrap.innerHTML = '';
-    qrySel('.front > .panelFrame').scrollLeft = 0;
-    qrySel('.back > .panelFrame').scrollLeft = 0;
-    const frArr = card.front.shuffle ? shuffleArray(frPanes) : frPanes;
-    const bkArr = card.back.shuffle ? shuffleArray(bkPanes) : bkPanes;
-    return Promise.all([promisePanes(frWrap, frArr), promisePanes(bkWrap, bkArr)]);
+  addScrollEvents() {
+    const front = jie.content.front, back = jie.content.back;
+    front.frame.addEventListener('scroll', jie.frPanelTgt, { passive: true });
+    back.frame.addEventListener('scroll', jie.bkPanelTgt, { passive: true });
+  },
+  rmvScrollEvents() {
+    const front = jie.content.front, back = jie.content.back;
+    front.frame.removeEventListener('scroll', jie.frPanelTgt, { passive: true });
+    back.frame.removeEventListener('scroll', jie.bkPanelTgt, { passive: true });
   },
   iterate() {
-    const contentWrap = qrySel('.content > .outerWrap');
+    tong.rmvScrollEvents();
+    const contentWrap = jie.content.outerWrap;
     contentWrap.classList.remove('pivot');
-    cssToggle(contentWrap, 'hideMe');
-    Promise.resolve(this.dealCard())
-    .then(() => setTimeout(() => { cssToggle(contentWrap, 'hideMe'); }, 200));
+    jie.toggle(contentWrap, 'hideMe');
+    jie.clearCard();
+    kan.frontPanel = null;
+    kan.backPanel = null;
+    kan.scrolling = false;
+    jie.dealCard().then(() => {
+      setTimeout(() => { jie.toggle(contentWrap, 'hideMe'); }, 200);
+      tong.addScrollEvents();
+    });
   },
   reset() {
-    const content = qrySel('.content');
-    cssToggle(content, 'showMe');
+    const content = jie.content.section;
+    jie.toggle(content, 'showMe');
     kan.idx = 0;
     kan.shuffle = kan.cards;
     tong.iterate();
-    setTimeout(() => { cssToggle(content, 'showMe'); }, 300);
+    setTimeout(() => { jie.toggle(content, 'showMe'); }, 300);
   },
   prev() {
     const n = kan.idx - 1;
@@ -135,33 +199,97 @@ const tong = {
       tong.iterate();
     } else alert('No more cards to show');
   },
-  initialize(src) {
-    const content = qrySel('.content');
-    const controls = qrySel('.controls');
-    const contentWrap = qrySel('.content > .outerWrap');
-    kan.cards = src;
-    kan.idx = 0;
-    kan.shuffle = kan.cards;
-    const addClick = (element, func) => {
-      element.addEventListener('click', func);
-    };
-    addClick(qrySel('.darkMode'), function () {
-      cssToggle(document.body, 'dark');
+  awaitUserAction() {
+    const controls = jie.controls, contentWrap = jie.content.outerWrap;
+    for (btn of Object.keys(controls.buttons)) {
+      controls.buttons[btn].onclick = tong[btn];
+    }
+    const toggleDarkMode = () => jie.toggle(document.body, 'dark');
+    const flipCard = () => jie.toggle(contentWrap, 'pivot');
+    controls.darkMode.onclick = toggleDarkMode;
+    contentWrap.onclick = flipCard;
+    jie.portOrient.onchange = () => {
+      const fp = kan.frontPanel;
+      const bp = kan.backPanel;
+      const frFrame = jie.content.front.frame,
+            bkFrame = jie.content.back.frame;
+      if (jie.portOrient.matches) {
+        if (fp) frFrame.scrollLeft = fp.offsetLeft;
+        if (bp) bkFrame.scrollLeft = bp.offsetLeft;
+      } else {
+        if (fp) frFrame.scrollTop = fp.offsetTop;
+        if (bp) bkFrame.scrollTop = bp.offsetTop;
+      }
+    }
+  },
+  initialize() {
+    const content = jie.content.section;
+    const controls = jie.controls.section;
+    const contentWrap = jie.content.outerWrap;
+    const deck = [];
+
+    // hoisted custom function is referenced here
+    horticultureFlashCards(deck).then(() => {
+
+      // resume abstraction
+      kan.idx = 0;
+      kan.cards = deck;
+      kan.shuffle = kan.cards;
+      kan.scrolling = false;
+      tong.awaitUserAction();
+      setTimeout(() => { jie.toggle(controls, 'showMe'); }, 250);
+      jie.dealCard().then(() => {
+        setTimeout(() => { jie.toggle(content, 'showMe'); }, 400);
+        window.onresize = jie.scaleImgPanes;
+        tong.addScrollEvents();
+      });
     });
-    addClick(qrySel('button.prev'), this.prev);
-    addClick(qrySel('button.next'), this.next);
-    addClick(qrySel('button.reset'), this.reset);
-    addClick(contentWrap, function () {
-      cssToggle(contentWrap, 'pivot');
-    });
-    setTimeout(() => { cssToggle(controls, 'showMe'); }, 250);
-    this.dealCard();
-    setTimeout(() => { cssToggle(content, 'showMe'); }, 400);
-    window.onresize = scaleOnResize;
   }
 }
 
-// retrieve and process data
+// fire it up
+
+tong.initialize();
+
+
+// hoisted custom function is below
+// return array of card objects fitting design mold
+// array is returned as resolved promise
+
+function horticultureFlashCards(arr) {
+  const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
+  return fetch(src).then(resp => resp.json()).then(json => {
+    const imgRoot = json.imgRoot;
+    for (plant of json.plants) {
+      const card = {
+        front: { panes: [], shuffle: true },
+        back: { panes: [], shuffle: false }
+      };
+      for (image of plant.images) {
+        const pane = { type: 'imgSingle', data: imgRoot.concat(image) };
+        card.front.panes.push(pane);
+      }
+      const infoPane = { type: 'txtProps', data: [] };
+      const displayNames = {
+        group: 'Group',
+        botanicalName: 'Botanical Name',
+        commonName: 'Common Name',
+        note: 'Nota Bene'
+      }
+      for (key of Object.keys(displayNames)) {
+        if (plant[key]) {
+          const prop = { prop: displayNames[key], val: plant[key] };
+          infoPane.data.push(prop);
+        }
+      }
+      card.back.panes.push(infoPane);
+      arr.push(card);
+    }
+  });
+}
+
+
+
 
 function genericCards() {
   const cards = [];
@@ -186,41 +314,3 @@ function genericCards() {
   }
   tong.initialize(cards);
 }
-
-function horticultureFlashCards() {
-  const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
-  fetch(src)
-  .then(resp => resp.json())
-  .then(json => {
-    const imgRoot = json.imgRoot;
-    const cards = [];
-    for (plant of json.plants) {
-      const card = {
-        front: { panes: [], shuffle: true },
-        back: { panes: [], shuffle: false }
-      };
-      for (image of plant.images) {
-        const pane = { type: 'imgSingle', data: imgRoot.concat(image) };
-        card.front.panes.push(pane);
-      }
-      const infoPane = { type: 'txtProps', data: [] };
-      const displayNames = {
-        group: 'Group',
-        botanicalName: 'Botanical Name',
-        commonName: 'Common Name',
-        note: 'Nota Bene'
-      }
-      for (key of Object.keys(displayNames)) {
-        if (plant[key]) {
-          const prop = { prop: displayNames[key], val: plant[key] };
-          infoPane.data.push(prop);
-        }
-      }
-      card.back.panes.push(infoPane);
-      cards.push(card);
-    }
-    tong.initialize(cards);
-  });
-}
-
-horticultureFlashCards();

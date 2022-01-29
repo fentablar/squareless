@@ -29,7 +29,7 @@
   /* fixed dimensions */
   --border-content: 1px;
   --padding-content: 6px;
-  --edge-content: calc((var(--border-content) + var(--padding-content)) * 2);
+  --edge-content: calc(var(--border-content) * 2);
   --cardHeight: calc(var(--height-content) - var(--edge-content));
   --cardWidth: calc(var(--width-content) - var(--edge-content));
 
@@ -91,6 +91,14 @@ body.dark {
   position: absolute;
   top: 0;
   left: 0;
+  height: 50px;
+  width: 50px;
+}
+
+.scroller {
+  position: absolute;
+  top: 0;
+  right: 0;
   height: 50px;
   width: 50px;
 }
@@ -163,7 +171,6 @@ section {
 
 .front {
   background-color: rgb(var(--clr-bgFront));
-  padding: var(--padding-content);
 }
 
 .back {
@@ -241,8 +248,8 @@ section {
 }
 
 .pane {
-  max-width: calc(var(--cardWidth) * .95);
-  max-height: calc(var(--cardHeight) * .95);
+  max-width: calc(var(--cardWidth) * .92);
+  max-height: calc(var(--cardHeight) * .92);
   user-select: none;
 }
 
