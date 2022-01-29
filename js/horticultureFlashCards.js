@@ -288,30 +288,3 @@ function horticultureFlashCards(arr) {
     }
   });
 }
-
-
-
-
-function genericCards() {
-  const cards = [];
-  const len = Math.floor(Math.random() * 12) + 7;
-  for (let i = 0; i <= len; i++) {
-    const card = {
-      id: i,
-      front: { panes: [], shuffle: true },
-      back: { panes: [], shuffle: false }
-    };
-    const iWrap = '<div class="pane infoWrap">';
-    const len2 = Math.floor(Math.random() * 5) + 5;
-    for (let j = 0; j < len2; j++) {
-      const pane = '<p>Card &#' + (i+65) + '</p>'
-                + '<p>Pane ' + j + '</p></div>';
-      card.front.panes.push(iWrap.concat(pane));
-    }
-    let back = '<p>id = ' + i + '</p>'
-              + '<p>no. of panes = ' + len2 + '</p></div>';
-    card.back.panes.push(iWrap.concat(back));
-    cards.push(card);
-  }
-  tong.initialize(cards);
-}
