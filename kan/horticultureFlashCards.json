@@ -48,6 +48,120 @@
 			]
 		},
 		{
+			"commonName": "Blue Atlas Cedar",
+			"botanicalName": "Cedrus atlantica ‘Glauca’",
+			"group": "Conifer Trees",
+			"images": [
+				"blueAtlasCedar001.png", "blueAtlasCedar002.png", "blueAtlasCedar003.png",
+				"blueAtlasCedar004.png", "blueAtlasCedar005.png"
+			]
+		},
+		{
+			"commonName": "Deodar Cedar",
+			"botanicalName": "Cedrus deodara",
+			"group": "Conifer Trees",
+			"images": [
+				"deodarCedar001.png", "deodarCedar002.png", "deodarCedar003.png",
+				"deodarCedar004.png", "deodarCedar005.png"
+			]
+		},
+		{
+			"commonName": "Weeping Alaska Cedar",
+			"botanicalName": "Chamaecyparis nootkatensis ‘Pendula’",
+			"group": "Conifer Trees",
+			"images": [
+				"alaskaCedar001.png", "alaskaCedar002.png", "alaskaCedar003.png",
+				"alaskaCedar004.png", "alaskaCedar005.png", "alaskaCedar006.png"
+			],
+			"note": "name check"
+		},
+		{
+			"commonName": "Slender Hinoki Falsecypress",
+			"botanicalName": "Chamaecyparis obtusa ‘Gracilis’",
+			"group": "Conifer Trees",
+			"images": [
+				"hinokiFalsecypress001.png", "hinokiFalsecypress001.png",
+				"hinokiFalsecypress001.png", "hinokiFalsecypress001.png",
+				"hinokiFalsecypress001.png", "hinokiFalsecypress001.png"
+			]
+		},
+		{
+			"commonName": "Plume Cedar",
+			"botanicalName": "Cryptomeria japonica ‘Elegans’",
+			"group": "Conifer Trees",
+			"images": [
+				"plumeCedar001.png", "plumeCedar002.png"
+			],
+			"note": "more images needed"
+		},
+		{
+			"commonName": "Sekkan-sugi Cryptomeria",
+			"botanicalName": "Cryptomeria japonica ‘Sekkan-sugi’",
+			"group": "Conifer Trees",
+			"images": [
+				"sekkanSugi001.png", "sekkanSugi002.png", "sekkanSugi003.png",
+				"sekkanSugi004.png"
+			],
+			"note": "more images needed"
+		},
+		{
+			"commonName": "Leyland Cypress",
+			"botanicalName": "X Cupressocyparis leylandii",
+			"group": "Conifer Trees",
+			"images": [
+				"leylandCypress001.png", "leylandCypress002.png"
+			],
+			"note": "name check; more images needed"
+		},
+		{
+			"commonName": "Hollywood Juniper",
+			"botanicalName": "Juniperus chinensis ‘Kaizuka’",
+			"group": "Conifer Trees",
+			"images": [
+				"hollywoodJuniper001.png", "hollywoodJuniper002.png",
+				"hollywoodJuniper003.png", "hollywoodJuniper004.png"
+			],
+			"note": "more images needed"
+		},
+		{
+			"commonName": "European Larch",
+			"botanicalName": "Larix decidua ‘Pendula’",
+			"group": "Conifer Trees",
+			"images": [
+				"europeanLarch001.png", "europeanLarch002.png", "europeanLarch003.png",
+				"europeanLarch004.png"
+			],
+			"note": "more images needed"
+		},
+		{
+			"commonName": "Dawn Redwood",
+			"botanicalName": "Metasequoia glyptostroboides",
+			"group": "Conifer Trees",
+			"images": [
+				"dawnRedwood001.png", "dawnRedwood002.png", "dawnRedwood003.png",
+				"dawnRedwood004.png", "dawnRedwood005.png", "dawnRedwood006.png",
+				"dawnRedwood007.png", "dawnRedwood008.png", "dawnRedwood009.png",
+				"dawnRedwood010.png", "dawnRedwood011.png", "dawnRedwood012.png",
+				"dawnRedwood013.png", "dawnRedwood014.png", "dawnRedwood015.png",
+				"dawnRedwood016.png", "dawnRedwood017.png", "dawnRedwood018.png",
+				"dawnRedwood019.png", "dawnRedwood020.png", "dawnRedwood021.png",
+				"dawnRedwood022.png", "dawnRedwood023.png", "dawnRedwood024.png",
+				"dawnRedwood025.png"
+			]
+		},
+		{
+			"commonName": "Serbian Spruce",
+			"botanicalName": "Picea omorika",
+			"group": "Conifer Trees",
+			"images": [
+				"serbianSpruce001.png", "serbianSpruce002.png", "serbianSpruce003.png",
+				"serbianSpruce004.png", "serbianSpruce005.png", "serbianSpruce006.png",
+				"serbianSpruce007.png", "serbianSpruce008.png", "serbianSpruce009.png",
+				"serbianSpruce010.png", "serbianSpruce011.png", "serbianSpruce012.png",
+				"serbianSpruce013.png"
+			]
+		},
+		{
 			"commonName": "Sungold Falsecypress",
 			"botanicalName": "Chamaecyparis pisifera ‘Sungold’",
 			"group": "Conifer Shrubs",

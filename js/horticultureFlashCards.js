@@ -257,7 +257,7 @@ tong.initialize();
 // push formatted cards into predetermined array
 
 function horticultureFlashCards(targetArray) {
-  const src = 'https://fentablar.github.io/squareless/kan/horticultureFlashCards.json';
+  const src = '../kan/horticultureFlashCards.json';
   return fetch(src).then(resp => resp.json()).then(json => {
     const imgRoot = json.imgRoot;
     for (plant of json.plants) {
