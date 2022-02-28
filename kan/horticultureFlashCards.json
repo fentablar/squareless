@@ -1,6 +1,6 @@
 {
 	"dataName": "Horticulture Flash Cards",
-	"imgRoot": "https://res.cloudinary.com/fentablar/image/upload/v1632844188/horticultureFlashCards/",
+	"imgRoot": "https://res.cloudinary.com/fentablar/image/upload/horticultureFlashCards/",
 	"plants": [{
 			"commonName": "Grand Fir",
 			"botanicalName": "Abies grandis",
@@ -46,6 +46,12 @@
 				"incenseCedar007.png", "incenseCedar008.png", "incenseCedar009.png",
 				"incenseCedar010.png", "incenseCedar011.png", "incenseCedar012.png"
 			]
+		},
+		{
+			"commonName": ,
+			"botanicalName": ,
+			"group": ,
+			"images": []
 		},
 		{
 			"commonName": "Sungold Falsecypress",
