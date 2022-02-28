@@ -13,6 +13,47 @@
 			]
 		},
 		{
+			"commonName": "Alpine Fir",
+			"botanicalName": "Abies lasiocarpa",
+			"group": "Conifer Trees",
+			"images": [
+				"alpineFir001.png", "alpineFir002.png", "alpineFir003.png",
+				"alpineFir004.png", "alpineFir005.png", "alpineFir006.png",
+				"alpineFir007.png", "alpineFir008.png", "alpineFir009.png",
+				"alpineFir010.png", "alpineFir011.png"
+			],
+			"note": "may be problematic due to durability, pests, diseases, or invasiveness"
+		},
+		{
+			"commonName": "Noble Fir",
+			"botanicalName": "Abies procera",
+			"group": "Conifer Trees",
+			"images": [
+				"nobleFir001.png", "nobleFir002.png", "nobleFir003.png",
+				"nobleFir004.png", "nobleFir005.png", "nobleFir006.png",
+				"nobleFir007.png", "nobleFir008.png", "nobleFir009.png",
+				"nobleFir010.png", "nobleFir011.png", "nobleFir012.png",
+				"nobleFir013.png"
+			]
+		},
+		{
+			"commonName": "Incense Cedar",
+			"botanicalName": "Calocedrus decurrens",
+			"group": "Conifer Trees",
+			"images": [
+				"incenseCedar001.png", "incenseCedar002.png", "incenseCedar003.png",
+				"incenseCedar004.png", "incenseCedar005.png", "incenseCedar006.png",
+				"incenseCedar007.png", "incenseCedar008.png", "incenseCedar009.png",
+				"incenseCedar010.png", "incenseCedar011.png", "incenseCedar012.png"
+			]
+		},
+		{
+			"commonName": ,
+			"botanicalName": ,
+			"group": ,
+			"images": []
+		},
+		{
 			"commonName": "Sungold Falsecypress",
 			"botanicalName": "Chamaecyparis pisifera ‘Sungold’",
 			"group": "Conifer Shrubs",
