@@ -311,6 +311,107 @@
 			]
 		},
 		{
+			"commonName": "Blue Rug Juniper",
+			"botanicalName": "Juniperus horizontalis ‘Wiltoni’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"blueRugJuniper001.png", "blueRugJuniper002.png",
+				"blueRugJuniper003.png", "blueRugJuniper004.png"
+			],
+			"note": "name check"
+		},
+		{
+			"commonName": "Japanese Garden Juniper",
+			"botanicalName": "Juniperus procumbens ‘Nana’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"japaneseGardenJuniper001.png", "japaneseGardenJuniper002.png",
+				"japaneseGardenJuniper003.png", "japaneseGardenJuniper004.png",
+				"japaneseGardenJuniper005.png"
+			]
+		},
+		{
+			"commonName": "Tam Juniper",
+			"botanicalName": "Juniperus sabina ‘Tamariscifolia’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"tamJuniper001.png", "tamJuniper002.png"
+			],
+			"note": "more images needed; may be problematic due to durability, pests, diseases, or invasiveness"
+		},
+		{
+			"commonName": "Blue Star Juniper",
+			"botanicalName": "Juniperus squamata ‘Blue Star’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"blueStarJuniper001.png", "blueStarJuniper002.png",
+				"blueStarJuniper003.png", "blueStarJuniper004.png"
+			]
+		},
+		{
+			"commonName": "Bird’s Nest Spruce",
+			"botanicalName": "Picea abies ‘Nidiformis’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"birdsNestSpruce001.png", "birdsNestSpruce002.png",
+				"birdsNestSpruce003.png", "birdsNestSpruce004.png"
+			]
+		},
+		{
+			"commonName": "Weeping Norway Spruce",
+			"botanicalName": "Picea abies ‘Pendula’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"weepingNorwaySpruce001.png", "weepingNorwaySpruce002.png",
+				"weepingNorwaySpruce003.png", "weepingNorwaySpruce004.png"
+			]
+		},
+		{
+			"commonName": "Dwarf Alberta Spruce",
+			"botanicalName": "Picea glauca ‘Albertiana’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"dwarfAlbertaSpruce001.png"
+			],
+			"note": "more images needed; may be problematic due to durability, pests, diseases, or invasiveness"
+		},
+		{
+			"commonName": "Dwarf Mugo Pine",
+			"botanicalName": "Pinus mugo mugo",
+			"group": "Conifer Shrubs",
+			"images": [
+				"dwarfMugoPine001.png", "dwarfMugoPine002.png", "dwarfMugoPine003.png",
+				"dwarfMugoPine004.png"
+			]
+		},
+		{
+			"commonName": "Dwarf White Pine",
+			"botanicalName": "Pinus strobus ‘Nana’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"dwarfWhitePine001.png", "dwarfWhitePine002.png",
+				"dwarfWhitePine003.png", "dwarfWhitePine004.png"
+			]
+		},
+		{
+			"commonName": "Spreading English Yew",
+			"botanicalName": "Taxus baccata ‘Repandens’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"spreadingEnglishYew001.png", "spreadingEnglishYew002.png",
+				"spreadingEnglishYew003.png", "spreadingEnglishYew004.png"
+			]
+		},
+		{
+			"commonName": "Irish Yew",
+			"botanicalName": "Taxus baccata ‘Stricta’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"irishYew001.png", "irishYew002.png"
+			],
+			"note": "name check; more images needed"
+		},
+		{
 			"commonName": "Madrona; Pacific Madrone",
 			"botanicalName": "Arbutus menziesii",
 			"group": "Broadleaf Evergreen Trees",
