@@ -412,6 +412,37 @@
 			"note": "name check; more images needed"
 		},
 		{
+			"commonName": "Dwarf Deerhorn Cedar",
+			"botanicalName": "Thujopsis dolobrata ‘Nana’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"dwarfDeerhornCedar001.png", "dwarfDeerhornCedar002.png"
+			],
+			"note": "more images needed"
+		},
+		{
+			"commonName": "Weeping Canadian Hemlock",
+			"botanicalName": "Tsuga canadensis ‘Pendula’",
+			"group": "Conifer Shrubs",
+			"images": [
+				"weepingCanadianHemlock001.png", "weepingCanadianHemlock002.png",
+				"weepingCanadianHemlock003.png"
+			]
+		},
+		{
+			"commonName": "Southern Magnolia",
+			"botanicalName": "Magnolia grandiflora",
+			"group": "Broadleaf Evergreen Trees",
+			"images": [
+				"southernMagnolia001.png", "southernMagnolia002.png",
+				"southernMagnolia003.png", "southernMagnolia004.png",
+				"southernMagnolia005.png", "southernMagnolia006.png",
+				"southernMagnolia007.png", "southernMagnolia008.png",
+				"southernMagnolia009.png", "southernMagnolia010.png",
+				"southernMagnolia011.png", "southernMagnolia012.png",
+			]
+		},
+		{
 			"commonName": "Madrona; Pacific Madrone",
 			"botanicalName": "Arbutus menziesii",
 			"group": "Broadleaf Evergreen Trees",
