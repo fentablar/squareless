@@ -162,6 +162,146 @@
 			]
 		},
 		{
+			"commonName": "Blue Colorado Spruce",
+			"botanicalName": "Picea pungens ‘Glauca’",
+			"group": "Conifer Trees",
+			"images": [
+				"blueColoradoSpruce001.png", "blueColoradoSpruce002.png",
+				"blueColoradoSpruce003.png", "blueColoradoSpruce004.png",
+				"blueColoradoSpruce005.png"
+			],
+			"note": "name check; may be problematic due to durability, pests, diseases, or invasiveness"
+		},
+		{
+			"commonName": "Shore Pine",
+			"botanicalName": "Pinus contorta subsp. contorta",
+			"group": "Conifer Trees",
+			"images": [
+				"shorePine001.png", "shorePine002.png", "shorePine003.png",
+				"shorePine004.png", "shorePine005.png", "shorePine006.png",
+				"shorePine007.png", "shorePine008.png", "shorePine009.png"
+			]
+		},
+		{
+			"commonName": "Vanderwolf’s Pyramid Limber Pine",
+			"botanicalName": "Pinus flexilis ‘Vanderwolf’s Pyramid’",
+			"group": "Conifer Trees",
+			"images": [
+				"vanderwolfLimberPine001.png", "vanderwolfLimberPine002.png",
+				"vanderwolfLimberPine003.png", "vanderwolfLimberPine004.png"
+			]
+		},
+		{
+			"commonName": "Austrian Pine",
+			"botanicalName": "Pinus nigra",
+			"group": "Conifer Trees",
+			"images": [
+				"austrianPine001.png", "austrianPine002.png", "austrianPine003.png",
+				"austrianPine004.png", "austrianPine005.png"
+			],
+			"note": "more images needed"
+		},
+		{
+			"commonName": "Scotch Pine",
+			"botanicalName": "Pinus sylvestris",
+			"group": "Conifer Trees",
+			"images": [
+				"scotchPine001.png", "scotchPine002.png", "scotchPine003.png",
+				"scotchPine004.png"
+			]
+		},
+		{
+			"commonName": "Douglas Fir",
+			"botanicalName": "Pseudotsuga menziesii",
+			"group": "Conifer Trees",
+			"images": [
+				"douglasFir001.png", "douglasFir002.png", "douglasFir003.png",
+				"douglasFir004.png", "douglasFir005.png", "douglasFir006.png",
+				"douglasFir007.png", "douglasFir008.png", "douglasFir009.png",
+				"douglasFir010.png", "douglasFir011.png", "douglasFir012.png",
+				"douglasFir013.png", "douglasFir014.png", "douglasFir015.png",
+				"douglasFir016.png", "douglasFir017.png", "douglasFir018.png",
+				"douglasFir019.png", "douglasFir020.png"
+			]
+		},
+		{
+			"commonName": "Japanese Umbrella Pine",
+			"botanicalName": "Sciadopitys verticillata",
+			"group": "Conifer Trees",
+			"images": [
+				"japaneseUmbrellaPine001.png", "japaneseUmbrellaPine002.png",
+				"japaneseUmbrellaPine003.png", "japaneseUmbrellaPine004.png",
+				"japaneseUmbrellaPine005.png", "japaneseUmbrellaPine006.png",
+				"japaneseUmbrellaPine007.png", "japaneseUmbrellaPine008.png",
+				"japaneseUmbrellaPine009.png", "japaneseUmbrellaPine010.png"
+			]
+		},
+		{
+			"commonName": "Coast Redwood",
+			"botanicalName": "Sequoia sempervirens",
+			"group": "Conifer Trees",
+			"images": [
+				"coastRedwood001.png", "coastRedwood002.png", "coastRedwood003.png",
+				"coastRedwood004.png", "coastRedwood005.png", "coastRedwood006.png",
+				"coastRedwood007.png", "coastRedwood008.png", "coastRedwood009.png",
+				"coastRedwood010.png"
+			]
+		},
+		{
+			"commonName": "Weeping Giant Sequoia",
+			"botanicalName": "Sequoiadendron giganteum ‘Pendulum’",
+			"group": "Conifer Trees",
+			"images": [
+				"weepingGiantSequoia001.png", "weepingGiantSequoia002.png",
+				"weepingGiantSequoia003.png", "weepingGiantSequoia004.png",
+				"weepingGiantSequoia005.png", "weepingGiantSequoia006.png"
+			]
+		},
+		{
+			"commonName": "Emerald Green Arborvitae",
+			"botanicalName": "Thuja occidentalis ‘Emerald Green’",
+			"group": "Conifer Trees",
+			"images": [
+				"emeraldGreenArborvitae001.png", "emeraldGreenArborvitae002.png",
+				"emeraldGreenArborvitae003.png", "emeraldGreenArborvitae004.png",
+				"emeraldGreenArborvitae005.png"
+			]
+		},
+		{
+			"commonName": "Western Red Cedar",
+			"botanicalName": "Thuja plicata",
+			"group": "Conifer Trees",
+			"images": [
+				"westernRedCedar001.png", "westernRedCedar002.png",
+				"westernRedCedar003.png"
+			],
+			"note": "more images needed"
+		},
+		{
+			"commonName": "Western Hemlock",
+			"botanicalName": "Tsuga heterophylla",
+			"group": "Conifer Trees",
+			"images": [
+				"westernHemlock001.png", "westernHemlock002.png", "westernHemlock003.png",
+				"westernHemlock004.png", "westernHemlock005.png", "westernHemlock006.png",
+				"westernHemlock007.png", "westernHemlock008.png", "westernHemlock009.png",
+				"westernHemlock010.png", "westernHemlock011.png", "westernHemlock012.png",
+				"westernHemlock013.png", "westernHemlock014.png", "westernHemlock015.png",
+				"westernHemlock016.png", "westernHemlock017.png", "westernHemlock018.png"
+			]
+		},
+		{
+			"commonName": "Mountain Hemlock",
+			"botanicalName": "Tsuga mertensiana",
+			"group": "Conifer Trees",
+			"images": [
+				"mountainHemlock001.png", "mountainHemlock002.png", "mountainHemlock003.png",
+				"mountainHemlock004.png", "mountainHemlock005.png", "mountainHemlock006.png",
+				"mountainHemlock007.png", "mountainHemlock008.png", "mountainHemlock009.png",
+				"mountainHemlock010.png", "mountainHemlock011.png", "mountainHemlock012.png"
+			]
+		},
+		{
 			"commonName": "Sungold Falsecypress",
 			"botanicalName": "Chamaecyparis pisifera ‘Sungold’",
 			"group": "Conifer Shrubs",
