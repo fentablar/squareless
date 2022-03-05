@@ -439,7 +439,7 @@
 				"southernMagnolia005.png", "southernMagnolia006.png",
 				"southernMagnolia007.png", "southernMagnolia008.png",
 				"southernMagnolia009.png", "southernMagnolia010.png",
-				"southernMagnolia011.png", "southernMagnolia012.png",
+				"southernMagnolia011.png", "southernMagnolia012.png"
 			]
 		},
 		{
@@ -463,6 +463,62 @@
 				"vineMaple001.png", "vineMaple002.png", "vineMaple003.png",
 				"vineMaple004.png", "vineMaple005.png"
 			]
+		},
+		{
+			"commonName": "Stripebark Maple",
+			"botanicalName": "Acer davidii",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"stripebarkMaple001.png", "stripebarkMaple002.png",
+				"stripebarkMaple003.png", "stripebarkMaple004.png",
+				"stripebarkMaple005.png", "stripebarkMaple006.png",
+				"stripebarkMaple007.png"
+			]
+		},
+		{
+			"commonName": "Amur Maple",
+			"botanicalName": "Acer ginnala",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"amurMaple001.png", "amurMaple002.png", "amurMaple003.png",
+				"amurMaple004.png", "amurMaple005.png", "amurMaple006.png",
+				"amurMaple007.png", "amurMaple008.png", "amurMaple009.png",
+				"amurMaple010.png", "amurMaple011.png", "amurMaple012.png",
+				"amurMaple013.png", "amurMaple014.png"
+			]
+		},
+		{
+			"commonName": "Paperbark Maple",
+			"botanicalName": "Acer griseum",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"paperbarkMaple001.png", "paperbarkMaple002.png", "paperbarkMaple003.png",
+				"paperbarkMaple004.png", "paperbarkMaple005.png", "paperbarkMaple006.png",
+				"paperbarkMaple007.png", "paperbarkMaple008.png", "paperbarkMaple009.png"
+			]
+		},
+		{
+			"commonName": "Bloodgood Japanese Maple",
+			"botanicalName": "Acer palmatum ‘Bloodgood’",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"bloodgoodJapaneseMaple001.png", "bloodgoodJapaneseMaple002.png",
+				"bloodgoodJapaneseMaple003.png", "bloodgoodJapaneseMaple004.png",
+				"bloodgoodJapaneseMaple005.png", "bloodgoodJapaneseMaple006.png",
+				"bloodgoodJapaneseMaple007.png", "bloodgoodJapaneseMaple008.png",
+				"bloodgoodJapaneseMaple009.png", "bloodgoodJapaneseMaple010.png",
+				"bloodgoodJapaneseMaple011.png", "bloodgoodJapaneseMaple012.png"
+			]
+		},
+		{
+			"commonName": "Laceleaf Japanese Maple",
+			"botanicalName": "Acer palmatum ‘Dissectum’",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"laceleafJapaneseMaple001.png", "laceleafJapaneseMaple002.png",
+				"laceleafJapaneseMaple003.png"
+			],
+			"note": "name check"
 		},
 		{
 			"commonName": "Edward Goucher Glossy Abelia",
