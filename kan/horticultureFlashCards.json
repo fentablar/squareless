@@ -521,6 +521,62 @@
 			"note": "name check"
 		},
 		{
+			"commonName": "Norway Maple",
+			"botanicalName": "Acer platanoides",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"norwayMaple001.png", "norwayMaple002.png", "norwayMaple003.png",
+				"norwayMaple004.png", "norwayMaple005.png", "norwayMaple006.png",
+				"norwayMaple007.png", "norwayMaple008.png", "norwayMaple009.png",
+				"norwayMaple010.png", "norwayMaple011.png"
+			],
+			"note": "may be problematic due to durability, pests, diseases, or invasiveness"
+		},
+		{
+			"commonName": "Red Maple",
+			"botanicalName": "Acer rubrum",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"redMaple001.png", "redMaple002.png", "redMaple003.png", "redMaple004.png",
+				"redMaple005.png", "redMaple006.png", "redMaple007.png", "redMaple008.png",
+				"redMaple009.png", "redMaple010.png", "redMaple011.png", "redMaple012.png",
+				"redMaple013.png", "redMaple014.png", "redMaple015.png", "redMaple016.png"
+			]
+		},
+		{
+			"commonName": "Red Horsechestnut",
+			"botanicalName": "Aesculus x carnea",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"redHorsechestnut001.png", "redHorsechestnut002.png",
+				"redHorsechestnut003.png", "redHorsechestnut004.png",
+				"redHorsechestnut005.png", "redHorsechestnut006.png"
+			]
+		},
+		{
+			"commonName": "Himalayan Birch",
+			"botanicalName": "Betula jacquemontii",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"himalayanBirch001.png", "himalayanBirch001.png", "himalayanBirch001.png",
+				"himalayanBirch001.png", "himalayanBirch001.png", "himalayanBirch001.png",
+				"himalayanBirch001.png", "himalayanBirch001.png", "himalayanBirch001.png",
+				"himalayanBirch001.png", "himalayanBirch001.png", "himalayanBirch001.png"
+			]
+		},
+		{
+			"commonName": "River Birch",
+			"botanicalName": "Betula nigra",
+			"group": "Broadleaf Deciduous Trees",
+			"images": [
+				"riverBirch001.png", "riverBirch002.png", "riverBirch003.png",
+				"riverBirch004.png", "riverBirch005.png", "riverBirch006.png",
+				"riverBirch007.png", "riverBirch008.png", "riverBirch009.png",
+				"riverBirch010.png", "riverBirch011.png", "riverBirch012.png",
+				"riverBirch013.png", "riverBirch014.png"
+			]
+		},
+		{
 			"commonName": "Edward Goucher Glossy Abelia",
 			"botanicalName": "Abelia x grandiflora ‘Edward Goucher’",
 			"group": "Broadleaf Evergreen Shrubs",
