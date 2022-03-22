@@ -61,7 +61,7 @@ html {
 
   /* color assignments */
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
 
   --clr-btnActive: 12, 133, 233; /* bleuDeFrance-0c85e9 */
   --clr-bgMain: 204, 204, 204; /* lightGray-cccccc */
